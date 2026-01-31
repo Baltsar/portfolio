@@ -28,8 +28,10 @@ const lora = Lora({
 });
 
 export const metadata: Metadata = {
-  title: "Live workbench",
-  description: "Working in public. Here's what I'm doing now.",
+  metadataBase:
+    process.env.NEXT_PUBLIC_SITE_URL != null
+      ? new URL(process.env.NEXT_PUBLIC_SITE_URL)
+      : undefined,
 };
 
 export const viewport: Viewport = {

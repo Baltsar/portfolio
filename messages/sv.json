@@ -1,16 +1,17 @@
 {
   "meta": {
-    "title": "Live workbench",
-    "description": "Arbetar öppet. Så här ser det ut just nu."
+    "title": "Gustaf Baltsar Garnow — Digital designer som bygger i offentlighet",
+    "description": "Digital designer som jobbar snabbt, testar tidigt och lär sig i rörelse. Pågående projekt, experiment och systemtänk — byggt öppet.",
+    "ogTitle": "Gustaf Baltsar Garnow — Arbetar öppet",
+    "ogDescription": "Pågående projekt, pauser och misslyckanden. En arbetsbänk — inte ett showroom.",
+    "keywords": "digital designer, systems thinking, working in public, UX, interaction design, experimental design"
   },
   "statement": {
     "name": "GUSTAF BALTSAR GARNOW"
   },
   "hero": {
     "lines": [
-      "Jobbar snabbt.",
-      "Testar tidigt.",
-      "Lär mig i rörelse."
+      "Digital designer. Bygger, testar, går vidare."
     ]
   },
   "nav": {

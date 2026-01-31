@@ -1,16 +1,17 @@
 {
   "meta": {
-    "title": "Live workbench",
-    "description": "Working in public. Here's what I'm doing now."
+    "title": "Gustaf Baltsar Garnow — Digital designer working in public",
+    "description": "Digital designer who works fast, tests early and learns in motion. Live projects, experiments and systems thinking — built in public.",
+    "ogTitle": "Gustaf Baltsar Garnow — Working in public",
+    "ogDescription": "Live projects, pauses and failures. A workbench — not a showroom.",
+    "keywords": "digital designer, systems thinking, working in public, UX, interaction design, experimental design"
   },
   "statement": {
     "name": "GUSTAF BALTSAR GARNOW"
   },
   "hero": {
     "lines": [
-      "Work fast.",
-      "Test early.",
-      "Learn in motion."
+      "Digital designer. Build, test, move on."
     ]
   },
   "nav": {
