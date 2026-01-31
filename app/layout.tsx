@@ -27,11 +27,15 @@ const lora = Lora({
   display: "swap",
 });
 
+const baseUrl =
+  process.env.NEXT_PUBLIC_SITE_URL != null
+    ? process.env.NEXT_PUBLIC_SITE_URL
+    : process.env.VERCEL_URL != null
+      ? `https://${process.env.VERCEL_URL}`
+      : null;
+
 export const metadata: Metadata = {
-  metadataBase:
-    process.env.NEXT_PUBLIC_SITE_URL != null
-      ? new URL(process.env.NEXT_PUBLIC_SITE_URL)
-      : undefined,
+  metadataBase: baseUrl != null ? new URL(baseUrl) : undefined,
 };
 
 export const viewport: Viewport = {
@@ -48,6 +52,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="sv" className={`${inter.variable} ${jetbrainsMono.variable} ${robotoMono.variable} ${lora.variable}`}>
+      <head>
+        {process.env.NEXT_PUBLIC_FB_APP_ID != null && (
+          <meta property="fb:app_id" content={process.env.NEXT_PUBLIC_FB_APP_ID} />
+        )}
+      </head>
       <body className="min-h-screen font-sans antialiased">
         <HtmlLangSwitcher />
         {children}
