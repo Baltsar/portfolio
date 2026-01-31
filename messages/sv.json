@@ -103,9 +103,9 @@
   "projectStripProjects": [
     { "name": "Sellpy Scanner", "status": "failed", "lesson": "För avancerat" },
     { "name": "Discord-communities", "status": "deleted", "lesson": "För många" },
-    { "name": "Koncept-webb v1", "status": "deleted", "lesson": "scope creep" },
-    { "name": "Event-launch", "status": "failed", "lesson": "validera först" },
-    { "name": "Brand-reboot", "status": "deleted", "lesson": "ship small" },
+    { "name": "Nollkoll lista", "status": "deleted", "lesson": "ännu en directory-sajt" },
+    { "name": "AI utan Byxor", "status": "deleted", "lesson": "Ingen automation då" },
+    { "name": "Agent Smith OpenClaw", "status": "failed", "lesson": "Hade inte kunskap" },
     { "name": "Community-pivot", "status": "failed", "lesson": "en sak i taget" }
   ],
   "footer": {

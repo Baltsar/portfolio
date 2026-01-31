@@ -103,9 +103,9 @@
   "projectStripProjects": [
     { "name": "Sellpy Scanner", "status": "failed", "lesson": "Too advanced" },
     { "name": "Discord communities", "status": "deleted", "lesson": "Too many" },
-    { "name": "Concept site v1", "status": "deleted", "lesson": "scope creep" },
-    { "name": "Event launch", "status": "failed", "lesson": "validate first" },
-    { "name": "Brand reboot", "status": "deleted", "lesson": "ship small" },
+    { "name": "Nollkoll lista", "status": "deleted", "lesson": "yet another directory site" },
+    { "name": "AI utan Byxor", "status": "deleted", "lesson": "No automation then" },
+    { "name": "Agent Smith OpenClaw", "status": "failed", "lesson": "Didn't have the knowledge" },
     { "name": "Community pivot", "status": "failed", "lesson": "one thing at a time" }
   ],
   "footer": {
