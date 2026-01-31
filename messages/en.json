@@ -1,0 +1,125 @@
+{
+  "meta": {
+    "title": "Live workbench",
+    "description": "Working in public. Here's what I'm doing now."
+  },
+  "statement": {
+    "name": "GUSTAF BALTSAR GARNOW"
+  },
+  "hero": {
+    "lines": [
+      "Work fast.",
+      "Test early.",
+      "Learn in motion."
+    ]
+  },
+  "nav": {
+    "workbench": "Workbench",
+    "moreProjects": "More projects",
+    "scrollLeft": "Scroll left",
+    "scrollRight": "Scroll right"
+  },
+  "sections": {
+    "statement": "My statement",
+    "feature": "Focus projects",
+    "moreWork": "Other work",
+    "learned": "Learned from — deleted & failed"
+  },
+  "clarificationStatement": {
+    "heading": "I work iteratively, not linearly.",
+    "body": "Build, test, and delete without ego. What's here is what survived."
+  },
+  "stack": {
+    "tech": ["Next.js", "TypeScript", "Tailwind"],
+    "attributes": "ART DIRECTION · GAMING CULTURE · SYSTEMS THINKING · PRODUCT SENSE"
+  },
+  "runtimeStatusLabels": {
+    "running": "RUNNING",
+    "paused": "PAUSED",
+    "archived": "ARCHIVED"
+  },
+  "statusTag": {
+    "live": "LIVE · ACTIVE",
+    "paused": "PROJECT · PAUSED",
+    "archived": "PROJECT · ARCHIVED"
+  },
+  "statusSubtext": {
+    "live": "ACTIVE — working in public",
+    "paused": "Paused",
+    "archived": "Archived"
+  },
+  "projectCard": {
+    "goTo": "Continue",
+    "goToAria": "Continue"
+  },
+  "projects": [
+    {
+      "runtime_status": "running",
+      "focus_state": "Tuning thresholds",
+      "title": "POLY SIGNALS",
+      "description": "Monitors Polymarket for unusual activity. Tracks top actors and flags suspicious bets.",
+      "latestUpdate": "Runs live. Logic adjusted continuously.",
+      "image": ""
+    },
+    {
+      "runtime_status": "paused",
+      "title": "DARK PENSION",
+      "description": "A narrative design project about hidden pension choices. No advice. No products.",
+      "latestUpdate": "Just consequences.",
+      "image": "/images/80x80_DARKPENSION.png"
+    },
+    {
+      "runtime_status": "paused",
+      "title": "FAVER",
+      "description": "A concept about everyday decisions and proximity. Timing over planning.",
+      "latestUpdate": "The form is not set yet.",
+      "image": ""
+    },
+    {
+      "runtime_status": "paused",
+      "focus_state": "Maintained",
+      "title": "1SVENSKTIGER",
+      "description": "A standalone community focused on engagement and growth. Driven by events, content and social presence.",
+      "latestUpdate": "Ongoing on the side.",
+      "href": "https://svensktiger.com",
+      "image": "/images/80x80_SVENSKTIGER.png"
+    },
+    {
+      "runtime_status": "archived",
+      "title": "MONERUJO",
+      "description": "Contribution to an open source Monero mobile project. Design work in an established ecosystem.",
+      "latestUpdate": "No longer active.",
+      "href": "https://monerujo.io",
+      "image": "/images/80x80_MONERUJO.png"
+    }
+  ],
+  "projectStrip": {
+    "title": "Learned from — deleted & failed",
+    "codepenCredit": "Borrowed from CodePen — blacklead-studio",
+    "deleted": "Deleted",
+    "failed": "Failed"
+  },
+  "projectStripProjects": [
+    { "name": "Side project v1", "status": "deleted", "lesson": "scope creep" },
+    { "name": "API rewrite", "status": "failed", "lesson": "incremental > big bang" },
+    { "name": "Dashboard 2024", "status": "deleted", "lesson": "ship small" },
+    { "name": "Mobile POC", "status": "failed", "lesson": "validate first" },
+    { "name": "Monolith split", "status": "deleted", "lesson": "strangler pattern" },
+    { "name": "Design system v0", "status": "failed", "lesson": "start with tokens" }
+  ],
+  "footer": {
+    "statement": "Working in public.",
+    "watchingChannels": "Actively monitoring these channels.",
+    "ariaX": "X (Twitter)",
+    "ariaGitHub": "GitHub",
+    "ariaDiscord": "Discord",
+    "ariaTelegram": "Telegram",
+    "ariaEmail": "Email"
+  },
+  "workbench": {
+    "back": "← Back to workbench",
+    "experimentLabel": "Experiment",
+    "hint": "Click ●/× on a card to turn on or off. Green line = on, red = off.",
+    "currentState": "Workbench — current state"
+  }
+}

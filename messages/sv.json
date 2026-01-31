@@ -1,0 +1,125 @@
+{
+  "meta": {
+    "title": "Live workbench",
+    "description": "Arbetar öppet. Så här ser det ut just nu."
+  },
+  "statement": {
+    "name": "GUSTAF BALTSAR GARNOW"
+  },
+  "hero": {
+    "lines": [
+      "Jobbar snabbt.",
+      "Testar tidigt.",
+      "Lär mig i rörelse."
+    ]
+  },
+  "nav": {
+    "workbench": "Workbench",
+    "moreProjects": "Fler projekt",
+    "scrollLeft": "Bläddra åt vänster",
+    "scrollRight": "Bläddra åt höger"
+  },
+  "sections": {
+    "statement": "Mitt statement",
+    "feature": "Fokusprojekt",
+    "moreWork": "Övrigt arbete",
+    "learned": "Lärdomar — raderade & misslyckade"
+  },
+  "clarificationStatement": {
+    "heading": "Jag jobbar iterativt, inte linjärt.",
+    "body": "Bygger, testar och raderar utan prestige. Det som finns här är vad som överlevde."
+  },
+  "stack": {
+    "tech": ["Next.js", "TypeScript", "Tailwind"],
+    "attributes": "ART DIRECTION · GAMING CULTURE · SYSTEMS THINKING · PRODUCT SENSE"
+  },
+  "runtimeStatusLabels": {
+    "running": "RUNNING",
+    "paused": "PAUSED",
+    "archived": "ARCHIVED"
+  },
+  "statusTag": {
+    "live": "LIVE · AKTIV",
+    "paused": "PROJECT · PAUSAD",
+    "archived": "PROJECT · ARKIVERAD"
+  },
+  "statusSubtext": {
+    "live": "AKTIV — arbetar öppet",
+    "paused": "Pausad",
+    "archived": "Arkiverad"
+  },
+  "projectCard": {
+    "goTo": "Gå vidare",
+    "goToAria": "Gå vidare"
+  },
+  "projects": [
+    {
+      "runtime_status": "running",
+      "focus_state": "Tuning thresholds",
+      "title": "POLY SIGNALS",
+      "description": "Bevakar Polymarket efter ovanliga rörelser. Följer toppaktörer och flaggar misstänkta bets.",
+      "latestUpdate": "Kör live. Logik justeras kontinuerligt.",
+      "image": ""
+    },
+    {
+      "runtime_status": "paused",
+      "title": "DARK PENSION",
+      "description": "Ett narrativt designprojekt om dolda pensionsval. Inga råd. Inga produkter.",
+      "latestUpdate": "Bara konsekvenser.",
+      "image": "/images/80x80_DARKPENSION.png"
+    },
+    {
+      "runtime_status": "paused",
+      "title": "FAVER",
+      "description": "Ett koncept om vardagsbeslut och närhet. Timing före planering.",
+      "latestUpdate": "Formen är inte klar än.",
+      "image": ""
+    },
+    {
+      "runtime_status": "paused",
+      "focus_state": "Maintained",
+      "title": "1SVENSKTIGER",
+      "description": "Ett fristående community med fokus på engagemang och tillväxt. Drivs genom events, innehåll och social närvaro.",
+      "latestUpdate": "Pågår vid sidan av.",
+      "href": "https://svensktiger.com",
+      "image": "/images/80x80_SVENSKTIGER.png"
+    },
+    {
+      "runtime_status": "archived",
+      "title": "MONERUJO",
+      "description": "Bidrag till ett open source-projekt för Monero på mobil. Designarbete i ett etablerat ekosystem.",
+      "latestUpdate": "Ej aktivt längre.",
+      "href": "https://monerujo.io",
+      "image": "/images/80x80_MONERUJO.png"
+    }
+  ],
+  "projectStrip": {
+    "title": "Lärdomar — raderade & misslyckade",
+    "codepenCredit": "Snodd från CodePen — blacklead-studio",
+    "deleted": "Raderad",
+    "failed": "Misslyckad"
+  },
+  "projectStripProjects": [
+    { "name": "Sidoprojekt v1", "status": "deleted", "lesson": "scope creep" },
+    { "name": "API-omskrivning", "status": "failed", "lesson": "incremental > big bang" },
+    { "name": "Dashboard 2024", "status": "deleted", "lesson": "ship small" },
+    { "name": "Mobile POC", "status": "failed", "lesson": "validate first" },
+    { "name": "Monolith-split", "status": "deleted", "lesson": "strangler pattern" },
+    { "name": "Design system v0", "status": "failed", "lesson": "start with tokens" }
+  ],
+  "footer": {
+    "statement": "Arbetar öppet.",
+    "watchingChannels": "AKTIVT övervakar dessa sociala kanaler.",
+    "ariaX": "X (Twitter)",
+    "ariaGitHub": "GitHub",
+    "ariaDiscord": "Discord",
+    "ariaTelegram": "Telegram",
+    "ariaEmail": "E-post"
+  },
+  "workbench": {
+    "back": "← Tillbaka till workbench",
+    "experimentLabel": "Experiment",
+    "hint": "Klicka på ●/× på ett kort för att slå på eller av. Grön linje = på, röd = av.",
+    "currentState": "Workbench — aktuellt läge"
+  }
+}
