@@ -10,4 +10,4 @@ Sajten kör på **Vercel**. Push till `main` → automatisk deploy.
 
 ## OG-bild
 
-Social preview använder **`public/images/DigitalDesigner_GustafGarnow.png`** (1200×630 px).
+Ladda upp **`public/og.png`** (1200×630 px). Alternativ A: "GUSTAF BALTSAR GARNOW / Working in public". Alternativ B: "ARBETAR ÖPPET / Digital designer". Metadata pekar på `/og.png`.
