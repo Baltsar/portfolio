@@ -101,12 +101,12 @@
     "failed": "Failed"
   },
   "projectStripProjects": [
-    { "name": "Side project v1", "status": "deleted", "lesson": "scope creep" },
-    { "name": "API rewrite", "status": "failed", "lesson": "incremental > big bang" },
-    { "name": "Dashboard 2024", "status": "deleted", "lesson": "ship small" },
-    { "name": "Mobile POC", "status": "failed", "lesson": "validate first" },
-    { "name": "Monolith split", "status": "deleted", "lesson": "strangler pattern" },
-    { "name": "Design system v0", "status": "failed", "lesson": "start with tokens" }
+    { "name": "Sellpy Scanner", "status": "failed", "lesson": "Too advanced" },
+    { "name": "Discord communities", "status": "deleted", "lesson": "Too many" },
+    { "name": "Concept site v1", "status": "deleted", "lesson": "scope creep" },
+    { "name": "Event launch", "status": "failed", "lesson": "validate first" },
+    { "name": "Brand reboot", "status": "deleted", "lesson": "ship small" },
+    { "name": "Community pivot", "status": "failed", "lesson": "one thing at a time" }
   ],
   "footer": {
     "statement": "Working in public.",

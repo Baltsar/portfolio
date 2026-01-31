@@ -101,12 +101,12 @@
     "failed": "Misslyckad"
   },
   "projectStripProjects": [
-    { "name": "Sidoprojekt v1", "status": "deleted", "lesson": "scope creep" },
-    { "name": "API-omskrivning", "status": "failed", "lesson": "incremental > big bang" },
-    { "name": "Dashboard 2024", "status": "deleted", "lesson": "ship small" },
-    { "name": "Mobile POC", "status": "failed", "lesson": "validate first" },
-    { "name": "Monolith-split", "status": "deleted", "lesson": "strangler pattern" },
-    { "name": "Design system v0", "status": "failed", "lesson": "start with tokens" }
+    { "name": "Sellpy Scanner", "status": "failed", "lesson": "För avancerat" },
+    { "name": "Discord-communities", "status": "deleted", "lesson": "För många" },
+    { "name": "Koncept-webb v1", "status": "deleted", "lesson": "scope creep" },
+    { "name": "Event-launch", "status": "failed", "lesson": "validera först" },
+    { "name": "Brand-reboot", "status": "deleted", "lesson": "ship small" },
+    { "name": "Community-pivot", "status": "failed", "lesson": "en sak i taget" }
   ],
   "footer": {
     "statement": "Arbetar öppet.",
