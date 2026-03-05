@@ -4,6 +4,7 @@ import { initLayoutToggle } from './layout-toggle.js';
 import { initCaseStudy } from './case-study.js';
 import { initExport } from './export.js';
 import { initSpinners } from './spinners.js';
+import { initTerminal } from './terminal.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   initGrain();
@@ -12,4 +13,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initCaseStudy();
   initExport();
   initSpinners();
+  initTerminal();
 });
