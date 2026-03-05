@@ -1,0 +1,21 @@
+:root {
+  --bg: #0a0a0a;
+  --win-bg: #f5e6c8;
+  --win-bg-light: #faf3e6;
+  --win-titlebar: #e8d5b0;
+  --win-border: #c4a97a;
+  --win-border-dark: #8a7352;
+  --win-text: #1a1408;
+  --green: #33ff33;
+  --green-dim: #1a8c1a;
+  --green-glow: rgba(51, 255, 51, 0.15);
+  --blue: #0033ff;
+  --blue-bright: #3366ff;
+  --blue-glow: rgba(0, 51, 255, 0.2);
+  --text-primary: #f5e6c8;
+  --text-secondary: #9c8b6e;
+  --text-dim: #5c5040;
+  --font-mono: 'IBM Plex Mono', monospace;
+  --font-display: 'Space Mono', monospace;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}

@@ -1,0 +1,113 @@
+/* ============================================
+   PROJECT BAR — tags left, open button, drag handle right
+   ============================================ */
+.project-bar {
+  padding: 0;
+  border-top: 1px solid var(--win-border);
+  display: flex;
+  align-items: stretch;
+  background: var(--win-bg);
+  position: relative;
+}
+
+/* Tags area */
+.bar-tags {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+}
+
+.tag {
+  font-family: var(--font-mono); font-size: 0.4375rem; font-weight: 500;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 2px 5px;
+  border: none;
+  background: none;
+  color: var(--win-text);
+  opacity: 0.35;
+}
+
+.tag.active { color: var(--green-dim); opacity: 0.5; }
+.tag.shipped { color: var(--blue); opacity: 0.4; }
+.tag.concept { color: var(--win-text); opacity: 0.25; }
+.tag.wip { color: var(--blue-bright); opacity: 0.6; border: 1px dashed rgba(0,51,255,0.3); }
+
+.tag + .tag::before {
+  content: '\00B7';
+  margin-right: 6px;
+  color: var(--win-border);
+}
+
+/* ============================================
+   OPEN BUTTON — with glyph spinner
+   ============================================ */
+.open-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--win-text);
+  background: rgba(26,20,8,0.06);
+  border: none;
+  border-left: 1px solid var(--win-border);
+  padding: 8px 20px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.open-btn:hover {
+  background: var(--win-border-dark);
+  color: var(--win-bg);
+}
+
+.open-btn:hover .open-glyph {
+  color: var(--win-bg);
+}
+
+.open-glyph {
+  display: inline-block;
+  width: 14px;
+  text-align: center;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--win-border-dark);
+  transition: color 0.15s;
+}
+
+/* ============================================
+   DRAG HANDLE — far right in project bar
+   ============================================ */
+.bar-drag {
+  width: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: grab;
+  border-left: 1px solid rgba(196,169,122,0.3);
+  position: relative;
+}
+
+.bar-drag:active { cursor: grabbing; }
+
+.bar-drag::before {
+  content: '';
+  width: 16px; height: 16px;
+  background:
+    linear-gradient(-45deg,
+      transparent 30%, var(--win-border-dark) 30%, var(--win-border-dark) 33%, transparent 33%,
+      transparent 43%, var(--win-border-dark) 43%, var(--win-border-dark) 46%, transparent 46%,
+      transparent 56%, var(--win-border-dark) 56%, var(--win-border-dark) 59%, transparent 59%,
+      transparent 69%, var(--win-border-dark) 69%, var(--win-border-dark) 72%, transparent 72%,
+      transparent 82%, var(--win-border-dark) 82%, var(--win-border-dark) 85%, transparent 85%
+    );
+  opacity: 0.4;
+}
+
+.mac-window:hover .bar-drag::before { opacity: 0.7; }

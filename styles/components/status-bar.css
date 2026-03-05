@@ -1,0 +1,19 @@
+.status-bar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  background: rgba(10,10,10,0.92); backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(245,230,200,0.06);
+  padding: 6px 24px; display: flex; justify-content: space-between; align-items: center;
+  font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.08em;
+}
+
+.status-left { display: flex; align-items: center; gap: 8px; color: var(--text-secondary); }
+
+.status-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--green); box-shadow: 0 0 6px var(--green);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+.status-right { color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.12em; }

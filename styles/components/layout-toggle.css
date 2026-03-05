@@ -1,0 +1,121 @@
+.layout-toggle {
+  position: relative;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-bottom: 20px;
+  width: fit-content;
+  background: rgba(245,230,200,0.04);
+  border: 1px solid rgba(245,230,200,0.08);
+  border-radius: 4px;
+  padding: 3px;
+}
+
+.layout-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 26px;
+  background: transparent;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.2s;
+  position: relative;
+}
+
+.layout-btn:hover { background: rgba(245,230,200,0.06); }
+
+.layout-btn.active-view {
+  background: rgba(245,230,200,0.1);
+}
+
+.layout-btn .ico {
+  display: grid;
+  gap: 2px;
+  opacity: 0.4;
+  transition: opacity 0.2s;
+}
+
+.layout-btn.active-view .ico { opacity: 0.8; }
+.layout-btn:hover .ico { opacity: 0.7; }
+
+.ico-chaos {
+  width: 16px;
+  height: 14px;
+  position: relative;
+}
+
+.ico-chaos span {
+  position: absolute;
+  background: var(--text-primary);
+  border: 0.5px solid rgba(245,230,200,0.3);
+}
+
+.ico-chaos span:nth-child(1) { width: 7px; height: 5px; top: 0; left: 0; transform: rotate(-4deg); }
+.ico-chaos span:nth-child(2) { width: 6px; height: 5px; top: 2px; right: 0; transform: rotate(3deg); }
+.ico-chaos span:nth-child(3) { width: 7px; height: 5px; bottom: 0; left: 3px; transform: rotate(1deg); }
+
+.ico-neat {
+  grid-template-columns: repeat(2, 7px);
+  grid-template-rows: repeat(2, 5px);
+}
+
+.ico-neat span {
+  background: var(--text-primary);
+}
+
+/* Tooltip */
+.layout-btn .tooltip {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-family: var(--font-mono);
+  font-size: 0.5rem;
+  letter-spacing: 0.05em;
+  color: var(--bg);
+  background: var(--text-primary);
+  padding: 4px 10px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s;
+  z-index: 300;
+}
+
+.layout-btn .tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 4px solid transparent;
+  border-top-color: var(--text-primary);
+}
+
+.layout-btn:hover .tooltip { opacity: 1; }
+
+/* GRID MODE */
+.windows-area.grid-mode {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+  min-height: auto;
+  align-items: start;
+}
+
+.windows-area.grid-mode .mac-window {
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  transform: none !important;
+  width: 100% !important;
+  animation: none;
+  opacity: 1;
+}
+
+.windows-area.grid-mode .win-profile { order: -1; }

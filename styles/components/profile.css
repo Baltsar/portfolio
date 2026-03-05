@@ -1,0 +1,94 @@
+.profile-content {
+  padding: 0;
+  background: var(--win-bg);
+}
+
+.profile-photo {
+  width: 100%;
+  aspect-ratio: 1/1;
+  background: #1a1408;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-photo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(0,0,0,0.2) 1px, transparent 1px);
+  background-size: 3px 3px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.profile-photo .photo-placeholder {
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: rgba(245,230,200,0.06);
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  line-height: 0.85;
+  text-align: center;
+}
+
+.profile-info {
+  padding: 10px 12px;
+  border-top: 1px solid var(--win-border);
+}
+
+.profile-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.75rem;
+  color: var(--win-text);
+  letter-spacing: -0.02em;
+}
+
+.profile-role {
+  font-family: var(--font-mono);
+  font-size: 0.5625rem;
+  color: var(--win-text);
+  opacity: 0.6;
+  margin-top: 2px;
+}
+
+.profile-stack {
+  padding: 8px 12px 10px;
+  border-top: 1px solid rgba(196,169,122,0.4);
+}
+
+.stack-label {
+  font-size: 0.5rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--win-text);
+  opacity: 0.4;
+  margin-bottom: 6px;
+}
+
+.stack-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.stack-item {
+  font-family: var(--font-mono);
+  font-size: 0.5rem;
+  font-weight: 500;
+  padding: 2px 6px;
+  background: rgba(26,20,8,0.06);
+  border: 1px solid rgba(26,20,8,0.1);
+  color: var(--win-text);
+  letter-spacing: 0.03em;
+}
+
+.stack-item.highlight {
+  background: rgba(0,51,255,0.08);
+  border-color: rgba(0,51,255,0.2);
+  color: var(--blue);
+}

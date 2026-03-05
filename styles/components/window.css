@@ -1,0 +1,106 @@
+/* WINDOWS AREA */
+.windows-area {
+  position: relative; margin-top: 40px; min-height: 750px;
+}
+
+/* MAC WINDOW */
+.mac-window {
+  background: var(--win-bg);
+  border: 2px solid var(--win-border);
+  border-top-color: var(--win-bg-light);
+  border-left-color: var(--win-bg-light);
+  border-right-color: var(--win-border-dark);
+  border-bottom-color: var(--win-border-dark);
+  box-shadow: 8px 8px 0 rgba(0,0,0,0.35), 20px 20px 50px rgba(0,0,0,0.5);
+  position: absolute;
+  transition: box-shadow 0.4s var(--ease-out-expo), transform 0.4s var(--ease-out-expo);
+  cursor: default;
+  opacity: 0; animation: windowDrop 0.7s var(--ease-out-expo) forwards;
+}
+
+.mac-window:hover {
+  z-index: 50 !important;
+  box-shadow: 12px 12px 0 rgba(0,0,0,0.4), 24px 24px 60px rgba(0,0,0,0.6);
+  transform: translate(-3px, -3px) scale(1.01);
+}
+
+.mac-window.is-dragging {
+  z-index: 60 !important;
+  transition: none !important;
+  cursor: grabbing;
+}
+
+.mac-window.is-dragging:hover {
+  box-shadow: 8px 8px 0 rgba(0,0,0,0.35), 20px 20px 50px rgba(0,0,0,0.5);
+}
+
+@keyframes windowDrop { from{opacity:0;transform:translateY(30px) scale(0.95)} to{opacity:1;transform:translateY(0) scale(1)} }
+
+/* Titlebar */
+.mac-titlebar {
+  background: var(--win-titlebar); border-bottom: 1px solid var(--win-border);
+  padding: 5px 10px; display: flex; align-items: center; gap: 8px;
+  user-select: none; position: relative;
+}
+
+/* Drag grip — replaces macOS buttons on project windows */
+.titlebar-grip {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5px;
+  width: 18px;
+  padding: 2px 0;
+  flex-shrink: 0;
+  cursor: grab;
+}
+
+.titlebar-grip span {
+  display: block;
+  height: 1.5px;
+  background: var(--win-border-dark);
+  opacity: 0.4;
+  border-radius: 1px;
+}
+
+.mac-window:hover .titlebar-grip span {
+  opacity: 0.6;
+}
+
+/* Case study close button — only used in popup */
+.mac-btn-close {
+  width: 14px; height: 14px; border-radius: 50%;
+  background: #ff5f57;
+  border: 1px solid rgba(0,0,0,0.15);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: filter 0.15s;
+}
+
+.mac-btn-close:hover {
+  filter: brightness(0.85);
+}
+
+.mac-title {
+  flex: 1; text-align: center;
+  font-family: var(--font-mono); font-size: 0.625rem;
+  font-weight: 600; color: var(--win-text); letter-spacing: 0.03em;
+}
+
+.mac-content { position: relative; overflow: visible; }
+
+/* WINDOW POSITIONS — OVERLAPPING DESKTOP */
+.win-1 { width: min(500px, 58vw); top: 0; left: 0; z-index: 10; animation-delay: 0.1s; }
+.win-2 { width: min(440px, 52vw); top: 30px; right: 0; z-index: 20; animation-delay: 0.25s; }
+.win-3 { width: min(420px, 50vw); top: 380px; left: 2%; z-index: 15; animation-delay: 0.4s; transform: rotate(-0.4deg); }
+.win-4 { width: min(380px, 46vw); top: 350px; right: 4%; z-index: 8; animation-delay: 0.55s; transform: rotate(0.3deg); }
+.win-profile { width: min(280px, 36vw); top: 220px; left: 38%; z-index: 25; animation-delay: 0.7s; transform: rotate(0.6deg); }
+
+/* Smooth transitions between modes */
+.windows-area .mac-window {
+  transition: all 0.5s var(--ease-out-expo);
+}
+
+/* Clicked to front */
+.mac-window.z-front {
+  z-index: 60 !important;
+}

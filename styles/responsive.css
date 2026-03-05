@@ -1,0 +1,47 @@
+@media (max-width: 768px) {
+  .desktop { padding: 50px 16px 24px; }
+  .hero-name { font-size: clamp(2.2rem, 12vw, 3.5rem); }
+  .windows-area { display: flex; flex-direction: column; gap: 20px; min-height: auto; }
+  .mac-window {
+    position: relative !important; width: 100% !important;
+    top: auto !important; left: auto !important; right: auto !important;
+    transform: none !important;
+  }
+  .overlay-title { font-size: clamp(3rem, 18vw, 5rem); }
+  .terminal-footer { margin-top: 40px; }
+  .footer-links { flex-wrap: wrap; gap: 16px; }
+  .case-popup { width: 100% !important; resize: none !important; min-width: 0 !important; }
+  .case-hero { height: 40vh; min-height: 250px; }
+  .case-hero .overlay-title { font-size: clamp(3.5rem, 14vw, 7rem); }
+  .case-split { grid-template-columns: 1fr; }
+  .case-text-col { border-right: none; border-bottom: 2px solid var(--win-border); }
+  .case-preview-col { min-height: 250px; }
+  .img-ref { cursor: pointer; }
+  .case-meta { grid-template-columns: 1fr 1fr; }
+  .case-meta-item { padding: 12px 16px; }
+  .bar-drag { display: none; }
+  .file-size, .file-date { display: none; }
+  .layout-toggle { display: none; }
+  /* Mobile order: projects first, profile last */
+  .win-1 { order: 1; }
+  .win-2 { order: 2; }
+  .win-3 { order: 3; }
+  .win-4 { order: 4; }
+  .win-profile { order: 5; }
+  /* Mobile close button sticky */
+  .case-popup .mac-titlebar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .case-popup .mac-btn-close {
+    width: 18px;
+    height: 18px;
+  }
+  /* Tooltips: tap to show */
+  .term .tip { display: none; }
+  .term.tip-active .tip { display: block; }
+  /* Stats responsive */
+  .case-stats { flex-wrap: wrap; }
+  .case-stat { min-width: 45%; }
+}
