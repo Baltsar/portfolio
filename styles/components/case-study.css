@@ -39,7 +39,7 @@
   background: #dcc89e;
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 100;
   gap: 10px;
 }
 
@@ -515,7 +515,17 @@
   font-weight: 500;
 }
 
-/* Mobile close bar — hidden on desktop */
-.case-close-mobile {
-  display: none;
+/* Footer close link */
+.case-footer-close {
+  padding: 16px 24px;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--win-text);
+  opacity: 0.5;
+  cursor: pointer;
+  border-top: 1px solid var(--win-border);
+  background: var(--win-bg);
+  transition: opacity 0.15s;
 }
+.case-footer-close:hover { opacity: 1; }

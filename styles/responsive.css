@@ -28,21 +28,21 @@
   .win-3 { order: 3; }
   .win-4 { order: 4; }
   .win-profile { order: 5; }
-  /* Mobile close button — bigger touch target */
+  /* Mobile close button — 20px visual, 44px touch target */
   .case-popup .mac-titlebar {
     position: sticky;
     top: 0;
-    z-index: 10;
+    z-index: 100;
   }
   .case-popup .mac-btn-close {
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
     position: relative;
   }
   .case-popup .mac-btn-close::before {
     content: '';
     position: absolute;
-    inset: -10px;
+    inset: -12px;
   }
   /* Tooltips: tap to show */
   .term .tip { display: none; }
@@ -51,35 +51,26 @@
   .case-stats { flex-wrap: wrap; }
   .case-stat { min-width: 45%; }
 
-  /* Case body padding so content isn't hidden behind close button */
-  .case-body {
-    padding-bottom: 60px;
-  }
-
-  /* === Floating close button === */
-  .case-close-mobile {
-    display: flex;
-    position: fixed;
-    bottom: 16px;
+  /* Tap hint overlay on first card */
+  .tap-hint {
+    position: absolute;
+    bottom: 40px;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 1000;
-    max-width: 200px;
-    background: var(--win-border-dark);
-    color: var(--win-bg);
-    border-radius: 4px;
-    padding: 10px 20px;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
     font-family: var(--font-mono);
-    font-size: 0.6875rem;
+    font-size: 0.625rem;
     font-weight: 600;
-    cursor: pointer;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+    color: var(--win-text);
+    background: var(--win-titlebar);
+    border: 1px solid var(--win-border);
+    padding: 6px 14px;
+    z-index: 10;
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity 0.5s;
   }
-  .case-close-mobile:active {
-    opacity: 0.8;
+  .tap-hint.fade-out {
+    opacity: 0;
   }
 
   /* === FIX 2: Tighter mobile text in case study === */

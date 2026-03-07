@@ -117,10 +117,10 @@ function buildCaseHTML(project) {
           <div class="case-meta">
             ${metaHTML}
           </div>
+          <div class="case-footer-close" id="case-footer-close">\u2190 tillbaka till projekten</div>
         </div>
       </div>
     </div>
-    <div class="case-close-mobile" id="case-close-mobile">\u2715 st\u00e4ng projekt</div>
   `;
 }
 
@@ -273,16 +273,16 @@ function openCase(projectId) {
 
   const isMobile = window.innerWidth <= 768;
 
-  // Close button
+  // Close button (titlebar red dot)
   const closeBtn = document.getElementById('case-close');
   if (closeBtn) {
     closeBtn.addEventListener('click', closeCase);
   }
 
-  // Mobile close bar
-  const mobileClose = document.getElementById('case-close-mobile');
-  if (mobileClose) {
-    mobileClose.addEventListener('click', closeCase);
+  // Footer close link
+  const footerClose = document.getElementById('case-footer-close');
+  if (footerClose) {
+    footerClose.addEventListener('click', closeCase);
   }
 
   // Swipe down to close (mobile)
@@ -393,13 +393,47 @@ function closeCase() {
 }
 
 export function initCaseStudy() {
+  // Whole card clickable (except profile)
+  document.querySelectorAll('.mac-window[data-project]').forEach(win => {
+    win.style.cursor = 'pointer';
+
+    win.addEventListener('click', (e) => {
+      // Ignore drag handle clicks
+      if (e.target.closest('.bar-drag')) return;
+      if (e.target.closest('.titlebar-grip')) return;
+      // Ignore if window was just dragged
+      if (win.classList.contains('is-dragging')) return;
+      // Ignore open-btn clicks — handled separately to prevent double fire
+      if (e.target.closest('.open-btn')) return;
+
+      const projectId = win.dataset.project;
+      if (projectId) openCase(projectId);
+    });
+  });
+
+  // Open button still works
   document.querySelectorAll('.open-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
+      e.stopPropagation();
       const win = btn.closest('.mac-window');
       if (!win) return;
       const projectId = win.dataset.project;
       if (projectId) openCase(projectId);
     });
   });
+
+  // Mobile: "tap to open" hint, once per session
+  if (window.innerWidth <= 768 && !sessionStorage.getItem('tapHintShown')) {
+    const firstCard = document.querySelector('.mac-window[data-project]');
+    if (firstCard) {
+      const hint = document.createElement('div');
+      hint.className = 'tap-hint';
+      hint.textContent = 'tap to open';
+      firstCard.appendChild(hint);
+      sessionStorage.setItem('tapHintShown', '1');
+      setTimeout(() => hint.classList.add('fade-out'), 2000);
+      setTimeout(() => hint.remove(), 2500);
+    }
+  }
 }
