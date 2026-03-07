@@ -470,19 +470,52 @@
 /* RICH TEXT — LIST */
 .case-list {
   list-style: none;
-  margin: 12px 0;
-  padding: 0;
+  margin: 20px 0;
+  padding: 12px 0;
+  background: rgba(26,20,8,0.04);
+  border-left: 3px solid var(--green-dim);
+  border-top: 1px solid rgba(196,169,122,0.15);
+  border-bottom: 1px solid rgba(196,169,122,0.15);
+}
+
+.case-list.blue {
+  border-left-color: rgba(0,51,255,0.4);
+}
+
+.case-list.beige {
+  border-left-color: var(--win-border-dark);
+}
+
+.case-list-heading {
+  font-family: var(--font-mono);
+  font-size: 0.5rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--win-text);
+  opacity: 0.35;
+  margin-bottom: 8px;
+  padding: 0 16px 8px 28px;
+  border-bottom: 1px solid rgba(196,169,122,0.1);
 }
 
 .case-list li {
   font-family: var(--font-mono);
   font-size: 0.8125rem;
-  line-height: 1.9;
+  line-height: 1.8;
   color: var(--win-text);
-  padding: 3px 0;
+  padding: 6px 16px 6px 28px;
+  position: relative;
   display: flex;
   align-items: baseline;
   gap: 8px;
+  border-bottom: 1px solid rgba(196,169,122,0.06);
+  transition: background 0.15s;
+}
+
+.case-list li:last-child { border-bottom: none; }
+
+.case-list li:hover {
+  background: rgba(196,169,122,0.08);
 }
 
 .case-list .list-glyph {
@@ -492,11 +525,18 @@
   font-size: 0.75rem;
   color: var(--win-border-dark);
   flex-shrink: 0;
-  transition: color 0.15s;
+  transition: color 0.15s, background 0.15s;
 }
 
 .case-list li:hover .list-glyph {
   color: var(--green-dim);
+  background: rgba(51,255,51,0.08);
+  border-radius: 2px;
+}
+
+.case-list.blue li:hover .list-glyph {
+  color: var(--blue);
+  background: rgba(0,51,255,0.08);
 }
 
 /* INTRO SECTION */
