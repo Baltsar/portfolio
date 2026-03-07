@@ -74,6 +74,13 @@ export function initTerminal() {
 
   terminal.addEventListener('click', () => input.focus());
 
+  input.addEventListener('focus', () => {
+    terminal.classList.add('focused');
+  });
+  input.addEventListener('blur', () => {
+    terminal.classList.remove('focused');
+  });
+
   input.addEventListener('keydown', (e) => {
     if (e.key !== 'Enter') return;
     const raw = input.value.trim();

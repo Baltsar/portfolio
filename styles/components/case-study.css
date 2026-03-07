@@ -522,3 +522,8 @@
   margin-bottom: 20px;
   font-weight: 500;
 }
+
+/* Mobile close bar — hidden on desktop */
+.case-close-mobile {
+  display: none;
+}

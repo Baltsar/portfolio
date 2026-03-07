@@ -79,6 +79,7 @@
   font-weight: 700;
   color: var(--win-border-dark);
   transition: color 0.15s;
+  overflow: hidden;
 }
 
 /* ============================================

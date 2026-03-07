@@ -98,6 +98,20 @@
 .interactive-terminal {
   margin-top: 32px;
   cursor: text;
+  border: 1px solid rgba(51, 255, 51, 0.15);
+  background: rgba(51, 255, 51, 0.02);
+  padding: 16px;
+}
+
+.interactive-terminal.focused {
+  border-color: rgba(51, 255, 51, 0.3);
+  animation: termPulse 0.5s ease;
+}
+
+@keyframes termPulse {
+  0% { border-color: rgba(51, 255, 51, 0.15); }
+  50% { border-color: rgba(51, 255, 51, 0.5); }
+  100% { border-color: rgba(51, 255, 51, 0.3); }
 }
 
 .interactive-terminal .term-divider {

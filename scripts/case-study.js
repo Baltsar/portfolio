@@ -120,6 +120,7 @@ function buildCaseHTML(project) {
         </div>
       </div>
     </div>
+    <div class="case-close-mobile" id="case-close-mobile">\u2715 st\u00e4ng projekt</div>
   `;
 }
 
@@ -248,6 +249,28 @@ function initCaseSpinners() {
   scheduleCaseNudge();
 }
 
+function createInlineExpand(imgId) {
+  const img = currentProject ? currentProject.caseStudy.images.find(i => i.id === imgId) : null;
+  const expand = document.createElement('div');
+  expand.className = 'img-inline-expand';
+  expand.dataset.img = imgId;
+
+  const placeholder = img ? img.placeholder : '';
+  const filename = img ? img.filename : `image-${imgId}`;
+  const caption = img ? img.caption : '';
+
+  expand.innerHTML = `
+    <div class="inline-img-area">
+      <div class="preview-ph">${placeholder}</div>
+    </div>
+    <div class="inline-caption">
+      <div class="inline-fn">\u229E ${filename}</div>
+      <div class="inline-desc">${caption}</div>
+    </div>
+  `;
+  return expand;
+}
+
 function openCase(projectId) {
   const project = projects.find(p => p.id === projectId);
   if (!project) return;
@@ -258,21 +281,65 @@ function openCase(projectId) {
   backdrop.classList.add('is-open');
   document.body.style.overflow = 'hidden';
 
+  const isMobile = window.innerWidth <= 768;
+
   // Close button
   const closeBtn = document.getElementById('case-close');
   if (closeBtn) {
     closeBtn.addEventListener('click', closeCase);
   }
 
+  // Mobile close bar
+  const mobileClose = document.getElementById('case-close-mobile');
+  if (mobileClose) {
+    mobileClose.addEventListener('click', closeCase);
+  }
+
+  // Swipe down to close (mobile)
+  if (isMobile) {
+    let touchStartY = 0;
+    let touchStartTime = 0;
+    const popup = backdrop.querySelector('.case-popup');
+    if (popup) {
+      popup.addEventListener('touchstart', (e) => {
+        touchStartY = e.touches[0].clientY;
+        touchStartTime = Date.now();
+      }, { passive: true });
+      popup.addEventListener('touchend', (e) => {
+        const dy = e.changedTouches[0].clientY - touchStartY;
+        const dt = Date.now() - touchStartTime;
+        // Fast swipe down > 80px within 300ms
+        if (dy > 80 && dt < 300) {
+          closeCase();
+        }
+      }, { passive: true });
+    }
+  }
+
   // Image ref hover + click
-  const isMobile = window.innerWidth <= 768;
   document.querySelectorAll('.case-popup .img-ref').forEach(ref => {
     const imgId = parseInt(ref.dataset.img);
-    ref.addEventListener('click', (e) => {
-      e.preventDefault();
-      showPreview(imgId);
-    });
-    if (!isMobile) {
+
+    if (isMobile) {
+      // Mobile: inline accordion
+      ref.addEventListener('click', (e) => {
+        e.preventDefault();
+        let expand = ref.nextElementSibling;
+        if (!expand || !expand.classList.contains('img-inline-expand')) {
+          expand = createInlineExpand(imgId);
+          ref.parentNode.insertBefore(expand, ref.nextSibling);
+        }
+        // Close all other open expands
+        document.querySelectorAll('.img-inline-expand.open').forEach(el => {
+          if (el !== expand) el.classList.remove('open');
+        });
+        expand.classList.toggle('open');
+      });
+    } else {
+      ref.addEventListener('click', (e) => {
+        e.preventDefault();
+        showPreview(imgId);
+      });
       ref.addEventListener('mouseenter', () => showPreview(imgId));
     }
   });
@@ -291,7 +358,7 @@ function openCase(projectId) {
   initCaseSpinners();
 
   // Mobile tooltip tap support
-  if (window.innerWidth <= 768) {
+  if (isMobile) {
     document.querySelectorAll('.case-popup .term').forEach(term => {
       term.addEventListener('click', (e) => {
         e.stopPropagation();
