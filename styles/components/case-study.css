@@ -515,17 +515,19 @@
   font-weight: 500;
 }
 
-/* Footer close link */
+/* Footer close button */
 .case-footer-close {
-  padding: 16px 24px;
+  padding: 14px 24px;
   text-align: center;
   font-family: var(--font-mono);
   font-size: 0.75rem;
-  color: var(--win-text);
-  opacity: 0.5;
+  font-weight: 600;
+  color: var(--win-bg);
+  background: var(--win-border-dark);
   cursor: pointer;
-  border-top: 1px solid var(--win-border);
-  background: var(--win-bg);
-  transition: opacity 0.15s;
+  border-top: 2px solid var(--win-border);
+  transition: background 0.15s;
 }
-.case-footer-close:hover { opacity: 1; }
+.case-footer-close:hover {
+  background: var(--win-text);
+}
