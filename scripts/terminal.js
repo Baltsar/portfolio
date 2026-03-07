@@ -74,6 +74,14 @@ export function initTerminal() {
 
   terminal.addEventListener('click', () => input.focus());
 
+  // Auto-size input to content
+  function resizeInput() {
+    const len = input.value.length;
+    input.style.width = (len === 0 ? 1 : len) + 'ch';
+  }
+  input.addEventListener('input', resizeInput);
+  resizeInput();
+
   input.addEventListener('focus', () => {
     terminal.classList.add('focused');
   });
@@ -85,6 +93,7 @@ export function initTerminal() {
     if (e.key !== 'Enter') return;
     const raw = input.value.trim();
     input.value = '';
+    resizeInput();
     if (!raw) return;
 
     // Hide hint after first command
