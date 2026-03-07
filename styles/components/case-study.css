@@ -126,15 +126,9 @@
 }
 
 .img-ref::before {
-  content: '+';
-  font-weight: 700;
-  font-size: 0.875rem;
-  line-height: 1;
-  transition: transform 0.2s;
-}
-
-.img-ref.expanded::before {
-  content: '\2212';
+  content: '\25C9 ';
+  font-size: 0.75rem;
+  opacity: 0.6;
 }
 
 .img-ref:hover,
