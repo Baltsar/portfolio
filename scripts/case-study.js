@@ -37,7 +37,7 @@ function renderSection(section, spinSet) {
 
   // Default: text
   const refHTML = section.imgRef
-    ? ` <span class="img-ref" data-img="${section.imgRef.id}" data-spinner="${spinSet}"><span class="list-glyph">\u229E</span> ${section.imgRef.filename}</span>`
+    ? ` <span class="img-ref" data-img="${section.imgRef.id}" data-spinner="${spinSet}">${section.imgRef.filename}</span>`
     : '';
   return `<p>${section.text}${refHTML}</p>`;
 }
@@ -153,17 +153,7 @@ let caseNudgeTimers = [];
 function initCaseSpinners() {
   const items = [];
 
-  // Img refs in text
-  document.querySelectorAll('.case-popup .img-ref[data-spinner]').forEach(ref => {
-    const glyph = ref.querySelector('.list-glyph');
-    if (!glyph) return;
-    const setName = ref.dataset.spinner;
-    const chars = spinnerSets[setName] || spinnerSets.braille;
-    const resting = '\u229E';
-
-    items.push({ el: ref, glyph, chars, resting });
-    spinOnHover(ref, glyph, chars, resting);
-  });
+  // Img refs no longer have spinner glyphs — +/− handled via CSS ::before
 
   // Case list items — always spinning
   document.querySelectorAll('.case-popup .case-list li[data-spinner]').forEach((li, i) => {
@@ -264,7 +254,7 @@ function createInlineExpand(imgId) {
       <div class="preview-ph">${placeholder}</div>
     </div>
     <div class="inline-caption">
-      <div class="inline-fn">\u229E ${filename}</div>
+      <div class="inline-fn">${filename}</div>
       <div class="inline-desc">${caption}</div>
     </div>
   `;
@@ -329,11 +319,15 @@ function openCase(projectId) {
           expand = createInlineExpand(imgId);
           ref.parentNode.insertBefore(expand, ref.nextSibling);
         }
-        // Close all other open expands
+        // Close all other open expands + remove expanded class
         document.querySelectorAll('.img-inline-expand.open').forEach(el => {
-          if (el !== expand) el.classList.remove('open');
+          if (el !== expand) {
+            el.classList.remove('open');
+            el.previousElementSibling?.classList.remove('expanded');
+          }
         });
         expand.classList.toggle('open');
+        ref.classList.toggle('expanded', expand.classList.contains('open'));
       });
     } else {
       ref.addEventListener('click', (e) => {

@@ -51,28 +51,35 @@
   .case-stats { flex-wrap: wrap; }
   .case-stat { min-width: 45%; }
 
-  /* === FIX 1B: Sticky close bar at bottom === */
+  /* Case body padding so content isn't hidden behind close button */
+  .case-body {
+    padding-bottom: 60px;
+  }
+
+  /* === Floating close button === */
   .case-close-mobile {
     display: flex;
     position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 1000;
-    background: var(--win-titlebar);
-    border-top: 2px solid var(--win-border);
-    padding: 12px 20px;
+    max-width: 200px;
+    background: var(--win-border-dark);
+    color: var(--win-bg);
+    border-radius: 4px;
+    padding: 10px 20px;
     justify-content: center;
     align-items: center;
     gap: 8px;
     font-family: var(--font-mono);
-    font-size: 0.75rem;
+    font-size: 0.6875rem;
     font-weight: 600;
-    color: var(--win-text);
     cursor: pointer;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.4);
   }
   .case-close-mobile:active {
-    background: var(--win-border);
+    opacity: 0.8;
   }
 
   /* === FIX 2: Tighter mobile text in case study === */
@@ -102,12 +109,11 @@
     padding: 20px 16px;
   }
 
-  /* === FIX 5: Inline image accordion on mobile === */
+  /* === Inline image accordion on mobile === */
   .img-inline-expand {
     display: none;
-    margin: 12px 0;
+    margin: 12px 0 16px;
     border: 1px solid var(--win-border);
-    background: #0d0d0c;
     overflow: hidden;
   }
   .img-inline-expand.open {
@@ -121,10 +127,11 @@
   .inline-img-area {
     width: 100%;
     aspect-ratio: 16/10;
-    background: #0d0d0c;
+    background: var(--bg, #0a0a0a);
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
   }
   .inline-img-area .preview-ph {
     font-family: var(--font-display);
@@ -138,21 +145,26 @@
     line-height: 1.2;
   }
   .inline-caption {
-    padding: 10px 14px;
-    background: rgba(26,20,8,0.95);
-    border-top: 1px solid rgba(245,230,200,0.06);
+    padding: 12px 14px;
+    background: var(--win-bg);
+    border-top: 1px solid var(--win-border);
   }
   .inline-fn {
+    font-family: var(--font-mono);
     font-size: 0.625rem;
     font-weight: 600;
-    color: var(--text-primary);
+    color: var(--win-text);
     margin-bottom: 4px;
-    font-family: var(--font-mono);
+  }
+  .inline-fn::before {
+    content: '+ ';
+    color: var(--win-border-dark);
   }
   .inline-desc {
-    font-size: 0.625rem;
-    color: var(--text-secondary);
-    line-height: 1.6;
     font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    color: var(--win-text);
+    opacity: 0.7;
+    line-height: 1.6;
   }
 }

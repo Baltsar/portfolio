@@ -109,48 +109,40 @@
 
 /* INLINE IMAGE REFERENCE */
 .img-ref {
-  display: inline;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
   font-family: var(--font-mono);
   font-size: 0.6875rem;
   font-weight: 500;
   color: var(--blue);
   background: rgba(0,51,255,0.06);
-  padding: 2px 8px;
-  border: 1px solid rgba(0,51,255,0.15);
+  padding: 4px 10px;
+  border: 1px solid rgba(0,51,255,0.2);
   cursor: pointer;
   transition: all 0.15s;
   white-space: nowrap;
-  text-decoration: none;
-  position: relative;
+  margin: 4px 0;
 }
 
-.img-ref .list-glyph {
-  display: inline-block;
-  width: 1em;
-  text-align: center;
-  font-size: 0.625rem;
-  opacity: 0.6;
-  transition: opacity 0.15s;
+.img-ref::before {
+  content: '+';
+  font-weight: 700;
+  font-size: 0.875rem;
+  line-height: 1;
+  transition: transform 0.2s;
 }
 
-.img-ref:hover {
-  background: var(--blue);
-  color: white;
-  border-color: var(--blue);
+.img-ref.expanded::before {
+  content: '\2212';
 }
 
-.img-ref:hover .list-glyph {
-  opacity: 1;
-  color: white;
-}
-
+.img-ref:hover,
 .img-ref.ref-active {
   background: var(--blue);
   color: white;
   border-color: var(--blue);
 }
-
-.img-ref.ref-active .list-glyph { opacity: 1; color: white; }
 
 /* RIGHT: preview panel */
 .case-preview-col {
@@ -223,7 +215,7 @@
 }
 
 .caption-fn::before {
-  content: '\229E ';
+  content: '+ ';
   opacity: 0.4;
 }
 
