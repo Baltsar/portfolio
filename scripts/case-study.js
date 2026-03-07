@@ -311,20 +311,24 @@ function openCase(projectId) {
     const imgId = parseInt(ref.dataset.img);
 
     if (isMobile) {
-      // Mobile: inline accordion
+      // Mobile: inline accordion — insert after parent <p>, not inside it
       ref.addEventListener('click', (e) => {
         e.preventDefault();
-        let expand = ref.nextElementSibling;
+        e.stopPropagation();
+        const parentP = ref.closest('p') || ref.parentNode;
+        let expand = parentP.nextElementSibling;
         if (!expand || !expand.classList.contains('img-inline-expand')) {
           expand = createInlineExpand(imgId);
-          ref.parentNode.insertBefore(expand, ref.nextSibling);
+          parentP.parentNode.insertBefore(expand, parentP.nextSibling);
         }
         // Close all other open expands + remove expanded class
         document.querySelectorAll('.img-inline-expand.open').forEach(el => {
           if (el !== expand) {
             el.classList.remove('open');
-            el.previousElementSibling?.classList.remove('expanded');
           }
+        });
+        document.querySelectorAll('.img-ref.expanded').forEach(r => {
+          if (r !== ref) r.classList.remove('expanded');
         });
         expand.classList.toggle('open');
         ref.classList.toggle('expanded', expand.classList.contains('open'));
