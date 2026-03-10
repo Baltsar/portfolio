@@ -300,71 +300,75 @@
       "scanClass": "blue-scan",
       "spinnerSet": "blocks",
       "winClass": "win-3",
-      "overlaySub": "WIP · 90% Automation · Svenskt AB · Building in Public",
+      "overlaySub": "WIP · AI-drivet AB · Building in Public",
       "caseStudy": {
         "heroTitle": "ZERO HUMAN<br><span class=\"w-blue\">COMPANY</span>",
-        "heroSub": "WIP · 90% Automation · Svenskt AB · Building in Public",
-        "title": "Kan ett svenskt AB drivas till 90% av AI?",
+        "heroSub": "WIP · AI-drivet AB · Building in Public",
+        "title": "Ett AI-drivet svenskt AB",
         "sections": [
           {
             "type": "html",
-            "text": "<div style=\"display: inline-block; padding: 4px 12px; background: rgba(0,51,255,0.1); border: 1px solid rgba(0,51,255,0.25); border-radius: 4px; font-size: 0.625rem; font-weight: 700; color: var(--blue-bright); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px;\">⚡ Work in progress — building in public</div>"
+            "text": "<div style=\"display: inline-block; padding: 4px 12px; background: rgba(0,51,255,0.1); border: 1px dashed rgba(0,51,255,0.25); border-radius: 4px; font-size: 0.625rem; font-weight: 700; color: var(--blue-bright); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px;\">⚡ Work in progress — building in public</div>"
           },
           {
             "type": "text",
-            "text": "Det finns inget \"zero human company\" idag. Oavsett vad folk på X och LinkedIn påstår. Det som finns är företag som automatiserat 50%, kanske 60% av driften med AI-agenter — och en jävla massa manuellt jobb i luckorna. Jag försöker ta det till 90%+ i ett svenskt AB. Bokföring, fakturering, momsdeklaration, compliance — anpassat för Skatteverket, Bolagsverket och GDPR. Inte en generell AI-assistent. En jurisdiktionslåst lösning som kräver att du förstår BAS-kontoplanen och svensk lag."
+            "text": "Kan ett svenskt aktiebolag drivas till 90% av AI-agenter? Bokföring, fakturering, momsdeklaration, compliance — anpassat för Skatteverket, Bolagsverket och GDPR. Inte en pitch deck. Ett system som byggs och testas just nu.",
+            "imgRef": { "id": 1, "filename": "zhc-architecture.png" }
+          },
+          {
+            "type": "html",
+            "text": "<div style=\"display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--win-border); margin: 20px 0; border: 1px solid var(--win-border);\"><div style=\"background: var(--win-bg); padding: 16px 20px; text-align: center;\"><div style=\"font-family: var(--font-display); font-size: 1.8rem; font-weight: 700; letter-spacing: -0.03em;\">4</div><div style=\"font-size: 0.5625rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-dim); margin-top: 4px;\">AI-agenter</div></div><div style=\"background: var(--win-bg); padding: 16px 20px; text-align: center;\"><div style=\"font-family: var(--font-display); font-size: 1.8rem; font-weight: 700; letter-spacing: -0.03em;\">18/18</div><div style=\"font-size: 0.5625rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-dim); margin-top: 4px;\">Lagkrav faktura</div></div><div style=\"background: var(--win-bg); padding: 16px 20px; text-align: center;\"><div style=\"font-family: var(--font-display); font-size: 1.8rem; font-weight: 700; letter-spacing: -0.03em;\">SHA-256</div><div style=\"font-size: 0.5625rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-dim); margin-top: 4px;\">Audit hashkedja</div></div><div style=\"background: var(--win-bg); padding: 16px 20px; text-align: center;\"><div style=\"font-family: var(--font-display); font-size: 1.8rem; font-weight: 700; letter-spacing: -0.03em;\">3</div><div style=\"font-size: 0.5625rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-dim); margin-top: 4px;\">Simuleringar körda</div></div></div>"
           },
           {
             "type": "text",
-            "text": "Jag vet inte om det funkar. Tredje försöket just nu. Men varje iteration tar mig närmare, och allt dokumenteras öppet.",
-            "imgRef": { "id": 3, "filename": "avatar-zhc-company" }
-          },
-          {
-            "type": "stats",
-            "items": [
-              { "value": "90%", "label": "Automationsmål" },
-              { "value": "4", "label": "AI-agenter" },
-              { "value": "~2k", "label": "SEK/mån drift" },
-              { "value": "3", "label": "Resets hittills" }
-            ]
+            "text": "Under huven: fyra namngivna agenter orkestrerade via state machine med human gates. Filbaserad vault — write-once, atomisk skrivning, append-only audit log med SHA-256 hashkedja. Deterministisk momsberäkning. BAS 2026 Kompakt. PII-maskering. Regulatory scanning mot sex källor. Noll hårdkodade värden.",
+            "imgRef": { "id": 2, "filename": "zhc-vault.png" }
           },
           {
             "type": "text",
-            "text": "Bränt $40 i API-krediter på en dag. Backend? En dag — databas, scraper, admin, allt funkade direkt. Frontend? 1,5 dagar för att centrera en knapp. En agent centrerade ingenting. En annan skrev ä som \\u00e4. En tredje fick en pixel-perfect Figma-prototyp och skrev sin egen version ändå. Lärdomen: designa först, vibe coda sen. De resterande 10% av bolaget är tydligen frontend och jag gråter.",
-            "imgRef": { "id": 3, "filename": "avatar-zhc-company" }
+            "text": "Det som inte syns: compliance-arbetet. 18 av 18 lagkrav-fält på fakturor. Preflight och postflight checks. Full behandlingshistorik per artefakt. Det är skillnaden mellan en demo och ett system.",
+            "imgRef": { "id": 3, "filename": "zhc-compliance.png" }
           },
           {
-            "type": "quote",
-            "text": "bästa resultatet kom när jag slutade prompta och började ctrl+v. det mest avancerade verktyget i min stack var urklipp.",
-            "attr": "Gustaf på LinkedIn · mars 2026"
+            "type": "html",
+            "text": "<blockquote style=\"margin: 20px 0; padding: 16px 20px; border-left: 3px solid var(--win-border-dark); font-size: 0.8125rem; line-height: 1.8; color: var(--win-text);\"><div style=\"font-style: italic;\">&ldquo;Jag vet inte om det funkar som bolag. Men jag vet att compliance-lagret är riktigare än de flesta startup-MVPs jag sett.&rdquo;</div><div style=\"font-style: normal; font-size: 0.6875rem; color: var(--text-dim); margin-top: 8px;\">— Gustaf, ärligt</div></blockquote>"
           },
           {
             "type": "text",
-            "text": "Det här projektet dokumenteras i realtid — varje krona, varje fail, varje reset. Inte för att det är klart. För att processen att bygga ett autonomt bolag med svenska lagar, compliance och BankID-krav är intressant oavsett om det lyckas eller inte.",
-            "imgRef": { "id": 3, "filename": "avatar-zhc-company" }
+            "text": "Open source. MIT-licens. Mer kommer."
           }
         ],
         "images": [
           {
+            "id": 1,
+            "filename": "zhc-architecture.png",
+            "caption": "Fyra agenter, state machine, human gates. Orkestrering utan kaos.",
+            "placeholder": "AGENT<br>ARCHITECTURE"
+          },
+          {
+            "id": 2,
+            "filename": "zhc-vault.png",
+            "caption": "Filbaserad vault. Write-once, SHA-256 hashkedja, append-only audit log.",
+            "placeholder": "VAULT<br>SYSTEM"
+          },
+          {
             "id": 3,
-            "filename": "avatar-zhc-company",
-            "caption": "Falk — AI-genererad VD för Zero Human Company. Aldrig sjuk, aldrig sen, aldrig sur på ett möte.",
-            "placeholder": "ZHC<br>CEO",
-            "videoSrc": {
-              "webm": "/art/avatar-zhc-company.webm",
-              "mp4": "/art/avatar-zhc-company.mp4"
-            }
+            "filename": "zhc-compliance.png",
+            "caption": "18/18 lagkrav på fakturor. BAS 2026. Deterministisk moms. Inget hårdkodat.",
+            "placeholder": "COMPLIANCE<br>ENGINE"
           }
         ],
         "meta": [
           { "label": "Roll", "value": "Founder / Builder" },
-          { "label": "Stack", "value": "Claude · Cursor · TypeScript · MCP" },
+          { "label": "Stack", "value": "TypeScript · CLI · JSON+MD Vault · MIT" },
           { "label": "Status", "value": "Work in Progress" },
           { "label": "Dokumentation", "value": "LinkedIn" }
         ],
         "finderPath": "~/projects/<span>zhc</span>/assets",
         "finderFiles": [
-          { "name": "avatar-zhc-company", "size": "389 KB", "date": "2026-02-20", "type": "WEBM" }
+          { "name": "zhc-architecture.png", "size": "389 KB", "date": "2026-03-04", "type": "PNG" },
+          { "name": "zhc-vault.png", "size": "234 KB", "date": "2026-03-01", "type": "PNG" },
+          { "name": "zhc-compliance.png", "size": "567 KB", "date": "2026-02-20", "type": "PNG" }
         ]
       }
     },
