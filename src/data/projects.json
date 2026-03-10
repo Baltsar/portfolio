@@ -238,7 +238,7 @@
           },
           {
             "type": "text",
-            "text": "Byggt sajt, manifest, agent radar som jämför frameworks live från GitHub. Allt vibecoded. Första IRL-meetupen i Stockholm är planerad — formatet är stulet från gaming-communityn: fika, bygg i 50 min, paus, bygg 50 min, show & tell. Inga föreläsningar. Halvfärdigt är standard. Trasigt är välkommet.",
+            "text": "Byggt sajt, manifest, agent radar som jämför frameworks live från GitHub. Allt vibecoded. IRL-meetups i Stockholm — varje söndag. Formatet är stulet från gaming-communityn: fika, bygg i 50 min, paus, bygg 50 min, show & tell. Inga föreläsningar. Halvfärdigt är standard. Trasigt är välkommet.",
             "imgRef": { "id": 3, "filename": "opensverige-meetup.png" }
           },
           {
@@ -267,7 +267,7 @@
           {
             "id": 3,
             "filename": "opensverige-meetup.png",
-            "caption": "Första IRL-sessionen i Stockholm. Fika, bygg, show & tell. Inga föreläsningar.",
+            "caption": "IRL i Stockholm — varje söndag. Fika, bygg, show & tell. Inga föreläsningar.",
             "placeholder": "IRL MEETUP<br>STOCKHOLM"
           }
         ],
