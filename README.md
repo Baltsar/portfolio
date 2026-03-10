@@ -38,14 +38,4 @@ Claude · Cursor · TypeScript · MCP · Figma · Adobe CC · After Effects
 
 &nbsp;
 
-### Contact
-
-For business inquiries — [LinkedIn](https://linkedin.com/in/gustafgarnow)
-
-&nbsp;
-
----
-
-&nbsp;
-
 This repo is the portfolio source. Take whatever you want.
