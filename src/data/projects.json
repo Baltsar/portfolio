@@ -346,16 +346,6 @@
         ],
         "images": [
           {
-            "id": 1,
-            "filename": "zhc-ceo-portrait.webm",
-            "caption": "ZHC CEO — AI-genererad VD. Porträttvideo. Den som aldrig ringer in sjuk.",
-            "placeholder": "ZHC<br>CEO",
-            "videoSrc": {
-              "webm": "/art/zhc-ceo-portrait-pingpong.webm",
-              "mp4": "/art/zhc-ceo-portrait-pingpong.mp4"
-            }
-          },
-          {
             "id": 2,
             "filename": "zhc-linkedin-post.png",
             "caption": "Building in public. Varje fail, varje krona, dokumenterat på LinkedIn.",
@@ -364,11 +354,11 @@
           {
             "id": 3,
             "filename": "avatar-zhc-company",
-            "caption": "Agentarkitekturen. Fyra agenter, svenska lagar, human-in-the-loop.",
-            "placeholder": "AGENT<br>ARCHITECTURE",
+            "caption": "Falk — AI-genererad VD för Zero Human Company. Aldrig sjuk, aldrig sen, aldrig sur på ett möte.",
+            "placeholder": "ZHC<br>CEO",
             "videoSrc": {
-              "webm": "/art/zhc-card-pingpong.webm",
-              "mp4": "/art/zhc-card-pingpong.mp4"
+              "webm": "/art/avatar-zhc-company.webm",
+              "mp4": "/art/avatar-zhc-company.mp4"
             }
           }
         ],
