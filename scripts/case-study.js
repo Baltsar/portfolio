@@ -396,6 +396,16 @@ function openCase(projectId) {
         });
         expand.classList.toggle('open');
         ref.classList.toggle('expanded', expand.classList.contains('open'));
+
+        const isNowOpen = expand.classList.contains('open');
+        const imgData = currentProject?.caseStudy?.images?.find(i => i.id === imgId);
+        if (isNowOpen && imgData?.videoSrc) {
+          const phEl = expand.querySelector('.preview-ph');
+          if (phEl && !phEl.querySelector('video')) injectVideo(phEl, imgData.videoSrc);
+        } else if (!isNowOpen) {
+          const vid = expand.querySelector('video');
+          if (vid) vid.pause();
+        }
       });
     } else {
       ref.addEventListener('click', (e) => {

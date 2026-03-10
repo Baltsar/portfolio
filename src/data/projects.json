@@ -331,7 +331,7 @@
           {
             "type": "text",
             "text": "Bränt $40 i API-krediter på en dag. Backend? En dag — databas, scraper, admin, allt funkade direkt. Frontend? 1,5 dagar för att centrera en knapp. En agent centrerade ingenting. En annan skrev ä som \\u00e4. En tredje fick en pixel-perfect Figma-prototyp och skrev sin egen version ändå. Lärdomen: designa först, vibe coda sen. De resterande 10% av bolaget är tydligen frontend och jag gråter.",
-            "imgRef": { "id": 2, "filename": "zhc-linkedin-post.png" }
+            "imgRef": { "id": 3, "filename": "avatar-zhc-company" }
           },
           {
             "type": "quote",
@@ -345,12 +345,6 @@
           }
         ],
         "images": [
-          {
-            "id": 2,
-            "filename": "zhc-linkedin-post.png",
-            "caption": "Building in public. Varje fail, varje krona, dokumenterat på LinkedIn.",
-            "placeholder": "LINKEDIN<br>BUILDING IN PUBLIC"
-          },
           {
             "id": 3,
             "filename": "avatar-zhc-company",
@@ -370,7 +364,6 @@
         ],
         "finderPath": "~/projects/<span>zhc</span>/assets",
         "finderFiles": [
-          { "name": "zhc-linkedin-post.png", "size": "234 KB", "date": "2026-03-01", "type": "PNG" },
           { "name": "avatar-zhc-company", "size": "389 KB", "date": "2026-02-20", "type": "WEBM" }
         ]
       }
