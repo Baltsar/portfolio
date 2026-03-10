@@ -59,10 +59,7 @@ function renderLightbox(imgId) {
     });
   }
 
-  // Click backdrop to close
-  el.addEventListener('click', (e) => {
-    if (e.target === el) closeLightbox();
-  }, { once: true });
+  // Click backdrop to close (listener added once in openLightbox, not here)
 
   // Mobile swipe-down to close (only when at top)
   let lbTouchStartY = 0;
@@ -81,6 +78,10 @@ function renderLightbox(imgId) {
   }
 }
 
+function onBackdropClick(e) {
+  if (e.target === document.getElementById('case-lightbox')) closeLightbox();
+}
+
 export function openLightbox(imgId, project) {
   lightboxProject = project;
   const el = document.getElementById('case-lightbox');
@@ -89,6 +90,7 @@ export function openLightbox(imgId, project) {
   document.body.style.overflow = 'hidden';
   renderLightbox(imgId);
   document.addEventListener('keydown', onLightboxKey);
+  el.addEventListener('click', onBackdropClick);
 }
 
 export function closeLightbox() {
@@ -100,6 +102,7 @@ export function closeLightbox() {
   lightboxCurrentId = null;
   document.body.style.overflow = '';
   document.removeEventListener('keydown', onLightboxKey);
+  el.removeEventListener('click', onBackdropClick);
 }
 
 function onLightboxKey(e) {

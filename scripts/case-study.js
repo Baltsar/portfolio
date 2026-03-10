@@ -372,16 +372,14 @@ function openCase(projectId) {
     file.addEventListener('click', () => showPreview(imgId));
   });
 
-  // Desktop: click preview panel to open lightbox
-  if (!isMobile) {
-    const previewImg = document.getElementById('preview-img');
-    if (previewImg) {
-      previewImg.addEventListener('click', () => {
-        if (currentProject && lightboxCurrentImgId !== null) {
-          openLightbox(lightboxCurrentImgId, currentProject);
-        }
-      });
-    }
+  // Click preview panel to open lightbox (desktop + mobile)
+  const previewImg = document.getElementById('preview-img');
+  if (previewImg) {
+    previewImg.addEventListener('click', () => {
+      if (currentProject && lightboxCurrentImgId !== null) {
+        openLightbox(lightboxCurrentImgId, currentProject);
+      }
+    });
   }
 
   // Mark first ref as active
