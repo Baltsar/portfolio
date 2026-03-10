@@ -20,6 +20,33 @@
 <meta name="twitter:image" content="https://gustafgarnow.com/og-image-baltsar.png">
 <meta name="theme-color" content="#0a0a0a">
 <meta name="color-scheme" content="dark">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Gustaf Garnow",
+  "url": "https://gustafgarnow.com",
+  "jobTitle": "Creative Technologist",
+  "description": "10 years of design. Then I started shipping. Creative Technologist building AI agents, open source tools, and communities.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Stockholm",
+    "addressCountry": "SE"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/gustafgarnow/",
+    "https://github.com/Baltsar"
+  ],
+  "knowsAbout": ["AI Agents", "MCP", "Design", "Open Source", "Community Building"],
+  "makesOffer": {
+    "@type": "Offer",
+    "itemOffered": {
+      "@type": "Service",
+      "name": "Creative Technology & Digital Production"
+    }
+  }
+}
+</script>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -49,6 +76,7 @@
 <div class="desktop">
 
   <div class="hero">
+    <h1 class="sr-only">Gustaf Garnow — Creative Technologist, Stockholm</h1>
     <div class="headline">10 years of design.<br>Then I started <span class="g">shipping.</span></div>
     <div class="term-line"><span class="prompt">gustaf@garnow:~$</span> creative technologist · AI-native · stockholm</div>
   </div>
@@ -65,10 +93,11 @@
     </button>
   </div>
 
-  <div class="windows-area" id="windows-area">
+  <main class="windows-area" id="windows-area">
 
     <!-- WINDOW 1: Monero MCP -->
     <div class="mac-window is-active win-1" id="win1" data-project="monero-mcp">
+      <h2 class="sr-only">Monero MCP — World's First Monero MCP Server</h2>
       <div class="mac-titlebar">
         <div class="titlebar-grip"><span></span><span></span><span></span></div>
         <div class="mac-title">monero-mcp — world first</div>
@@ -95,6 +124,7 @@
 
     <!-- WINDOW 2: OpenSverige -->
     <div class="mac-window is-active win-2" id="win2" data-project="opensverige">
+      <h2 class="sr-only">OpenSverige — Sveriges AI Agent Community, Discord och IRL Meetups</h2>
       <div class="mac-titlebar">
         <div class="titlebar-grip"><span></span><span></span><span></span></div>
         <div class="mac-title">opensverige</div>
@@ -126,6 +156,7 @@
 
     <!-- WINDOW 3: ZHC -->
     <div class="mac-window win-3" id="win3" data-project="zhc">
+      <h2 class="sr-only">Zero Human Company — AI-drivet Svenskt AB, 90% Automation, Building in Public</h2>
       <div class="mac-titlebar">
         <div class="titlebar-grip"><span></span><span></span><span></span></div>
         <div class="mac-title">zhc — building in public</div>
@@ -157,6 +188,7 @@
 
     <!-- WINDOW 4: Enterprise Design -->
     <div class="mac-window win-4" id="win4" data-project="enterprise">
+      <h2 class="sr-only">Enterprise Design — 7+ år i Pension och Finans, Digital Producer</h2>
       <div class="mac-titlebar">
         <div class="titlebar-grip"><span></span><span></span><span></span></div>
         <div class="mac-title">enterprise — 7+ år i finans</div>
@@ -215,9 +247,9 @@
       </div>
     </div>
 
-  </div>
+  </main>
 
-  <div class="terminal-footer">
+  <footer class="terminal-footer">
     <div class="prompt-line">
       <span class="u">gustaf</span><span class="a">@</span><span class="p">garnow</span><span class="s">:~$ </span>
     </div>
@@ -257,12 +289,33 @@
         <span class="u">gustaf</span><span class="a">@</span><span class="p">garnow</span><span class="s">:~$ </span><span class="term-input-wrap"><input type="text" id="term-input" class="term-input" autocomplete="off" autocapitalize="off" spellcheck="false" size="1"><span class="terminal-cursor"></span></span>
       </div>
     </div>
-  </div>
+  </footer>
 
 </div>
 
 <!-- Case study backdrop -->
 <div class="case-backdrop" id="case-backdrop"></div>
+
+<noscript>
+  <div class="sr-only">
+    <h1>Gustaf Garnow — Creative Technologist, Stockholm</h1>
+    <p>10 years of design. Then I started shipping. Creative Technologist building AI agents, open source tools, and communities. Available in Stockholm.</p>
+
+    <h2>Monero MCP — World's First Monero MCP Server</h2>
+    <p>AI-agenter kommer hantera pengar. Ingen hade byggt en MCP-server för Monero. Jag byggde den. Världens första. Open source. 5 säkerhetslager. TypeScript + MCP.</p>
+
+    <h2>OpenSverige — Sveriges AI Agent Community</h2>
+    <p>Sveriges första community för folk som bygger med AI-agenter. 150+ Discord-medlemmar. IRL meetups i Stockholm. FOSS. Builders, inte talkers.</p>
+
+    <h2>Zero Human Company — AI-drivet Svenskt AB</h2>
+    <p>Kan ett svenskt AB drivas till 90% av AI? Bokföring, fakturering, momsdeklaration, compliance — anpassat för Skatteverket, Bolagsverket och GDPR. Work in progress. Building in public.</p>
+
+    <h2>Enterprise Design — 7+ år i Pension och Finans</h2>
+    <p>Digital Producer i regulerad miljö. 100+ kampanjer. Display, print, email, motion graphics, brand guidelines. WCAG-krav. Pensionsprodukter begripliga för vanliga människor.</p>
+
+    <p>Kontakt: gustaf.garnow@gmail.com | LinkedIn: /in/gustafgarnow | GitHub: /Baltsar</p>
+  </div>
+</noscript>
 
 <script type="module" src="/scripts/main.js"></script>
 </body>

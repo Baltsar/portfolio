@@ -1,26 +1,87 @@
 {
   "projects": [
     {
-      "id": "monero-mcp",
-      "title": "MONERO",
-      "titleAccent": "MCP",
       "accentClass": "w-green",
-      "windowTitle": "monero-mcp — world first",
-      "tags": [
-        { "label": "Shipped", "class": "shipped" },
-        { "label": "Active", "class": "active" }
-      ],
       "art": "/art/monero-mcp.png",
       "artPlaceholder": "art-placeholder-1",
-      "scanClass": "",
-      "spinnerSet": "braille",
-      "winClass": "win-1",
-      "overlaySub": "Model Context Protocol · Open Source · World First · 2025",
-      "link": "https://github.com/Baltsar/monero-mcp",
       "caseStudy": {
-        "heroTitle": "MONERO<br><span class=\"w-green\">MCP</span>",
+        "finderFiles": [
+          {
+            "date": "2025-11-14",
+            "name": "mcp-server-architecture.png",
+            "size": "342 KB",
+            "type": "PNG"
+          },
+          {
+            "date": "2026-01-08",
+            "name": "mcp-demo-interaction.gif",
+            "size": "1.2 MB",
+            "type": "GIF"
+          },
+          {
+            "date": "2025-10-22",
+            "name": "monero-wallet-ui-concept.png",
+            "size": "518 KB",
+            "type": "PNG"
+          },
+          {
+            "date": "2025-12-03",
+            "name": "agent-flow-diagram.png",
+            "size": "267 KB",
+            "type": "PNG"
+          }
+        ],
+        "finderPath": "~/projects/<span>monero-mcp</span>/assets",
         "heroSub": "World's First · Open Source · Model Context Protocol",
-        "title": "World's First Monero MCP Server",
+        "heroTitle": "MONERO<br><span class=\"w-green\">MCP</span>",
+        "images": [
+          {
+            "caption": "Arkitekturen. Claude pratar med Monero-noden via JSON-RPC. Fem säkerhetslager mellan agenten och plånboken — address allowlist, two-step confirmation, rate limiting, audit log, input sanitization.",
+            "filename": "mcp-server-architecture.png",
+            "id": 1,
+            "placeholder": "MCP SERVER<br>ARCHITECTURE"
+          },
+          {
+            "caption": "Första demo:n. En Agent Zero-agent som checkar wallet-balans, skickar en transaktion, och verifierar att den gick igenom. Allt via MCP-tools.",
+            "filename": "mcp-demo-interaction.gif",
+            "id": 2,
+            "placeholder": "MCP DEMO<br>INTERACTION"
+          },
+          {
+            "caption": "Bidrog till Moneros första Android-wallet (monerujo.io) innan MCP-servern byggdes. Inte mitt projekt längre — men visar att jag var i ekosystemet.",
+            "filename": "monero-wallet-ui-concept.png",
+            "id": 3,
+            "placeholder": "MONERO WALLET<br>UI CONCEPT"
+          },
+          {
+            "caption": "Modulärt agentflöde. Varje MCP-tool gör en sak. Pluggbart i vilken agent som helst.",
+            "filename": "agent-flow-diagram.png",
+            "id": 4,
+            "placeholder": "AGENT FLOW<br>DIAGRAM"
+          }
+        ],
+        "meta": [
+          {
+            "color": null,
+            "label": "Roll",
+            "value": "Builder / Designer"
+          },
+          {
+            "color": null,
+            "label": "Stack",
+            "value": "Claude · Cursor · TypeScript · MCP"
+          },
+          {
+            "color": null,
+            "label": "Status",
+            "value": "Shipped & Active"
+          },
+          {
+            "color": null,
+            "label": "Repo",
+            "value": "github.com/Baltsar"
+          }
+        ],
         "sections": [
           {
             "type": "text",
@@ -29,21 +90,47 @@
           {
             "type": "text",
             "text": "Ingen hade byggt en <strong>MCP</strong>-server för Monero. Jag kollade. Noll resultat. Så jag byggde den. Moneros privacy-by-default gör att agentens balans, transaktioner och motparter är dolda. Inte en feature — infrastruktur.",
-            "imgRef": { "id": 1, "filename": "mcp-server-architecture.png" }
+            "imgRef": {
+              "filename": "mcp-server-architecture.png",
+              "id": 1
+            }
           },
           {
             "type": "stats",
             "items": [
-              { "value": "1st", "label": "I världen" },
-              { "value": "2", "label": "Dagar" },
-              { "value": "5", "label": "Security layers" },
-              { "value": "OSS", "label": "Open source" }
+              {
+                "_key": "zrdeyjw8frj",
+                "_type": "statItem",
+                "label": "I världen",
+                "value": "1st"
+              },
+              {
+                "_key": "fjbpyw9u56",
+                "_type": "statItem",
+                "label": "Dagar",
+                "value": "2"
+              },
+              {
+                "_key": "j9aatcp60l",
+                "_type": "statItem",
+                "label": "Security layers",
+                "value": "5"
+              },
+              {
+                "_key": "leidkqk25g",
+                "_type": "statItem",
+                "label": "Open source",
+                "value": "OSS"
+              }
             ]
           },
           {
             "type": "text",
             "text": "Shippade som open source på GitHub. AI-agenter kan nu interagera med Monero-nätverket direkt via MCP. Första demo:n visade en <span title=\"Open source AI-agent framework — typ som OpenClaw\" style=\"border-bottom: 1px dashed var(--win-border-dark); cursor: help;\">Agent Zero</span> som checkade <span title=\"Hur mycket XMR som finns i plånboken just nu\" style=\"border-bottom: 1px dashed var(--win-border-dark); cursor: help;\">wallet-balans</span>, skickade en transaktion, och verifierade att den gick igenom. Allt via MCP-tools.",
-            "imgRef": { "id": 2, "filename": "mcp-demo-interaction.gif" }
+            "imgRef": {
+              "filename": "mcp-demo-interaction.gif",
+              "id": 2
+            }
           },
           {
             "type": "list",
@@ -64,7 +151,10 @@
           {
             "type": "text",
             "text": "Jag är inte en turist i det här ekosystemet. Bidrog till <a href=\"https://monerujo.io\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--blue); text-decoration: none;\">Moneros första Android-wallet</a> innan jag byggde MCP-servern.",
-            "imgRef": { "id": 3, "filename": "monero-wallet-ui-concept.png" }
+            "imgRef": {
+              "filename": "monero-wallet-ui-concept.png",
+              "id": 3
+            }
           },
           {
             "type": "quote",
@@ -74,36 +164,41 @@
           {
             "type": "text",
             "text": "Agentflödet designades modulärt — varje MCP-tool gör en sak. Wallet balance, send transaction, get block, verify payment. Pluggbart i vilken agent som helst.",
-            "imgRef": { "id": 4, "filename": "agent-flow-diagram.png" }
+            "imgRef": {
+              "filename": "agent-flow-diagram.png",
+              "id": 4
+            }
           }
         ],
-        "images": [
-          { "id": 1, "filename": "mcp-server-architecture.png", "caption": "Arkitekturen. Claude pratar med Monero-noden via JSON-RPC. Fem säkerhetslager mellan agenten och plånboken — address allowlist, two-step confirmation, rate limiting, audit log, input sanitization.", "placeholder": "MCP SERVER<br>ARCHITECTURE" },
-          { "id": 2, "filename": "mcp-demo-interaction.gif", "caption": "Första demo:n. En Agent Zero-agent som checkar wallet-balans, skickar en transaktion, och verifierar att den gick igenom. Allt via MCP-tools.", "placeholder": "MCP DEMO<br>INTERACTION" },
-          { "id": 3, "filename": "monero-wallet-ui-concept.png", "caption": "Bidrog till Moneros första Android-wallet (monerujo.io) innan MCP-servern byggdes. Inte mitt projekt längre — men visar att jag var i ekosystemet.", "placeholder": "MONERO WALLET<br>UI CONCEPT" },
-          { "id": 4, "filename": "agent-flow-diagram.png", "caption": "Modulärt agentflöde. Varje MCP-tool gör en sak. Pluggbart i vilken agent som helst.", "placeholder": "AGENT FLOW<br>DIAGRAM" }
-        ],
-        "meta": [
-          { "label": "Roll", "value": "Builder / Designer" },
-          { "label": "Stack", "value": "Claude · Cursor · TypeScript · MCP" },
-          { "label": "Status", "value": "Shipped & Active" },
-          { "label": "Repo", "value": "github.com/Baltsar" }
-        ],
-        "finderPath": "~/projects/<span>monero-mcp</span>/assets",
-        "finderFiles": [
-          { "name": "mcp-server-architecture.png", "size": "342 KB", "date": "2025-11-14", "type": "PNG" },
-          { "name": "mcp-demo-interaction.gif", "size": "1.2 MB", "date": "2026-01-08", "type": "GIF" },
-          { "name": "monero-wallet-ui-concept.png", "size": "518 KB", "date": "2025-10-22", "type": "PNG" },
-          { "name": "agent-flow-diagram.png", "size": "267 KB", "date": "2025-12-03", "type": "PNG" }
-        ]
-      }
+        "title": "World's First Monero MCP Server"
+      },
+      "id": "monero-mcp",
+      "link": "https://github.com/Baltsar/monero-mcp",
+      "overlaySub": "Model Context Protocol · Open Source · World First · 2025",
+      "scanClass": "",
+      "spinnerSet": "braille",
+      "tags": [
+        {
+          "class": "shipped",
+          "label": "Shipped"
+        },
+        {
+          "class": "active",
+          "label": "Active"
+        }
+      ],
+      "title": "MONERO",
+      "titleAccent": "MCP",
+      "winClass": "win-1",
+      "windowTitle": "monero-mcp — world first"
     },
     {
       "id": "opensverige",
       "title": "OPEN",
       "titleAccent": "SVERIGE",
       "accentClass": "w-blue",
-      "windowTitle": "opensverige",
+      "windowTitle": "opensverige — builders, inte talkers",
+      "link": "",
       "tags": [
         { "label": "Active", "class": "active" }
       ],
@@ -112,65 +207,81 @@
       "scanClass": "blue-scan",
       "spinnerSet": "arrows",
       "winClass": "win-2",
-      "overlaySub": "AI Agent Community · Meetups · Building in public",
+      "overlaySub": "AI Agent Community · Discord + IRL · FOSS · Sweden",
       "caseStudy": {
         "heroTitle": "OPEN<br><span class=\"w-blue\">SVERIGE</span>",
-        "heroSub": "AI Agent Community · Meetups · Building in public",
-        "title": "OpenSverige — AI Agent Community",
+        "heroSub": "AI Agent Community · Discord + IRL · FOSS · Sweden",
+        "title": "Sveriges community för AI-builders",
         "sections": [
           {
-            "type": "intro",
-            "text": "Grundade <span class=\"hl blue\">OpenSverige</span> — Sveriges första community för <span class=\"term tech\">AI-agenter<span class=\"tip\">Autonoma AI-system som kan utföra uppgifter, fatta beslut och interagera med externa verktyg.</span></span> och builders. Meetups, demos och kollaborativt byggande."
+            "type": "text",
+            "text": "Det finns inget community i Sverige för folk som faktiskt bygger med AI-agenter. Allt som finns är antingen corporate — AI Sweden, konferenser med suits och PowerPoints — eller ingenting alls. Jag satt hemma och vibecoded och hade ingen att snacka med om det. Så jag startade ett."
           },
           {
             "type": "text",
-            "text": "Idén föddes ur frustrationen att det inte fanns ett svenskt forum för folk som faktiskt bygger med AI-agenter. Inte prata om AI — utan bygga med det.",
-            "imgRef": { "id": 1, "filename": "opensverige-meetup.png" }
+            "text": "Jag har drivit community förut. <strong>Svensktiger</strong> — ett gaming-community för milsim och extraction shooters. Frispråkigt, tight, folk som spelar tillsammans. Jag ville bygga samma sak fast för AI-builders.",
+            "imgRef": { "id": 1, "filename": "opensverige-site.png" }
           },
           {
             "type": "stats",
             "items": [
-              { "value": "1st", "label": "I Sverige", "color": "blue" },
-              { "value": "50+", "label": "Medlemmar" },
-              { "value": "Live", "label": "Demos varje meetup", "color": "blue" }
+              { "value": "150+", "label": "Discord members" },
+              { "value": "3", "label": "Plattformar" },
+              { "value": "IRL", "label": "Meetups i Sverige" },
+              { "value": "FOSS", "label": "Öppet för alla" }
             ]
-          },
-          {
-            "type": "list",
-            "resting": "→",
-            "items": [
-              "Månatliga meetups med live-demos",
-              "Fokus: MCP, agent frameworks, tool-use",
-              "Building in public — alla delar sin process",
-              "Discord-community för daglig diskussion",
-              "Samarbeten med Anthropic och andra AI-företag"
-            ]
-          },
-          {
-            "type": "quote",
-            "text": "Sverige har massa AI-talang. Det som saknas är en plats där builders möts och bygger ihop.",
-            "attr": "Gustaf om varför OpenSverige"
           },
           {
             "type": "text",
-            "text": "Formatet: korta presentationer, live-demos av pågående projekt, och öppen diskussion. Ingen PowerPoint — bara <span class=\"hl blue\">fungerande demos</span> och ärliga samtal om vad som fungerar och inte.",
-            "imgRef": { "id": 2, "filename": "opensverige-format.png" }
+            "text": "Discord + Facebook + LinkedIn. Fokus på folk som bygger — agenter, MCP-servrar, multi-agent-system, lokala LLMs. Verktygsagnostiskt. Använd vad du vill. Inga certifieringar, inga avgifter, inget gatekeeping.",
+            "imgRef": { "id": 2, "filename": "opensverige-discord.png" }
+          },
+          {
+            "type": "text",
+            "text": "Byggt sajt, manifest, agent radar som jämför frameworks live från GitHub. Allt vibecoded. Första IRL-meetupen i Stockholm är planerad — formatet är stulet från gaming-communityn: fika, bygg i 50 min, paus, bygg 50 min, show & tell. Inga föreläsningar. Halvfärdigt är standard. Trasigt är välkommet.",
+            "imgRef": { "id": 3, "filename": "opensverige-meetup.png" }
+          },
+          {
+            "type": "quote",
+            "text": "Builders, inte talkers. En halvfärdig prototyp säger mer än en perfekt pitch deck.",
+            "attr": "opensverige manifestet"
+          },
+          {
+            "type": "text",
+            "text": "Problemet jag löste är inte tekniskt. Det är att svenska AI-builders inte hade en plats som var deras. Inte corporate, inte akademiskt, inte LinkedIn-cringe. Bara folk som sitter ner och bygger saker."
           }
         ],
         "images": [
-          { "id": 1, "filename": "opensverige-meetup.png", "caption": "Första OpenSverige meetup — demos, diskussioner och nätverk. Fokus på att bygga, inte bara prata.", "placeholder": "<img src=\"/art/case-preview-opensverige_1.png\" srcset=\"/art/case-preview-opensverige_1@2x.png 2x\" alt=\"OpenSverige meetup\" style=\"width:100%;height:100%;object-fit:contain;\">" },
-          { "id": 2, "filename": "opensverige-format.png", "caption": "Meetup-formatet: live-demos, öppen diskussion, ingen PowerPoint. Builders som visar vad de bygger.", "placeholder": "<img src=\"/art/case-preview-opensverige_2.png\" srcset=\"/art/case-preview-opensverige_2@2x.png 2x\" alt=\"OpenSverige format\" style=\"width:100%;height:100%;object-fit:contain;\">" }
+          {
+            "id": 1,
+            "filename": "opensverige-site.png",
+            "caption": "Sajten. Vibecoded från noll. Manifestet, agent radar, blogg. Allt öppet.",
+            "placeholder": "OPENSVERIGE<br>SAJT"
+          },
+          {
+            "id": 2,
+            "filename": "opensverige-discord.png",
+            "caption": "Discord-servern. 150+ builders. Kanaler för agent-frameworks, MCP, lokala LLMs, svenska API:er.",
+            "placeholder": "DISCORD<br>SERVER"
+          },
+          {
+            "id": 3,
+            "filename": "opensverige-meetup.png",
+            "caption": "Första IRL-sessionen i Stockholm. Fika, bygg, show & tell. Inga föreläsningar.",
+            "placeholder": "IRL MEETUP<br>STOCKHOLM"
+          }
         ],
         "meta": [
-          { "label": "Roll", "value": "Grundare" },
-          { "label": "Stack", "value": "Community · AI Agents · MCP" },
-          { "label": "Status", "value": "Active", "color": "var(--green-dim)" },
-          { "label": "Typ", "value": "Community" }
+          { "label": "Roll", "value": "Founder / Community Builder" },
+          { "label": "Stack", "value": "Discord · Next.js · Vercel" },
+          { "label": "Status", "value": "Active & Growing", "color": "var(--green-dim)" },
+          { "label": "Webb", "value": "opensverige.se" }
         ],
         "finderPath": "~/projects/<span>opensverige</span>/assets",
         "finderFiles": [
-          { "name": "opensverige-meetup.png", "size": "412 KB", "date": "2026-02-15", "type": "PNG" },
-          { "name": "opensverige-format.png", "size": "289 KB", "date": "2026-02-20", "type": "PNG" }
+          { "name": "opensverige-site.png", "size": "485 KB", "date": "2026-01-20", "type": "PNG" },
+          { "name": "opensverige-discord.png", "size": "312 KB", "date": "2026-02-10", "type": "PNG" },
+          { "name": "opensverige-meetup.png", "size": "1.1 MB", "date": "2026-03-01", "type": "PNG" }
         ]
       }
     },
@@ -180,6 +291,7 @@
       "titleAccent": "COMPANY",
       "accentClass": "w-blue",
       "windowTitle": "zhc — building in public",
+      "link": "",
       "tags": [
         { "label": "WIP", "class": "wip" }
       ],
@@ -188,11 +300,11 @@
       "scanClass": "blue-scan",
       "spinnerSet": "blocks",
       "winClass": "win-3",
-      "overlaySub": "WIP · AI-drivet AB · Building in Public",
+      "overlaySub": "WIP · 90% Automation · Svenskt AB · Building in Public",
       "caseStudy": {
         "heroTitle": "ZERO HUMAN<br><span class=\"w-blue\">COMPANY</span>",
-        "heroSub": "WIP · AI-drivet AB · Building in Public",
-        "title": "Ett AI-drivet svenskt AB",
+        "heroSub": "WIP · 90% Automation · Svenskt AB · Building in Public",
+        "title": "Kan ett svenskt AB drivas till 90% av AI?",
         "sections": [
           {
             "type": "html",
@@ -200,25 +312,25 @@
           },
           {
             "type": "text",
-            "text": "Jag bygger ett bolag som ska vara 90% automatiserat. Fyra AI-agenter sköter driften — bokföring, fakturering, compliance, regulatorisk bevakning. Allt anpassat för svensk lag."
+            "text": "Det finns inget \"zero human company\" idag. Oavsett vad folk på X och LinkedIn påstår. Det som finns är företag som automatiserat 50%, kanske 60% av driften med AI-agenter — och en jävla massa manuellt jobb i luckorna. Jag försöker ta det till 90%+ i ett svenskt AB. Bokföring, fakturering, momsdeklaration, compliance — anpassat för Skatteverket, Bolagsverket och GDPR. Inte en generell AI-assistent. En jurisdiktionslåst lösning som kräver att du förstår BAS-kontoplanen och svensk lag."
           },
           {
             "type": "text",
-            "text": "Det här är inte klart. Det är inte ens nära klart. Men det byggs, öppet, och varje fail dokumenteras.",
+            "text": "Jag vet inte om det funkar. Tredje försöket just nu. Men varje iteration tar mig närmare, och allt dokumenteras öppet.",
             "imgRef": { "id": 1, "filename": "zhc-dashboard.png" }
           },
           {
             "type": "stats",
             "items": [
+              { "value": "90%", "label": "Automationsmål" },
               { "value": "4", "label": "AI-agenter" },
-              { "value": "0", "label": "Kunder (ännu)" },
-              { "value": "3", "label": "Resets hittills" },
-              { "value": "~2k", "label": "SEK/mån drift" }
+              { "value": "~2k", "label": "SEK/mån drift" },
+              { "value": "3", "label": "Resets hittills" }
             ]
           },
           {
             "type": "text",
-            "text": "Spenderade $40 i API-krediter på en dag. Resetat systemet tre gånger. Backend? En dag. Databas, scraper, admin — allt funkade. Frontend? Helvete. En agent centrerade ingenting. En annan skrev ä som \\u00e4. En tredje fick en pixel-perfect prototyp och skrev sin egen version ändå.",
+            "text": "Bränt $40 i API-krediter på en dag. Backend? En dag — databas, scraper, admin, allt funkade direkt. Frontend? 1,5 dagar för att centrera en knapp. En agent centrerade ingenting. En annan skrev ä som \\u00e4. En tredje fick en pixel-perfect Figma-prototyp och skrev sin egen version ändå. Lärdomen: designa först, vibe coda sen. De resterande 10% av bolaget är tydligen frontend och jag gråter.",
             "imgRef": { "id": 2, "filename": "zhc-linkedin-post.png" }
           },
           {
@@ -228,14 +340,29 @@
           },
           {
             "type": "text",
-            "text": "Mer kommer. Det här projektet dokumenteras i realtid. Följ med eller vänta på resultatet — oavsett får ni se hela processen.",
+            "text": "Det här projektet dokumenteras i realtid — varje krona, varje fail, varje reset. Inte för att det är klart. För att processen att bygga ett autonomt bolag med svenska lagar, compliance och BankID-krav är intressant oavsett om det lyckas eller inte.",
             "imgRef": { "id": 3, "filename": "zhc-agent-architecture.png" }
           }
         ],
         "images": [
-          { "id": 1, "filename": "zhc-dashboard.png", "caption": "Dashboard. Fyra agenter, realtidsvy. Mörkt tema. Den där knappen tog 1,5 dagar att centrera.", "placeholder": "ZHC<br>DASHBOARD" },
-          { "id": 2, "filename": "zhc-linkedin-post.png", "caption": "Building in public. Varje fail, varje krona, dokumenterat på LinkedIn.", "placeholder": "LINKEDIN<br>BUILDING IN PUBLIC" },
-          { "id": 3, "filename": "zhc-agent-architecture.png", "caption": "Agentarkitekturen. Fyra agenter, svenska lagar, human-in-the-loop.", "placeholder": "AGENT<br>ARCHITECTURE" }
+          {
+            "id": 1,
+            "filename": "zhc-dashboard.png",
+            "caption": "Dashboard. Fyra agenter, realtidsvy. Mörkt tema. Den där knappen tog 1,5 dagar att centrera.",
+            "placeholder": "ZHC<br>DASHBOARD"
+          },
+          {
+            "id": 2,
+            "filename": "zhc-linkedin-post.png",
+            "caption": "Building in public. Varje fail, varje krona, dokumenterat på LinkedIn.",
+            "placeholder": "LINKEDIN<br>BUILDING IN PUBLIC"
+          },
+          {
+            "id": 3,
+            "filename": "zhc-agent-architecture.png",
+            "caption": "Agentarkitekturen. Fyra agenter, svenska lagar, human-in-the-loop.",
+            "placeholder": "AGENT<br>ARCHITECTURE"
+          }
         ],
         "meta": [
           { "label": "Roll", "value": "Founder / Builder" },
@@ -252,24 +379,75 @@
       }
     },
     {
-      "id": "enterprise",
-      "title": "ENTERPRISE",
-      "titleAccent": "DESIGN",
       "accentClass": "w-beige",
-      "windowTitle": "enterprise — 7+ år i finans",
-      "tags": [
-        { "label": "Shipped", "class": "shipped" }
-      ],
       "art": "/art/enterprise.png",
       "artPlaceholder": "art-placeholder-3",
-      "scanClass": "",
-      "spinnerSet": "classic",
-      "winClass": "win-4",
-      "overlaySub": "7+ år · Pension & Finans · Regulerad miljö",
       "caseStudy": {
-        "heroTitle": "ENTERPRISE<br><span class=\"w-beige\">DESIGN</span>",
+        "finderFiles": [
+          {
+            "date": "2024-06-15",
+            "name": "enterprise-showcase.png",
+            "size": "892 KB",
+            "type": "PNG"
+          },
+          {
+            "date": "2023-11-20",
+            "name": "enterprise-email-system.png",
+            "size": "445 KB",
+            "type": "PNG"
+          },
+          {
+            "date": "2024-02-08",
+            "name": "enterprise-brand-guidelines.png",
+            "size": "634 KB",
+            "type": "PNG"
+          }
+        ],
+        "finderPath": "~/projects/<span>enterprise</span>/assets",
         "heroSub": "7+ år · Pension & Finans · Regulerad miljö",
-        "title": "7+ år av enterprise-design",
+        "heroTitle": "ENTERPRISE<br><span class=\"w-beige\">DESIGN</span>",
+        "images": [
+          {
+            "caption": "Urval av kampanjproduktion. Display, print, email, social. Allt under strikta brand guidelines.",
+            "filename": "enterprise-showcase.png",
+            "id": 1,
+            "placeholder": "KAMPANJ<br>SHOWCASE"
+          },
+          {
+            "caption": "Email-templates och designsystem. Responsivt, WCAG-anpassat, skalbart.",
+            "filename": "enterprise-email-system.png",
+            "id": 2,
+            "placeholder": "EMAIL<br>SYSTEM"
+          },
+          {
+            "caption": "Brand guidelines och komponentbibliotek. Konsekvent leverans oavsett kanal.",
+            "filename": "enterprise-brand-guidelines.png",
+            "id": 3,
+            "placeholder": "BRAND<br>GUIDELINES"
+          }
+        ],
+        "meta": [
+          {
+            "color": null,
+            "label": "Roll",
+            "value": "Digital Producer / Designer"
+          },
+          {
+            "color": null,
+            "label": "Stack",
+            "value": "Adobe CC · Figma · After Effects · InDesign"
+          },
+          {
+            "color": null,
+            "label": "Status",
+            "value": "Shipped"
+          },
+          {
+            "color": null,
+            "label": "Bransch",
+            "value": "Pension & Finans"
+          }
+        ],
         "sections": [
           {
             "type": "text",
@@ -278,26 +456,55 @@
           {
             "type": "text",
             "text": "Digital Producer med ansvar för kampanjproduktion, brand guidelines och multikanal-leverans. Display, social, video, print, email, motion graphics. Allt från 300dpi årsredovisningar till animerade banners.",
-            "imgRef": { "id": 1, "filename": "enterprise-showcase.png" }
+            "imgRef": {
+              "filename": "enterprise-showcase.png",
+              "id": 1
+            }
           },
           {
             "type": "stats",
             "items": [
-              { "value": "7+", "label": "År i branschen" },
-              { "value": "100+", "label": "Kampanjer" },
-              { "value": "∞", "label": "Möten överlevda" },
-              { "value": "0", "label": "Saknade" }
+              {
+                "_key": "154c8oh97t3",
+                "_type": "statItem",
+                "label": "År i branschen",
+                "value": "7+"
+              },
+              {
+                "_key": "rgiolgl03x",
+                "_type": "statItem",
+                "label": "Kampanjer",
+                "value": "100+"
+              },
+              {
+                "_key": "ugezh7tsgv",
+                "_type": "statItem",
+                "label": "Möten överlevda",
+                "value": "∞"
+              },
+              {
+                "_key": "x7xbb833sk",
+                "_type": "statItem",
+                "label": "Saknade",
+                "value": "0"
+              }
             ]
           },
           {
             "type": "text",
             "text": "Det folk inte fattar med enterprise-design: det handlar inte om kreativ frihet. Det handlar om att ta komplexa finansprodukter — pension, fondförsäkring, premiepension — och göra dem begripliga för någon som bara vill veta om de har råd att gå i pension. I en banner. I ett mail. I en broschyr. Det är svårare än det låter.",
-            "imgRef": { "id": 2, "filename": "enterprise-email-system.png" }
+            "imgRef": {
+              "filename": "enterprise-email-system.png",
+              "id": 2
+            }
           },
           {
             "type": "text",
             "text": "Byggde email-templates och designsystem som fortfarande används. Brand guidelines, komponentbibliotek, style guides. Producerade motion graphics i After Effects, årsredovisningar i InDesign, kampanjer i alla format från 300dpi print till animerade social-annonser. Jobbade med juridik, compliance, WCAG-tillgänglighetskrav och varumärkesstyrning där varje leverans passerar granskning.",
-            "imgRef": { "id": 3, "filename": "enterprise-brand-guidelines.png" }
+            "imgRef": {
+              "filename": "enterprise-brand-guidelines.png",
+              "id": 3
+            }
           },
           {
             "type": "quote",
@@ -309,24 +516,23 @@
             "text": "7 år i svensk pensionsbransch och finanssektor. Jag vet hur regulerade miljöer funkar — juridiska ramverk, compliance, granskningsprocesser. Jag vet vad det kostar i tid. Och jag vet att saker som lever kvar efter att du gått — templates, system, guidelines — det är det som faktiskt räknas."
           }
         ],
-        "images": [
-          { "id": 1, "filename": "enterprise-showcase.png", "caption": "Urval av kampanjproduktion. Display, print, email, social. Allt under strikta brand guidelines.", "placeholder": "KAMPANJ<br>SHOWCASE" },
-          { "id": 2, "filename": "enterprise-email-system.png", "caption": "Email-templates och designsystem. Responsivt, WCAG-anpassat, skalbart.", "placeholder": "EMAIL<br>SYSTEM" },
-          { "id": 3, "filename": "enterprise-brand-guidelines.png", "caption": "Brand guidelines och komponentbibliotek. Konsekvent leverans oavsett kanal.", "placeholder": "BRAND<br>GUIDELINES" }
-        ],
-        "meta": [
-          { "label": "Roll", "value": "Digital Producer / Designer" },
-          { "label": "Stack", "value": "Adobe CC · Figma · After Effects · InDesign" },
-          { "label": "Status", "value": "Shipped" },
-          { "label": "Bransch", "value": "Pension & Finans" }
-        ],
-        "finderPath": "~/projects/<span>enterprise</span>/assets",
-        "finderFiles": [
-          { "name": "enterprise-showcase.png", "size": "892 KB", "date": "2024-06-15", "type": "PNG" },
-          { "name": "enterprise-email-system.png", "size": "445 KB", "date": "2023-11-20", "type": "PNG" },
-          { "name": "enterprise-brand-guidelines.png", "size": "634 KB", "date": "2024-02-08", "type": "PNG" }
-        ]
-      }
+        "title": "7+ år av enterprise-design"
+      },
+      "id": "enterprise",
+      "link": "",
+      "overlaySub": "7+ år · Pension & Finans · Regulerad miljö",
+      "scanClass": "",
+      "spinnerSet": "classic",
+      "tags": [
+        {
+          "class": "shipped",
+          "label": "Shipped"
+        }
+      ],
+      "title": "ENTERPRISE",
+      "titleAccent": "DESIGN",
+      "winClass": "win-4",
+      "windowTitle": "enterprise — 7+ år i finans"
     }
   ]
 }
