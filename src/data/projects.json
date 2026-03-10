@@ -317,7 +317,7 @@
           {
             "type": "text",
             "text": "Jag vet inte om det funkar. Tredje försöket just nu. Men varje iteration tar mig närmare, och allt dokumenteras öppet.",
-            "imgRef": { "id": 1, "filename": "zhc-dashboard.png" }
+            "imgRef": { "id": 3, "filename": "avatar-zhc-company" }
           },
           {
             "type": "stats",
@@ -341,7 +341,7 @@
           {
             "type": "text",
             "text": "Det här projektet dokumenteras i realtid — varje krona, varje fail, varje reset. Inte för att det är klart. För att processen att bygga ett autonomt bolag med svenska lagar, compliance och BankID-krav är intressant oavsett om det lyckas eller inte.",
-            "imgRef": { "id": 3, "filename": "zhc-agent-architecture.png" }
+            "imgRef": { "id": 3, "filename": "avatar-zhc-company" }
           }
         ],
         "images": [
@@ -363,7 +363,7 @@
           },
           {
             "id": 3,
-            "filename": "zhc-agent-architecture.png",
+            "filename": "avatar-zhc-company",
             "caption": "Agentarkitekturen. Fyra agenter, svenska lagar, human-in-the-loop.",
             "placeholder": "AGENT<br>ARCHITECTURE",
             "videoSrc": {
@@ -380,9 +380,8 @@
         ],
         "finderPath": "~/projects/<span>zhc</span>/assets",
         "finderFiles": [
-          { "name": "zhc-dashboard.png", "size": "567 KB", "date": "2026-03-04", "type": "PNG" },
           { "name": "zhc-linkedin-post.png", "size": "234 KB", "date": "2026-03-01", "type": "PNG" },
-          { "name": "zhc-agent-architecture.png", "size": "389 KB", "date": "2026-02-20", "type": "PNG" }
+          { "name": "avatar-zhc-company", "size": "389 KB", "date": "2026-02-20", "type": "WEBM" }
         ]
       }
     },
