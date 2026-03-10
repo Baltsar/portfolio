@@ -5,7 +5,7 @@ import { openLightbox } from './lightbox.js';
 let currentProject = null;
 let lightboxCurrentImgId = null;
 
-function renderSection(section, spinSet) {
+function renderSection(section, spinSet, imageCount) {
   const type = section.type || 'text';
 
   if (type === 'html') {
@@ -37,8 +37,8 @@ function renderSection(section, spinSet) {
     return `<ul class="case-list">${itemsHTML}</ul>`;
   }
 
-  // Default: text
-  const refHTML = section.imgRef
+  // Default: text — only render chip if more than one image exists
+  const refHTML = (section.imgRef && imageCount > 1)
     ? ` <span class="img-ref" data-img="${section.imgRef.id}" data-spinner="${spinSet}">${section.imgRef.filename}</span>`
     : '';
   return `<p>${section.text}${refHTML}</p>`;
@@ -49,7 +49,12 @@ function buildCaseHTML(project) {
   const artClass = project.artPlaceholder;
   const spinSet = project.spinnerSet || 'braille';
 
-  const paragraphsHTML = cs.sections.map(s => renderSection(s, spinSet)).join('');
+  const imageCount = cs.images.length;
+  const paragraphsHTML = cs.sections.map(s => renderSection(s, spinSet, imageCount)).join('');
+  // Single-image projects: render inline media block (shown on mobile, hidden on desktop)
+  const singleMediaBlock = imageCount === 1
+    ? `<div class="case-single-media" id="case-single-media"></div>`
+    : '';
 
   const finderHTML = cs.finderFiles.map((f, i) => `
     <div class="finder-file${i === 0 ? ' selected' : ''}" data-finder-img="${i + 1}" data-spinner="${spinSet}">
@@ -98,6 +103,7 @@ function buildCaseHTML(project) {
           <div class="case-split">
             <div class="case-text-col">
               <h2>${cs.title}</h2>
+              ${singleMediaBlock}
               ${paragraphsHTML}
             </div>
 
@@ -330,6 +336,9 @@ function openCase(projectId) {
   if (firstImgData?.videoSrc) {
     const phEl = backdrop.querySelector('#preview-ph');
     if (phEl) injectVideo(phEl, firstImgData.videoSrc);
+    // Mobile single-media block (only rendered for single-image projects)
+    const singleMedia = backdrop.querySelector('#case-single-media');
+    if (singleMedia) injectVideo(singleMedia, firstImgData.videoSrc);
   }
 
   const isMobile = window.innerWidth <= 768;
