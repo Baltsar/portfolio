@@ -1,7 +1,9 @@
 import { projects } from './render.js';
 import { spinnerSets, activeSpinners, spinOnHover } from './spinners.js';
+import { openLightbox } from './lightbox.js';
 
 let currentProject = null;
+let lightboxCurrentImgId = null;
 
 function renderSection(section, spinSet) {
   const type = section.type || 'text';
@@ -96,6 +98,7 @@ function buildCaseHTML(project) {
             <div class="case-preview-col">
               <div class="case-preview-img" id="preview-img">
                 <div class="preview-ph" id="preview-ph">${firstImg ? firstImg.placeholder : ''}</div>
+                <span class="zoom-indicator" aria-hidden="true">⊕ zoom</span>
               </div>
               <div class="case-preview-caption" id="preview-caption">
                 <div class="caption-fn" id="cap-fn">${firstImg ? firstImg.filename : ''}</div>
@@ -128,6 +131,7 @@ function showPreview(imgId) {
   if (!currentProject) return;
   const img = currentProject.caseStudy.images.find(i => i.id === imgId);
   if (!img) return;
+  lightboxCurrentImgId = imgId;
 
   const phEl = document.getElementById('preview-ph');
   const fnEl = document.getElementById('cap-fn');
@@ -252,12 +256,23 @@ function createInlineExpand(imgId) {
   expand.innerHTML = `
     <div class="inline-img-area">
       <div class="preview-ph">${placeholder}</div>
+      <span class="zoom-indicator" aria-hidden="true">⊕ zoom</span>
     </div>
     <div class="inline-caption">
       <div class="inline-fn">${filename}</div>
       <div class="inline-desc">${caption}</div>
     </div>
   `;
+
+  // Mobile: tap the image area to open lightbox
+  const imgArea = expand.querySelector('.inline-img-area');
+  if (imgArea) {
+    imgArea.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (currentProject) openLightbox(imgId, currentProject);
+    });
+  }
+
   return expand;
 }
 
@@ -266,6 +281,12 @@ function openCase(projectId) {
   if (!project) return;
 
   currentProject = project;
+
+  // Update URL hash for deep linking (without triggering hashchange listener)
+  if (window.location.hash.slice(1) !== projectId) {
+    history.pushState(null, '', '#' + projectId);
+  }
+
   const backdrop = document.getElementById('case-backdrop');
   backdrop.innerHTML = buildCaseHTML(project);
   backdrop.classList.add('is-open');
@@ -285,21 +306,24 @@ function openCase(projectId) {
     footerClose.addEventListener('click', closeCase);
   }
 
-  // Swipe down to close (mobile)
+  // Swipe down to close (mobile) — only when already at the top of the scroll
   if (isMobile) {
     let touchStartY = 0;
     let touchStartTime = 0;
+    let touchStartScrollTop = 0;
     const popup = backdrop.querySelector('.case-popup');
     if (popup) {
       popup.addEventListener('touchstart', (e) => {
         touchStartY = e.touches[0].clientY;
         touchStartTime = Date.now();
+        touchStartScrollTop = backdrop.scrollTop;
       }, { passive: true });
       popup.addEventListener('touchend', (e) => {
         const dy = e.changedTouches[0].clientY - touchStartY;
         const dt = Date.now() - touchStartTime;
-        // Fast swipe down > 80px within 300ms
-        if (dy > 80 && dt < 300) {
+        const didScroll = Math.abs(backdrop.scrollTop - touchStartScrollTop) > 5;
+        // Fast swipe down > 80px within 300ms, only when at the top and not a scroll gesture
+        if (dy > 80 && dt < 300 && !didScroll && backdrop.scrollTop < 10) {
           closeCase();
         }
       }, { passive: true });
@@ -348,9 +372,25 @@ function openCase(projectId) {
     file.addEventListener('click', () => showPreview(imgId));
   });
 
+  // Desktop: click preview panel to open lightbox
+  if (!isMobile) {
+    const previewImg = document.getElementById('preview-img');
+    if (previewImg) {
+      previewImg.addEventListener('click', () => {
+        if (currentProject && lightboxCurrentImgId !== null) {
+          openLightbox(lightboxCurrentImgId, currentProject);
+        }
+      });
+    }
+  }
+
   // Mark first ref as active
   const firstRef = document.querySelector('.case-popup .img-ref');
   if (firstRef) firstRef.classList.add('ref-active');
+
+  // Track current preview image for lightbox
+  const firstImg = project.caseStudy.images[0];
+  if (firstImg) lightboxCurrentImgId = firstImg.id;
 
   // Init glyph spinners in case study
   initCaseSpinners();
@@ -390,10 +430,15 @@ function closeCase() {
   backdrop.innerHTML = '';
   document.body.style.overflow = '';
   currentProject = null;
+  lightboxCurrentImgId = null;
   document.removeEventListener('keydown', onEscape);
   // Clear nudge timers
   caseNudgeTimers.forEach(t => clearTimeout(t));
   caseNudgeTimers = [];
+  // Remove hash without scroll jump
+  if (window.location.hash) {
+    history.pushState(null, '', window.location.pathname);
+  }
 }
 
 export function initCaseStudy() {
@@ -440,4 +485,22 @@ export function initCaseStudy() {
       setTimeout(() => hint.remove(), 2500);
     }
   }
+
+  // Deep linking — open project from URL hash on load
+  const hashId = window.location.hash.slice(1);
+  if (hashId) {
+    const match = projects.find(p => p.id === hashId);
+    if (match) openCase(hashId);
+  }
+
+  // Handle browser back/forward navigation
+  window.addEventListener('hashchange', () => {
+    const id = window.location.hash.slice(1);
+    if (!id) {
+      if (currentProject) closeCase();
+      return;
+    }
+    const match = projects.find(p => p.id === id);
+    if (match && id !== currentProject?.id) openCase(id);
+  });
 }

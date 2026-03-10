@@ -160,4 +160,71 @@
     opacity: 0.7;
     line-height: 1.6;
   }
+
+  /* Mobile zoom indicator — always visible in accordion */
+  .inline-img-area {
+    position: relative;
+    cursor: zoom-in;
+  }
+
+  .inline-img-area .zoom-indicator {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    font-family: var(--font-mono);
+    font-size: 0.5625rem;
+    font-weight: 600;
+    color: var(--green-dim);
+    background: rgba(0,0,0,0.55);
+    border: 1px solid rgba(51,255,51,0.2);
+    padding: 3px 6px;
+    letter-spacing: 0.06em;
+    opacity: 0.7;
+    pointer-events: none;
+    z-index: 2;
+    user-select: none;
+  }
+
+  /* Mobile lightbox adjustments */
+  .lb-inner {
+    max-width: 100vw;
+    max-height: 100vh;
+  }
+
+  .lb-media {
+    max-height: 55vh;
+  }
+
+  .lb-image {
+    max-height: 55vh;
+  }
+
+  .lb-placeholder {
+    font-size: clamp(1.5rem, 10vw, 3rem);
+    padding: 32px 20px;
+  }
+
+  .lb-close {
+    top: 8px;
+    right: 8px;
+    width: 44px;
+    height: 44px;
+    font-size: 1.25rem;
+  }
+
+  .lb-caption {
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 12px 14px;
+  }
+
+  .lb-nav {
+    padding: 0 4px;
+  }
+
+  .lb-prev,
+  .lb-next {
+    width: 44px;
+    height: 44px;
+  }
 }
