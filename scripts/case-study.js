@@ -69,6 +69,21 @@ function buildCaseHTML(project) {
 
   const firstImg = cs.images[0];
 
+  const zhcGalleryHTML = project.id === 'zhc' ? `
+    <div class="zhc-gallery-item">
+      <video autoplay loop muted playsinline class="zhc-gallery-video">
+        <source src="/art/zhc-ceo-portrait-pingpong.webm" type="video/webm">
+        <source src="/art/zhc-ceo-portrait-pingpong.mp4" type="video/mp4">
+      </video>
+      <div class="zhc-title-area">
+        <div class="zhc-gallery-title">ZERO<br>HUMAN<br><span class="accent-green">COMPANY</span></div>
+        <div class="zhc-gallery-subtitle">An AI-managed Swedish AB<br>Built in public. Honest stats.</div>
+        <div class="zhc-gallery-tag">concept — 2026</div>
+      </div>
+      <div class="zhc-divider"></div>
+    </div>
+  ` : '';
+
   return `
     <div class="mac-window case-popup">
       <div class="mac-titlebar">
@@ -107,6 +122,8 @@ function buildCaseHTML(project) {
               </div>
             </div>
           </div>
+
+          ${zhcGalleryHTML}
 
           <div class="case-finder">
             <div class="finder-toolbar">
