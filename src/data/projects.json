@@ -365,7 +365,11 @@
             "id": 3,
             "filename": "zhc-agent-architecture.png",
             "caption": "Agentarkitekturen. Fyra agenter, svenska lagar, human-in-the-loop.",
-            "placeholder": "AGENT<br>ARCHITECTURE"
+            "placeholder": "AGENT<br>ARCHITECTURE",
+            "videoSrc": {
+              "webm": "/art/zhc-card-pingpong.webm",
+              "mp4": "/art/zhc-card-pingpong.mp4"
+            }
           }
         ],
         "meta": [
