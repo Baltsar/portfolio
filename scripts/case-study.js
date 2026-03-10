@@ -69,20 +69,16 @@ function buildCaseHTML(project) {
 
   const firstImg = cs.images[0];
 
-  const zhcGalleryHTML = project.id === 'zhc' ? `
-    <div class="zhc-gallery-item">
-      <video autoplay loop muted playsinline class="zhc-gallery-video">
-        <source src="/art/zhc-ceo-portrait-pingpong.webm" type="video/webm">
-        <source src="/art/zhc-ceo-portrait-pingpong.mp4" type="video/mp4">
-      </video>
-      <div class="zhc-title-area">
-        <div class="zhc-gallery-title">ZERO<br>HUMAN<br><span class="accent-green">COMPANY</span></div>
-        <div class="zhc-gallery-subtitle">An AI-managed Swedish AB<br>Built in public. Honest stats.</div>
-        <div class="zhc-gallery-tag">concept — 2026</div>
-      </div>
-      <div class="zhc-divider"></div>
-    </div>
-  ` : '';
+  // Render initial preview content — video or placeholder text
+  const firstImgPreview = firstImg
+    ? (firstImg.videoSrc
+      ? `<video autoplay loop muted playsinline class="preview-video">
+          ${firstImg.videoSrc.webm ? `<source src="${firstImg.videoSrc.webm}" type="video/webm">` : ''}
+          ${firstImg.videoSrc.mp4 ? `<source src="${firstImg.videoSrc.mp4}" type="video/mp4">` : ''}
+        </video>`
+      : firstImg.placeholder)
+    : '';
+  const firstImgHasVideo = !!(firstImg && firstImg.videoSrc);
 
   return `
     <div class="mac-window case-popup">
@@ -112,7 +108,7 @@ function buildCaseHTML(project) {
 
             <div class="case-preview-col">
               <div class="case-preview-img" id="preview-img">
-                <div class="preview-ph" id="preview-ph">${firstImg ? firstImg.placeholder : ''}</div>
+                <div class="preview-ph${firstImgHasVideo ? ' has-video' : ''}" id="preview-ph">${firstImgPreview}</div>
                 <span class="zoom-indicator" aria-hidden="true">⊕ zoom</span>
               </div>
               <div class="case-preview-caption" id="preview-caption">
@@ -122,8 +118,6 @@ function buildCaseHTML(project) {
               </div>
             </div>
           </div>
-
-          ${zhcGalleryHTML}
 
           <div class="case-finder">
             <div class="finder-toolbar">
@@ -155,7 +149,26 @@ function showPreview(imgId) {
   const descEl = document.getElementById('cap-desc');
   const idxEl = document.getElementById('cap-idx');
 
-  if (phEl) phEl.innerHTML = img.placeholder;
+  if (phEl) {
+    // Pause + cleanup any existing video before switching
+    const existingVideo = phEl.querySelector('video');
+    if (existingVideo) {
+      existingVideo.pause();
+    }
+
+    if (img.videoSrc) {
+      phEl.classList.add('has-video');
+      phEl.innerHTML = `
+        <video autoplay loop muted playsinline class="preview-video">
+          ${img.videoSrc.webm ? `<source src="${img.videoSrc.webm}" type="video/webm">` : ''}
+          ${img.videoSrc.mp4 ? `<source src="${img.videoSrc.mp4}" type="video/mp4">` : ''}
+        </video>`;
+    } else {
+      phEl.classList.remove('has-video');
+      phEl.innerHTML = img.placeholder;
+    }
+  }
+
   if (fnEl) fnEl.textContent = img.filename;
   if (descEl) descEl.textContent = img.caption;
   if (idxEl) idxEl.textContent = `${img.id} / ${currentProject.caseStudy.images.length}`;

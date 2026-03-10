@@ -161,31 +161,6 @@
     line-height: 1.6;
   }
 
-  /* ZHC gallery item — stack vertically on mobile */
-  .zhc-gallery-item {
-    aspect-ratio: auto;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .zhc-title-area {
-    position: relative;
-    width: 100%;
-    padding: 1.5rem;
-    background: var(--bg, #0a0a0a);
-  }
-
-  .zhc-gallery-video {
-    position: relative;
-    width: 60%;
-    height: auto;
-    margin: 0 auto;
-  }
-
-  .zhc-divider {
-    display: none;
-  }
-
   /* Mobile zoom indicator — always visible in accordion */
   .inline-img-area {
     position: relative;

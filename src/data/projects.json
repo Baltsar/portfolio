@@ -347,9 +347,13 @@
         "images": [
           {
             "id": 1,
-            "filename": "zhc-dashboard.png",
-            "caption": "Dashboard. Fyra agenter, realtidsvy. Mörkt tema. Den där knappen tog 1,5 dagar att centrera.",
-            "placeholder": "ZHC<br>DASHBOARD"
+            "filename": "zhc-ceo-portrait.webm",
+            "caption": "ZHC CEO — AI-genererad VD. Porträttvideo. Den som aldrig ringer in sjuk.",
+            "placeholder": "ZHC<br>CEO",
+            "videoSrc": {
+              "webm": "/art/zhc-ceo-portrait-pingpong.webm",
+              "mp4": "/art/zhc-ceo-portrait-pingpong.mp4"
+            }
           },
           {
             "id": 2,

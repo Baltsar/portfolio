@@ -774,96 +774,21 @@
   pointer-events: none !important;
 }
 
-/* ZHC GALLERY VIDEO ITEM — split layout (title left, portrait video right) */
-.zhc-gallery-item {
-  position: relative;
+/* PREVIEW PANEL — video support */
+.case-preview-img .preview-ph.has-video {
+  padding: 0;
   width: 100%;
-  aspect-ratio: 5/3;
-  background: var(--bg, #0a0a0a);
-  overflow: hidden;
-  border: 1px solid rgba(245, 230, 200, 0.08);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0;
 }
 
-.zhc-gallery-video {
-  position: absolute;
-  right: 0;
-  top: 0;
+.case-preview-img .preview-video {
   height: 100%;
   width: auto;
-  z-index: 1;
-}
-
-.zhc-title-area {
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 62%;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 2rem 3rem;
-  background: linear-gradient(90deg, var(--bg, #0a0a0a) 70%, transparent 100%);
-}
-
-.zhc-gallery-title {
-  font-family: var(--font-display, 'Space Mono', monospace);
-  font-size: clamp(2.5rem, 6vw, 5rem);
-  font-weight: 700;
-  line-height: 0.95;
-  letter-spacing: -0.03em;
-  color: var(--text-primary, #f5e6c8);
-}
-
-.zhc-gallery-title .accent-green {
-  color: var(--green, #33ff33);
-}
-
-.zhc-gallery-subtitle {
-  font-family: var(--font-mono, 'IBM Plex Mono', monospace);
-  font-size: clamp(0.6rem, 1.2vw, 0.8rem);
-  color: var(--text-dim, #5c5040);
-  margin-top: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  line-height: 1.6;
-}
-
-.zhc-gallery-tag {
-  display: inline-block;
-  font-size: 0.55rem;
-  color: var(--text-secondary, #9c8b6e);
-  border: 1px solid rgba(245, 230, 200, 0.12);
-  padding: 0.2rem 0.5rem;
-  margin-top: 1.2rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  width: fit-content;
-}
-
-.zhc-divider {
-  position: absolute;
-  right: 34%;
-  top: 10%;
-  bottom: 10%;
-  width: 1px;
-  background: linear-gradient(to bottom, transparent, rgba(245, 230, 200, 0.06) 30%, rgba(245, 230, 200, 0.06) 70%, transparent);
-  z-index: 3;
-  pointer-events: none;
-}
-
-.zhc-gallery-item::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: 5;
-  opacity: 0;
-  background: repeating-linear-gradient(to bottom, transparent 0px, transparent 2px, rgba(0, 0, 0, 0.06) 2px, rgba(0, 0, 0, 0.06) 4px);
-  transition: opacity 0.3s;
-  pointer-events: none;
-}
-
-.zhc-gallery-item:hover::after {
-  opacity: 1;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
 }
