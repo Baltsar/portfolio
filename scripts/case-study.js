@@ -69,14 +69,9 @@ function buildCaseHTML(project) {
 
   const firstImg = cs.images[0];
 
-  // Render initial preview content — video or placeholder text
+  // Render initial preview content — leave empty slot for video (filled after DOM insert)
   const firstImgPreview = firstImg
-    ? (firstImg.videoSrc
-      ? `<video autoplay loop muted playsinline class="preview-video">
-          ${firstImg.videoSrc.webm ? `<source src="${firstImg.videoSrc.webm}" type="video/webm">` : ''}
-          ${firstImg.videoSrc.mp4 ? `<source src="${firstImg.videoSrc.mp4}" type="video/mp4">` : ''}
-        </video>`
-      : firstImg.placeholder)
+    ? (firstImg.videoSrc ? '' : firstImg.placeholder)
     : '';
   const firstImgHasVideo = !!(firstImg && firstImg.videoSrc);
 
@@ -138,6 +133,23 @@ function buildCaseHTML(project) {
   `;
 }
 
+function injectVideo(phEl, videoSrc) {
+  const existing = phEl.querySelector('video');
+  if (existing) existing.pause();
+  phEl.innerHTML = '';
+  phEl.classList.add('has-video');
+  const video = document.createElement('video');
+  video.autoplay = true;
+  video.loop = true;
+  video.muted = true;
+  video.setAttribute('playsinline', '');
+  video.className = 'preview-video';
+  video.src = videoSrc.webm || videoSrc.mp4;
+  phEl.appendChild(video);
+  video.load();
+  video.play().catch(() => {});
+}
+
 function showPreview(imgId) {
   if (!currentProject) return;
   const img = currentProject.caseStudy.images.find(i => i.id === imgId);
@@ -150,20 +162,11 @@ function showPreview(imgId) {
   const idxEl = document.getElementById('cap-idx');
 
   if (phEl) {
-    // Pause + cleanup any existing video before switching
-    const existingVideo = phEl.querySelector('video');
-    if (existingVideo) {
-      existingVideo.pause();
-    }
-
     if (img.videoSrc) {
-      phEl.classList.add('has-video');
-      phEl.innerHTML = `
-        <video autoplay loop muted playsinline class="preview-video">
-          ${img.videoSrc.webm ? `<source src="${img.videoSrc.webm}" type="video/webm">` : ''}
-          ${img.videoSrc.mp4 ? `<source src="${img.videoSrc.mp4}" type="video/mp4">` : ''}
-        </video>`;
+      injectVideo(phEl, img.videoSrc);
     } else {
+      const existing = phEl.querySelector('video');
+      if (existing) existing.pause();
       phEl.classList.remove('has-video');
       phEl.innerHTML = img.placeholder;
     }
@@ -321,6 +324,13 @@ function openCase(projectId) {
   backdrop.innerHTML = buildCaseHTML(project);
   backdrop.classList.add('is-open');
   document.body.style.overflow = 'hidden';
+
+  // Bootstrap first-image video via createElement (innerHTML drops <source> children)
+  const firstImgData = project.caseStudy?.images?.[0];
+  if (firstImgData?.videoSrc) {
+    const phEl = backdrop.querySelector('#preview-ph');
+    if (phEl) injectVideo(phEl, firstImgData.videoSrc);
+  }
 
   const isMobile = window.innerWidth <= 768;
 
