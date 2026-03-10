@@ -1,19 +1,25 @@
 /* CASE STUDY BACKDROP */
 .case-backdrop {
-  display: none;
-  position: fixed;
-  inset: 0;
-  z-index: 90;
-  background: rgba(0,0,0,0.6);
-  backdrop-filter: blur(3px);
-}
-
-.case-backdrop.is-open {
   display: flex;
   align-items: flex-start;
   justify-content: center;
   overflow-y: auto;
   padding: 40px 0;
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  background: rgba(0,0,0,0.6);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.18s ease, visibility 0.18s ease;
+  will-change: opacity;
+}
+
+.case-backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 /* CASE POPUP */
@@ -29,6 +35,8 @@
   opacity: 0;
   transform: scale(0.95);
   animation: caseIn 0.4s var(--ease-out-expo) forwards;
+  contain: layout style;
+  will-change: transform;
 }
 
 @keyframes caseIn {

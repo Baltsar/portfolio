@@ -327,8 +327,9 @@ function openCase(projectId) {
   }
 
   const backdrop = document.getElementById('case-backdrop');
+
+  // Render content while backdrop is invisible — avoids layout thrash on show
   backdrop.innerHTML = buildCaseHTML(project);
-  backdrop.classList.add('is-open');
   document.body.style.overflow = 'hidden';
 
   // Bootstrap first-image video via createElement (innerHTML drops <source> children)
@@ -336,10 +337,14 @@ function openCase(projectId) {
   if (firstImgData?.videoSrc) {
     const phEl = backdrop.querySelector('#preview-ph');
     if (phEl) injectVideo(phEl, firstImgData.videoSrc);
-    // Mobile single-media block (only rendered for single-image projects)
     const singleMedia = backdrop.querySelector('#case-single-media');
     if (singleMedia) injectVideo(singleMedia, firstImgData.videoSrc);
   }
+
+  // Show after first paint so innerHTML flush and display-change don't compound
+  requestAnimationFrame(() => {
+    backdrop.classList.add('is-open');
+  });
 
   const isMobile = window.innerWidth <= 768;
 
@@ -478,24 +483,27 @@ function onEscape(e) {
 }
 
 function closeCase() {
-  // Clear list spinner timers
   document.querySelectorAll('.case-popup .case-list li').forEach(li => {
     if (li._spinTimer) clearTimeout(li._spinTimer);
   });
   const backdrop = document.getElementById('case-backdrop');
   backdrop.classList.remove('is-open');
-  backdrop.innerHTML = '';
   document.body.style.overflow = '';
-  currentProject = null;
-  lightboxCurrentImgId = null;
   document.removeEventListener('keydown', onEscape);
-  // Clear nudge timers
   caseNudgeTimers.forEach(t => clearTimeout(t));
   caseNudgeTimers = [];
-  // Remove hash without scroll jump
   if (window.location.hash) {
     history.pushState(null, '', window.location.pathname);
   }
+  // Clear DOM after fade-out to avoid janky mid-animation reflow
+  backdrop.addEventListener('transitionend', function cleanup() {
+    if (!backdrop.classList.contains('is-open')) {
+      backdrop.innerHTML = '';
+      currentProject = null;
+      lightboxCurrentImgId = null;
+    }
+    backdrop.removeEventListener('transitionend', cleanup);
+  });
 }
 
 export function initCaseStudy() {
