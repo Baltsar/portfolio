@@ -7,9 +7,12 @@ function buildLightboxHTML(img, images) {
   const hasPrev = idx > 0;
   const hasNext = idx < total - 1;
 
+  // Media slot left empty for videos — filled via injectLightboxVideo after render
   const mediaHTML = img.src
     ? `<img class="lb-image" src="${img.src}" alt="${img.filename}">`
-    : `<div class="lb-placeholder">${img.placeholder}</div>`;
+    : img.videoSrc
+      ? `<div class="lb-video-slot"></div>`
+      : `<div class="lb-placeholder">${img.placeholder}</div>`;
 
   return `
     <div class="lb-inner">
@@ -30,6 +33,21 @@ function buildLightboxHTML(img, images) {
   `;
 }
 
+function injectLightboxVideo(el, videoSrc) {
+  const slot = el.querySelector('.lb-video-slot');
+  if (!slot) return;
+  const video = document.createElement('video');
+  video.autoplay = true;
+  video.loop = true;
+  video.muted = true;
+  video.setAttribute('playsinline', '');
+  video.className = 'lb-video';
+  video.src = videoSrc.webm || videoSrc.mp4;
+  slot.replaceWith(video);
+  video.load();
+  video.play().catch(() => {});
+}
+
 function renderLightbox(imgId) {
   if (!lightboxProject) return;
   const images = lightboxProject.caseStudy.images;
@@ -38,7 +56,15 @@ function renderLightbox(imgId) {
 
   lightboxCurrentId = imgId;
   const el = document.getElementById('case-lightbox');
+
+  // Pause any existing video before replacing
+  const existingVideo = el.querySelector('video');
+  if (existingVideo) existingVideo.pause();
+
   el.innerHTML = buildLightboxHTML(img, images);
+
+  // Inject video via createElement (innerHTML drops <source> children)
+  if (img.videoSrc) injectLightboxVideo(el, img.videoSrc);
 
   // Close button
   document.getElementById('lb-close').addEventListener('click', closeLightbox);
@@ -59,9 +85,7 @@ function renderLightbox(imgId) {
     });
   }
 
-  // Click backdrop to close (listener added once in openLightbox, not here)
-
-  // Mobile swipe-down to close (only when at top)
+  // Mobile swipe-down to close
   let lbTouchStartY = 0;
   let lbTouchStartTime = 0;
   const inner = el.querySelector('.lb-inner');
@@ -86,23 +110,39 @@ export function openLightbox(imgId, project) {
   lightboxProject = project;
   const el = document.getElementById('case-lightbox');
   if (!el) return;
-  el.classList.add('is-open');
-  document.body.style.overflow = 'hidden';
+
+  // Render content while still hidden — avoids layout thrash on show
   renderLightbox(imgId);
+  document.body.style.overflow = 'hidden';
   document.addEventListener('keydown', onLightboxKey);
   el.addEventListener('click', onBackdropClick);
+
+  // Show after content is painted (rAF ensures content is flushed first)
+  requestAnimationFrame(() => {
+    el.classList.add('is-open');
+  });
 }
 
 export function closeLightbox() {
   const el = document.getElementById('case-lightbox');
   if (!el) return;
+
   el.classList.remove('is-open');
-  el.innerHTML = '';
-  lightboxProject = null;
-  lightboxCurrentId = null;
   document.body.style.overflow = '';
   document.removeEventListener('keydown', onLightboxKey);
   el.removeEventListener('click', onBackdropClick);
+
+  // Clear content after CSS fade-out finishes (150ms matches transition)
+  el.addEventListener('transitionend', function cleanup() {
+    if (!el.classList.contains('is-open')) {
+      const vid = el.querySelector('video');
+      if (vid) vid.pause();
+      el.innerHTML = '';
+      lightboxProject = null;
+      lightboxCurrentId = null;
+    }
+    el.removeEventListener('transitionend', cleanup);
+  });
 }
 
 function onLightboxKey(e) {
@@ -119,7 +159,6 @@ function onLightboxKey(e) {
 }
 
 export function initLightbox() {
-  // Ensure the lightbox container exists in the DOM
   if (!document.getElementById('case-lightbox')) {
     const el = document.createElement('div');
     el.id = 'case-lightbox';

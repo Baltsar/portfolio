@@ -596,18 +596,25 @@
 
 /* LIGHTBOX OVERLAY */
 #case-lightbox {
-  display: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: fixed;
   inset: 0;
   z-index: 200;
   background: rgba(0,0,0,0.92);
-  backdrop-filter: blur(8px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.15s ease, visibility 0.15s ease;
+  contain: layout style;
+  will-change: opacity;
 }
 
 #case-lightbox.is-open {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 .lb-inner {
@@ -677,6 +684,15 @@
   max-height: 70vh;
   object-fit: contain;
   display: block;
+}
+
+.lb-video {
+  max-width: 90vw;
+  max-height: 70vh;
+  width: auto;
+  height: auto;
+  display: block;
+  border-radius: 4px;
 }
 
 .lb-placeholder {
