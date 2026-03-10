@@ -312,35 +312,35 @@
           },
           {
             "type": "text",
-            "text": "Det finns inget \"zero human company\" idag. Oavsett vad folk på X och LinkedIn påstår. Det som finns är företag som automatiserat 50%, kanske 60% av driften med AI-agenter — och en jävla massa manuellt jobb i luckorna. Jag försöker ta det till 90%+ i ett svenskt AB. Bokföring, fakturering, momsdeklaration, compliance — anpassat för Skatteverket, Bolagsverket och GDPR. Inte en generell AI-assistent. En jurisdiktionslåst lösning som kräver att du förstår BAS-kontoplanen och svensk lag."
+            "text": "Det finns inget \"zero human company\" idag. Inte på riktigt. Det som finns är demos, pitch decks och trådar på X. Jag ville se hur långt man faktiskt kan ta det — ett svenskt AB anpassat för Skatteverket, Bolagsverket och GDPR, där AI-agenter sköter bokföring, fakturering och compliance."
           },
           {
             "type": "text",
-            "text": "Jag vet inte om det funkar. Tredje försöket just nu. Men varje iteration tar mig närmare, och allt dokumenteras öppet.",
+            "text": "Systemet heter Kammarn. Fyra namngivna agenter orkestrerade via state machine med human gates. Filbaserad vault — write-once, atomisk skrivning, append-only audit log med SHA-256 hashkedja. Deterministisk momsberäkning. BAS 2026 Kompakt. Noll hårdkodade värden — allt styrs via policies.json.",
             "imgRef": { "id": 3, "filename": "avatar-zhc-company" }
           },
           {
             "type": "stats",
             "items": [
-              { "value": "90%", "label": "Automationsmål" },
               { "value": "4", "label": "AI-agenter" },
-              { "value": "~2k", "label": "SEK/mån drift" },
-              { "value": "3", "label": "Resets hittills" }
+              { "value": "18/18", "label": "Lagkrav faktura" },
+              { "value": "SHA-256", "label": "Audit hashkedja" },
+              { "value": "3", "label": "Simuleringar körda" }
             ]
           },
           {
             "type": "text",
-            "text": "Bränt $40 i API-krediter på en dag. Backend? En dag — databas, scraper, admin, allt funkade direkt. Frontend? 1,5 dagar för att centrera en knapp. En agent centrerade ingenting. En annan skrev ä som \\u00e4. En tredje fick en pixel-perfect Figma-prototyp och skrev sin egen version ändå. Lärdomen: designa först, vibe coda sen. De resterande 10% av bolaget är tydligen frontend och jag gråter.",
+            "text": "Det som inte syns vid första anblick: compliance-djupet. 18 av 18 lagkrav-fält på fakturor. Preflight och postflight checks på varje operation. PII-maskering. Regulatory scanning mot sex svenska källor. Full behandlingshistorik per artefakt — processing chain, inte bara slutresultat.",
             "imgRef": { "id": 3, "filename": "avatar-zhc-company" }
           },
           {
             "type": "quote",
-            "text": "bästa resultatet kom när jag slutade prompta och började ctrl+v. det mest avancerade verktyget i min stack var urklipp.",
-            "attr": "Gustaf på LinkedIn · mars 2026"
+            "text": "Jag vet inte om det funkar som bolag. Men compliance-lagret är riktigare än de flesta startup-MVPs jag sett.",
+            "attr": "Gustaf, ärligt"
           },
           {
             "type": "text",
-            "text": "Det här projektet dokumenteras i realtid — varje krona, varje fail, varje reset. Inte för att det är klart. För att processen att bygga ett autonomt bolag med svenska lagar, compliance och BankID-krav är intressant oavsett om det lyckas eller inte.",
+            "text": "Open source. MIT-licens. TypeScript, CLI, filbaserad vault. Processen dokumenteras på LinkedIn — men det här är inte en dagbok. Det är ett system.",
             "imgRef": { "id": 3, "filename": "avatar-zhc-company" }
           }
         ],
