@@ -335,7 +335,7 @@ function openCase(projectId) {
 
   const backdrop = document.getElementById('case-backdrop');
 
-  // Render content while backdrop is invisible — avoids layout thrash on show
+  // Phase 1 (synchronous, kept minimal for INP): render HTML + show
   backdrop.innerHTML = buildCaseHTML(project);
   document.body.style.overflow = 'hidden';
 
@@ -348,141 +348,136 @@ function openCase(projectId) {
     if (singleMedia) injectVideo(singleMedia, firstImgData.videoSrc);
   }
 
-  // Show after first paint so innerHTML flush and display-change don't compound
+  // Track first image for lightbox immediately (needed before deferred setup)
+  const firstImg = project.caseStudy.images[0];
+  if (firstImg) lightboxCurrentImgId = firstImg.id;
+
+  // Show after first paint
   requestAnimationFrame(() => {
     backdrop.classList.add('is-open');
   });
 
-  const isMobile = window.innerWidth <= 768;
+  // Phase 2 (deferred): attach all event listeners after browser has painted
+  setTimeout(() => {
+    if (!currentProject) return; // guard if closed before timeout fires
+    const isMobile = window.innerWidth <= 768;
 
-  // Close button (titlebar red dot)
-  const closeBtn = document.getElementById('case-close');
-  if (closeBtn) {
-    closeBtn.addEventListener('click', closeCase);
-  }
+    // Close button (titlebar red dot)
+    const closeBtn = document.getElementById('case-close');
+    if (closeBtn) closeBtn.addEventListener('click', closeCase);
 
-  // Footer close link
-  const footerClose = document.getElementById('case-footer-close');
-  if (footerClose) {
-    footerClose.addEventListener('click', closeCase);
-  }
+    // Footer close link
+    const footerClose = document.getElementById('case-footer-close');
+    if (footerClose) footerClose.addEventListener('click', closeCase);
 
-  // Swipe down to close (mobile) — only when already at the top of the scroll
-  if (isMobile) {
-    let touchStartY = 0;
-    let touchStartTime = 0;
-    let touchStartScrollTop = 0;
-    const popup = backdrop.querySelector('.case-popup');
-    if (popup) {
-      popup.addEventListener('touchstart', (e) => {
-        touchStartY = e.touches[0].clientY;
-        touchStartTime = Date.now();
-        touchStartScrollTop = backdrop.scrollTop;
-      }, { passive: true });
-      popup.addEventListener('touchend', (e) => {
-        const dy = e.changedTouches[0].clientY - touchStartY;
-        const dt = Date.now() - touchStartTime;
-        const didScroll = Math.abs(backdrop.scrollTop - touchStartScrollTop) > 5;
-        // Fast swipe down > 80px within 300ms, only when at the top and not a scroll gesture
-        if (dy > 80 && dt < 300 && !didScroll && backdrop.scrollTop < 10) {
-          closeCase();
-        }
-      }, { passive: true });
-    }
-  }
-
-  // Image ref hover + click
-  document.querySelectorAll('.case-popup .img-ref').forEach(ref => {
-    const imgId = parseInt(ref.dataset.img);
-
+    // Swipe down to close (mobile)
     if (isMobile) {
-      // Mobile: inline accordion — insert after parent <p>, not inside it
-      ref.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        const parentP = ref.closest('p') || ref.parentNode;
-        let expand = parentP.nextElementSibling;
-        if (!expand || !expand.classList.contains('img-inline-expand')) {
-          expand = createInlineExpand(imgId);
-          parentP.parentNode.insertBefore(expand, parentP.nextSibling);
-        }
-        // Close all other open expands + remove expanded class
-        document.querySelectorAll('.img-inline-expand.open').forEach(el => {
-          if (el !== expand) {
-            el.classList.remove('open');
+      let touchStartY = 0;
+      let touchStartTime = 0;
+      let touchStartScrollTop = 0;
+      const popup = backdrop.querySelector('.case-popup');
+      if (popup) {
+        popup.addEventListener('touchstart', (e) => {
+          touchStartY = e.touches[0].clientY;
+          touchStartTime = Date.now();
+          touchStartScrollTop = backdrop.scrollTop;
+        }, { passive: true });
+        popup.addEventListener('touchend', (e) => {
+          const dy = e.changedTouches[0].clientY - touchStartY;
+          const dt = Date.now() - touchStartTime;
+          const didScroll = Math.abs(backdrop.scrollTop - touchStartScrollTop) > 5;
+          if (dy > 80 && dt < 300 && !didScroll && backdrop.scrollTop < 10) {
+            closeCase();
+          }
+        }, { passive: true });
+      }
+    }
+
+    // Image ref hover + click
+    document.querySelectorAll('.case-popup .img-ref').forEach(ref => {
+      const imgId = parseInt(ref.dataset.img);
+
+      if (isMobile) {
+        ref.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          const parentP = ref.closest('p') || ref.parentNode;
+          let expand = parentP.nextElementSibling;
+          if (!expand || !expand.classList.contains('img-inline-expand')) {
+            expand = createInlineExpand(imgId);
+            parentP.parentNode.insertBefore(expand, parentP.nextSibling);
+          }
+          document.querySelectorAll('.img-inline-expand.open').forEach(el => {
+            if (el !== expand) el.classList.remove('open');
+          });
+          document.querySelectorAll('.img-ref.expanded').forEach(r => {
+            if (r !== ref) r.classList.remove('expanded');
+          });
+          expand.classList.toggle('open');
+          ref.classList.toggle('expanded', expand.classList.contains('open'));
+
+          const isNowOpen = expand.classList.contains('open');
+          const imgData = currentProject?.caseStudy?.images?.find(i => i.id === imgId);
+          if (isNowOpen && imgData?.videoSrc) {
+            const phEl = expand.querySelector('.preview-ph');
+            if (phEl && !phEl.querySelector('video')) injectVideo(phEl, imgData.videoSrc);
+          } else if (!isNowOpen) {
+            const vid = expand.querySelector('video');
+            if (vid) vid.pause();
           }
         });
-        document.querySelectorAll('.img-ref.expanded').forEach(r => {
-          if (r !== ref) r.classList.remove('expanded');
+      } else {
+        ref.addEventListener('click', (e) => {
+          e.preventDefault();
+          showPreview(imgId);
         });
-        expand.classList.toggle('open');
-        ref.classList.toggle('expanded', expand.classList.contains('open'));
-
-        const isNowOpen = expand.classList.contains('open');
-        const imgData = currentProject?.caseStudy?.images?.find(i => i.id === imgId);
-        if (isNowOpen && imgData?.videoSrc) {
-          const phEl = expand.querySelector('.preview-ph');
-          if (phEl && !phEl.querySelector('video')) injectVideo(phEl, imgData.videoSrc);
-        } else if (!isNowOpen) {
-          const vid = expand.querySelector('video');
-          if (vid) vid.pause();
-        }
-      });
-    } else {
-      ref.addEventListener('click', (e) => {
-        e.preventDefault();
-        showPreview(imgId);
-      });
-      ref.addEventListener('mouseenter', () => showPreview(imgId));
-    }
-  });
-
-  // Finder file clicks
-  document.querySelectorAll('.case-popup .finder-file').forEach(file => {
-    const imgId = parseInt(file.dataset.finderImg);
-    file.addEventListener('click', () => showPreview(imgId));
-  });
-
-  // Click preview panel to open lightbox (desktop + mobile)
-  const previewImg = document.getElementById('preview-img');
-  if (previewImg) {
-    previewImg.addEventListener('click', () => {
-      if (currentProject && lightboxCurrentImgId !== null) {
-        openLightbox(lightboxCurrentImgId, currentProject);
+        ref.addEventListener('mouseenter', () => showPreview(imgId));
       }
     });
-  }
 
-  // Mark first ref as active
-  const firstRef = document.querySelector('.case-popup .img-ref');
-  if (firstRef) firstRef.classList.add('ref-active');
-
-  // Track current preview image for lightbox
-  const firstImg = project.caseStudy.images[0];
-  if (firstImg) lightboxCurrentImgId = firstImg.id;
-
-  // Init glyph spinners in case study
-  initCaseSpinners();
-
-  // Mobile tooltip tap support
-  if (isMobile) {
-    document.querySelectorAll('.case-popup .term').forEach(term => {
-      term.addEventListener('click', (e) => {
-        e.stopPropagation();
-        document.querySelectorAll('.case-popup .term.tip-active').forEach(t => {
-          if (t !== term) t.classList.remove('tip-active');
-        });
-        term.classList.toggle('tip-active');
-      });
+    // Finder file clicks
+    document.querySelectorAll('.case-popup .finder-file').forEach(file => {
+      const imgId = parseInt(file.dataset.finderImg);
+      file.addEventListener('click', () => showPreview(imgId));
     });
-  }
 
-  // Close on backdrop click
-  backdrop.addEventListener('click', (e) => {
-    if (e.target === backdrop) closeCase();
-  });
+    // Click preview panel to open lightbox
+    const previewImg = document.getElementById('preview-img');
+    if (previewImg) {
+      previewImg.addEventListener('click', () => {
+        if (currentProject && lightboxCurrentImgId !== null) {
+          openLightbox(lightboxCurrentImgId, currentProject);
+        }
+      });
+    }
 
-  document.addEventListener('keydown', onEscape);
+    // Mark first ref as active
+    const firstRef = document.querySelector('.case-popup .img-ref');
+    if (firstRef) firstRef.classList.add('ref-active');
+
+    // Mobile tooltip tap support
+    if (isMobile) {
+      document.querySelectorAll('.case-popup .term').forEach(term => {
+        term.addEventListener('click', (e) => {
+          e.stopPropagation();
+          document.querySelectorAll('.case-popup .term.tip-active').forEach(t => {
+            if (t !== term) t.classList.remove('tip-active');
+          });
+          term.classList.toggle('tip-active');
+        });
+      });
+    }
+
+    // Close on backdrop click
+    backdrop.addEventListener('click', (e) => {
+      if (e.target === backdrop) closeCase();
+    });
+
+    document.addEventListener('keydown', onEscape);
+
+    // Init glyph spinners (most expensive — last)
+    initCaseSpinners();
+  }, 0);
 }
 
 function onEscape(e) {
