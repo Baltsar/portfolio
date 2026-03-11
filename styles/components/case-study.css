@@ -800,10 +800,11 @@
 
 /* PREVIEW PANEL — image/video support */
 .case-preview-img .preview-ph.has-img {
-  position: absolute;
-  inset: 0;
+  width: 100%;
   padding: 0;
   font-size: 0;
+  display: flex;
+  align-items: flex-start;
 }
 
 .case-preview-img .preview-ph.has-video {
@@ -826,8 +827,7 @@
 
 .case-preview-img .preview-img-actual {
   width: 100%;
-  height: 100%;
-  object-fit: contain;
+  height: auto;
   display: block;
 }
 
