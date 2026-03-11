@@ -799,7 +799,13 @@
 }
 
 /* PREVIEW PANEL — image/video support */
-.case-preview-img .preview-ph.has-img,
+.case-preview-img .preview-ph.has-img {
+  position: absolute;
+  inset: 0;
+  padding: 0;
+  font-size: 0;
+}
+
 .case-preview-img .preview-ph.has-video {
   padding: 0;
   width: 100%;
