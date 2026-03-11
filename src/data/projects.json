@@ -220,7 +220,7 @@
           {
             "type": "text",
             "text": "Jag har drivit community förut. <strong>Svensktiger</strong> — ett gaming-community för milsim och extraction shooters. Frispråkigt, tight, folk som spelar tillsammans. Jag ville bygga samma sak fast för AI-builders.",
-            "imgRef": { "id": 1, "filename": "opensverige-site.png" }
+            "imgRef": { "id": 1, "filename": "case-preview-opensverige_1.png" }
           },
           {
             "type": "stats",
@@ -234,12 +234,11 @@
           {
             "type": "text",
             "text": "Discord + Facebook + LinkedIn. Fokus på folk som bygger — agenter, MCP-servrar, multi-agent-system, lokala LLMs. Verktygsagnostiskt. Använd vad du vill. Inga certifieringar, inga avgifter, inget gatekeeping.",
-            "imgRef": { "id": 2, "filename": "opensverige-discord.png" }
+            "imgRef": { "id": 2, "filename": "case-preview-opensverige_2.png" }
           },
           {
             "type": "text",
-            "text": "Byggt sajt, manifest, agent radar som jämför frameworks live från GitHub. Allt vibecoded. IRL-meetups i Stockholm — varje söndag. Formatet är stulet från gaming-communityn: fika, bygg i 50 min, paus, bygg 50 min, show & tell. Inga föreläsningar. Halvfärdigt är standard. Trasigt är välkommet.",
-            "imgRef": { "id": 3, "filename": "opensverige-meetup.png" }
+            "text": "Byggt sajt, manifest, agent radar som jämför frameworks live från GitHub. Allt vibecoded. IRL-meetups i Stockholm — varje söndag. Formatet är stulet från gaming-communityn: fika, bygg i 50 min, paus, bygg 50 min, show & tell. Inga föreläsningar. Halvfärdigt är standard. Trasigt är välkommet."
           },
           {
             "type": "quote",
@@ -254,21 +253,17 @@
         "images": [
           {
             "id": 1,
-            "filename": "opensverige-site.png",
+            "filename": "case-preview-opensverige_1.png",
             "caption": "Sajten. Vibecoded från noll. Manifestet, agent radar, blogg. Allt öppet.",
-            "placeholder": "OPENSVERIGE<br>SAJT"
+            "placeholder": "OPENSVERIGE<br>SAJT",
+            "src": "/art/case-preview-opensverige_1.png"
           },
           {
             "id": 2,
-            "filename": "opensverige-discord.png",
+            "filename": "case-preview-opensverige_2.png",
             "caption": "Discord-servern. 150+ builders. Kanaler för agent-frameworks, MCP, lokala LLMs, svenska API:er.",
-            "placeholder": "DISCORD<br>SERVER"
-          },
-          {
-            "id": 3,
-            "filename": "opensverige-meetup.png",
-            "caption": "IRL i Stockholm — varje söndag. Fika, bygg, show & tell. Inga föreläsningar.",
-            "placeholder": "IRL MEETUP<br>STOCKHOLM"
+            "placeholder": "DISCORD<br>SERVER",
+            "src": "/art/case-preview-opensverige_2.png"
           }
         ],
         "meta": [
@@ -279,9 +274,8 @@
         ],
         "finderPath": "~/projects/<span>opensverige</span>/assets",
         "finderFiles": [
-          { "name": "opensverige-site.png", "size": "485 KB", "date": "2026-01-20", "type": "PNG" },
-          { "name": "opensverige-discord.png", "size": "312 KB", "date": "2026-02-10", "type": "PNG" },
-          { "name": "opensverige-meetup.png", "size": "1.1 MB", "date": "2026-03-01", "type": "PNG" }
+          { "name": "case-preview-opensverige_1.png", "size": "485 KB", "date": "2026-01-20", "type": "PNG" },
+          { "name": "case-preview-opensverige_2.png", "size": "312 KB", "date": "2026-02-10", "type": "PNG" }
         ]
       }
     },
