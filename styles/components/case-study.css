@@ -817,6 +817,13 @@
   display: block;
 }
 
+.case-preview-img .preview-img-actual {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 /* Single-image inline media block — visible on mobile only (desktop uses preview panel) */
 .case-single-media {
   display: none;

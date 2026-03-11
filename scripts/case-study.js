@@ -76,7 +76,7 @@ function buildCaseHTML(project) {
 
   // Render initial preview content — leave empty slot for video (filled after DOM insert)
   const firstImgPreview = firstImg
-    ? (firstImg.videoSrc ? '' : firstImg.placeholder)
+    ? (firstImg.videoSrc ? '' : firstImg.src ? `<img class="preview-img-actual" src="${firstImg.src}" alt="${firstImg.filename}">` : firstImg.placeholder)
     : '';
   const firstImgHasVideo = !!(firstImg && firstImg.videoSrc);
 
@@ -174,7 +174,11 @@ function showPreview(imgId) {
       const existing = phEl.querySelector('video');
       if (existing) existing.pause();
       phEl.classList.remove('has-video');
-      phEl.innerHTML = img.placeholder;
+      if (img.src) {
+        phEl.innerHTML = `<img class="preview-img-actual" src="${img.src}" alt="${img.filename}">`;
+      } else {
+        phEl.innerHTML = img.placeholder;
+      }
     }
   }
 
