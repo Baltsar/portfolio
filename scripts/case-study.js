@@ -79,6 +79,7 @@ function buildCaseHTML(project) {
     ? (firstImg.videoSrc ? '' : firstImg.src ? `<img class="preview-img-actual" src="${firstImg.src}" alt="${firstImg.filename}">` : firstImg.placeholder)
     : '';
   const firstImgHasVideo = !!(firstImg && firstImg.videoSrc);
+  const firstImgHasImg = !!(firstImg && firstImg.src && !firstImg.videoSrc);
 
   return `
     <div class="mac-window case-popup">
@@ -109,7 +110,7 @@ function buildCaseHTML(project) {
 
             <div class="case-preview-col">
               <div class="case-preview-img" id="preview-img">
-                <div class="preview-ph${firstImgHasVideo ? ' has-video' : ''}" id="preview-ph">${firstImgPreview}</div>
+                <div class="preview-ph${firstImgHasVideo ? ' has-video' : firstImgHasImg ? ' has-img' : ''}" id="preview-ph">${firstImgPreview}</div>
                 <span class="zoom-indicator" aria-hidden="true">⊕ zoom</span>
               </div>
               <div class="case-preview-caption" id="preview-caption">
@@ -175,8 +176,10 @@ function showPreview(imgId) {
       if (existing) existing.pause();
       phEl.classList.remove('has-video');
       if (img.src) {
+        phEl.classList.add('has-img');
         phEl.innerHTML = `<img class="preview-img-actual" src="${img.src}" alt="${img.filename}">`;
       } else {
+        phEl.classList.remove('has-img');
         phEl.innerHTML = img.placeholder;
       }
     }
