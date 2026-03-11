@@ -800,11 +800,14 @@
 
 /* PREVIEW PANEL — image/video support */
 .case-preview-img .preview-ph.has-img {
-  width: 100%;
+  position: absolute;
+  inset: 0;
   padding: 0;
   font-size: 0;
   display: flex;
   align-items: flex-start;
+  justify-content: center;
+  overflow: hidden;
 }
 
 .case-preview-img .preview-ph.has-video {
@@ -829,6 +832,7 @@
   width: 100%;
   height: auto;
   display: block;
+  flex-shrink: 0;
 }
 
 /* Single-image inline media block — visible on mobile only (desktop uses preview panel) */
