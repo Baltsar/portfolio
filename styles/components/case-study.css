@@ -808,6 +808,7 @@
   align-items: flex-start;
   justify-content: center;
   overflow: hidden;
+  z-index: 1;
 }
 
 .case-preview-img .preview-ph.has-video {
@@ -818,6 +819,8 @@
   align-items: center;
   justify-content: center;
   font-size: 0;
+  position: relative;
+  z-index: 1;
 }
 
 .case-preview-img .preview-video {
