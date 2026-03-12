@@ -1,0 +1,270 @@
+/* Loading styleguide — sno fritt, layout för copy-paste */
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { font-size: 16px; -webkit-font-smoothing: antialiased; }
+
+body {
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  min-height: 100vh;
+}
+
+.sg-wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px 80px;
+}
+
+.sg-header {
+  margin-bottom: 40px;
+}
+
+.sg-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.6rem, 4vw, 2.1rem);
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+
+.sg-desc {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin-bottom: 16px;
+}
+
+.sg-desc strong { color: var(--win-border); }
+
+.sg-back {
+  font-size: 0.75rem;
+  color: var(--green-dim);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+}
+.sg-back:hover { color: var(--green); text-shadow: 0 0 8px var(--green-glow); }
+
+.sg-main { display: flex; flex-direction: column; gap: 36px; }
+
+.sg-section-title {
+  font-family: var(--font-display);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--win-border);
+  letter-spacing: 0.06em;
+  margin-bottom: 4px;
+}
+
+.sg-section-desc {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  margin-bottom: 14px;
+  line-height: 1.5;
+}
+
+/* ========== Grid av kort ========== */
+.sg-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 16px;
+}
+
+.sg-card {
+  background: rgba(0,0,0,0.25);
+  border: 1px solid rgba(196,169,122,0.18);
+  border-radius: 6px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.sg-card:hover {
+  border-color: rgba(196,169,122,0.35);
+  box-shadow: 0 0 0 1px rgba(196,169,122,0.1);
+}
+
+.sg-card-demo {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sg-card-name {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-dim);
+}
+
+.sg-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+}
+
+/* ========== Copy-knappar ========== */
+.sg-copy-btn {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--win-border-dark);
+  background: rgba(196,169,122,0.12);
+  border: 1px solid rgba(196,169,122,0.3);
+  padding: 5px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.sg-copy-btn:hover {
+  background: rgba(196,169,122,0.2);
+  color: var(--win-text);
+  border-color: var(--win-border);
+}
+
+.sg-copy-btn .copy-label { pointer-events: none; }
+
+/* ========== Open button (samma som project-bar) ========== */
+.open-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--win-text);
+  background: rgba(26,20,8,0.06);
+  border: 1px solid var(--win-border);
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.open-btn:hover {
+  background: var(--win-border-dark);
+  color: var(--win-bg);
+}
+
+.open-btn:hover .open-glyph {
+  color: var(--win-bg);
+}
+
+.open-glyph {
+  display: inline-block;
+  width: 14px;
+  text-align: center;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--win-border-dark);
+  transition: color 0.15s;
+  overflow: hidden;
+}
+
+/* ========== Inline glyph ========== */
+.sg-inline-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 28px;
+  align-items: center;
+}
+
+.sg-inline-item {
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.inline-glyph {
+  display: inline-block;
+  width: 1.2em;
+  text-align: center;
+  font-weight: 700;
+  color: var(--green-dim);
+  margin-right: 6px;
+}
+
+/* ========== Terminal cursor & status ========== */
+.sg-row.sg-misc { flex-wrap: wrap; gap: 20px; }
+
+.sg-misc-item {
+  flex-direction: row;
+  align-items: center;
+  font-size: 0.8rem;
+}
+
+.sg-misc-item .u { color: var(--green); }
+.sg-misc-item .a { color: var(--text-dim); }
+.sg-misc-item .p { color: var(--blue-bright); }
+.sg-misc-item .s { color: var(--text-secondary); }
+
+.terminal-cursor {
+  display: inline-block;
+  width: 8px;
+  height: 1.1em;
+  background: var(--green);
+  vertical-align: text-bottom;
+  animation: blink 1s step-end infinite;
+  margin-left: 1px;
+}
+
+@keyframes blink { 50% { opacity: 0; } }
+
+.status-dot-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-secondary);
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 6px var(--green);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+/* ========== Code block + Copy hela ========== */
+.sg-code-wrap {
+  position: relative;
+  background: rgba(0,0,0,0.35);
+  border: 1px solid rgba(196,169,122,0.2);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.sg-code .sg-pre {
+  padding: 16px 20px;
+  padding-bottom: 48px;
+  overflow-x: auto;
+  font-size: 0.7rem;
+  line-height: 1.55;
+  color: var(--text-secondary);
+}
+
+.sg-pre code { font-family: var(--font-mono); }
+
+.sg-copy-full {
+  position: absolute;
+  bottom: 10px;
+  right: 12px;
+}
