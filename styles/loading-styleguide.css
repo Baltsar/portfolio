@@ -1,7 +1,9 @@
 /* Loading styleguide — sno fritt, layout för copy-paste */
 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html { font-size: 16px; -webkit-font-smoothing: antialiased; }
+html { font-size: 16px; -webkit-font-smoothing: antialiased; scrollbar-width: none; }
+html::-webkit-scrollbar { display: none; width: 0; height: 0; }
+*::-webkit-scrollbar { display: none; width: 0; height: 0; }
 
 body {
   background: var(--bg);
@@ -259,7 +261,9 @@ body {
   font-size: 0.7rem;
   line-height: 1.55;
   color: var(--text-secondary);
+  scrollbar-width: none;
 }
+.sg-code .sg-pre::-webkit-scrollbar { display: none; width: 0; height: 0; }
 
 .sg-pre code { font-family: var(--font-mono); }
 

@@ -1,5 +1,5 @@
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html { font-size: 16px; -webkit-font-smoothing: antialiased; }
+html { font-size: 16px; -webkit-font-smoothing: antialiased; scrollbar-width: none; }
 
 body {
   background: var(--bg);
@@ -130,7 +130,7 @@ a:focus-visible, button:focus-visible, .open-btn:focus-visible {
   outline-offset: 2px;
 }
 
-/* SCROLLBAR */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: var(--text-dim); }
+/* SCROLLBAR — dold överallt, scroll fungerar fortfarande */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+*::-webkit-scrollbar { display: none; width: 0; height: 0; }
