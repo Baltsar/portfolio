@@ -1,6 +1,6 @@
 import projectData from '../src/data/projects.json';
 
-export const projects = projectData.projects;
+export const projects = projectData.projects.filter(p => !p.hidden);
 
 export function renderProjectWindow(p) {
   const tagsHTML = p.tags.map(t => `<span class="tag ${t.class}">${t.label}</span>`).join('');

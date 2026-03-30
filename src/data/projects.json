@@ -1,6 +1,7 @@
 {
   "projects": [
     {
+      "hidden": true,
       "accentClass": "w-green",
       "art": "/art/monero-mcp.png",
       "artPlaceholder": "art-placeholder-1",
@@ -285,7 +286,7 @@
       "titleAccent": "COMPANY",
       "accentClass": "w-blue",
       "windowTitle": "zhc — building in public",
-      "link": "",
+      "link": "https://kammaren.nu",
       "tags": [
         { "label": "WIP", "class": "wip" }
       ],
@@ -354,6 +355,7 @@
           { "label": "Roll", "value": "Founder / Builder" },
           { "label": "Stack", "value": "Claude · Cursor · TypeScript · MCP" },
           { "label": "Status", "value": "Work in Progress" },
+          { "label": "Live", "value": "<a href=\"https://kammaren.nu\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--blue); text-decoration: none;\">kammaren.nu</a>" },
           { "label": "Dokumentation", "value": "LinkedIn" }
         ],
         "finderPath": "~/projects/<span>zhc</span>/assets",
