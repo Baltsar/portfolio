@@ -352,9 +352,12 @@ function runFit() {
   currentLhMult   = lhMult;
   renderBlocks(fontSize, lhMult);
 
-  // Expand cv-a4 if content overflows standard A4 height
+  // Set cv-a4 height:
+  // - Mobile (CONT_H huge): always size to actual content so page scrolls correctly
+  // - Desktop overflow: expand beyond A4
+  // - Desktop fits: clear inline style, let CSS min-height: 1123px give A4 look
   const actualH = measure(fontSize, lhMult);
-  if (actualH > CONT_H) {
+  if (CONT_H > 9000 || actualH > CONT_H) {
     a4el.style.minHeight = (PAD_Y * 2 + Math.ceil(actualH) + 24) + 'px';
   } else {
     a4el.style.minHeight = '';
@@ -570,7 +573,6 @@ window.toggleAttack = function () {
       win.style.width     = vw + 'px';
       win.style.transform = '';
       a4el.style.width    = vw + 'px';
-      a4el.style.minHeight = '';
       wrap.style.minHeight = '';
 
       cardEl.style.display = 'none';
