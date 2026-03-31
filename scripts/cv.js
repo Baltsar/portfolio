@@ -1,4 +1,4 @@
-import { prepareWithSegments, layoutNextLine } from '@chenglou/pretext';
+import { prepareWithSegments, layoutNextLine } from 'https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js';
 
 // ── A4 geometry ───────────────────────────────────────────────────
 const A4_W   = 794;
