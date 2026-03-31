@@ -135,10 +135,10 @@ const BLOCKS = [
 
   { text: 'Creative Technologist & Digital Producer',
     scale: 1.03, bold: true, display: true,
-    color: 'rgba(26,20,8,1)', date: '2025 – Present', mt: 0, mb: 0.28 },
+    color: 'rgba(26,20,8,1)', date: '2026 – Present', mt: 0, mb: 0.28 },
   { text: 'Freelance · Stockholm',
     scale: 0.9, italic: true, color: 'rgba(26,20,8,0.6)', mt: 0, mb: 0.45 },
-  { text: "Building AI-native tools, shipping products, and running communities.\nShipped: kammaren.nu (3:12 tax optimizer, live + regulatory monitoring), gustafgarnow.com, LunarAIstorm (AI agent social network, 48h build).\nFounded OpenSverige — Sweden's largest AI builder community.\nDaily tools: Claude Code · Cursor · Codex · MCP · OpenClaw · Hermes (Nous Research) · Discord Bots · APIs.\nAvailable for projects at the intersection of design, AI, and shipping.",
+  { text: "Building AI-native tools, shipping products, and running communities.\nShipped kammaren.nu (3:12 tax optimizer live with real users + regulatory monitoring microservice), gustafgarnow.com, and LunarAIstorm (AI agent social network, 48h build).\nFounded OpenSverige — Sweden's largest AI builder community.\nWorks daily with Claude, Claude Code, Cursor, OpenAI Codex, and agent frameworks (OpenClaw, Hermes/Nous Research).\nBuilds with MCP protocols, Discord bots, APIs, Vite, and GitHub.\nAvailable for projects at the intersection of design, AI, and shipping.",
     scale: 1, color: 'rgba(26,20,8,0.88)', mt: 0, mb: 1.4 },
 
   { text: 'Digital Producer',
@@ -155,19 +155,19 @@ const BLOCKS = [
 
   { text: 'Kammaren · kammaren.nu',
     scale: 1.03, bold: true, display: true,
-    color: 'rgba(26,20,8,1)', date: '2025 – Present', mt: 0, mb: 0.28 },
-  { text: "Multi-agent system for Swedish AB owners: CEO · Finance · Auditor · Researcher.\n3:12 tax optimizer shipped and live — saves owners 50–200k SEK/year.\nBAS 2026 bookkeeping · deterministic VAT · SHA-256 audit trail.\nAccounting firm engaged for independent validation.",
+    color: 'rgba(26,20,8,1)', date: '2026 – Present', mt: 0, mb: 0.28 },
+  { text: "Alla andra automatiserar din bokföring — vi kör en deterministisk state machine som bevisar att varje krona är korrekt, hashad, och revisionsklar innan den lämnar ditt bolag.\nMulti-agent system (CEO, Finance, Auditor, Researcher) for Swedish AB owners.\n3:12 tax optimizer shipped and live — saves owners 50–200k SEK/year.\nBAS 2026 bookkeeping · deterministic VAT · SHA-256 audit trail.\nAccounting firm engaged for independent validation.",
     scale: 1, color: 'rgba(26,20,8,0.88)', mt: 0, mb: 1.4 },
 
   { text: 'OpenSverige · opensverige.se',
     scale: 1.03, bold: true, display: true,
-    color: 'rgba(26,20,8,1)', date: '2024 – Present', mt: 0, mb: 0.28 },
-  { text: "Sweden's first community for builders working with AI agents.\n150+ Discord members · monthly IRL meetups, workshops, and hackathons in Stockholm.\nStartup founders, angel investors, hobbyists, and builders — mixed bag of ambitions.\nFree and open source. Builders, not talkers.",
+    color: 'rgba(26,20,8,1)', date: '2026 – Present', mt: 0, mb: 0.28 },
+  { text: "Sweden's first community for builders working with AI agents.\n150+ Discord members. Monthly IRL meetups, workshops, and hackathons in Stockholm.\nWe fail fast, build in the open, and ship tools for small businesses and the community.\nMixed bag of ambitions — startup founders, angel investors, hobbyists, and builders.\nFree and open source. Builders, not talkers.",
     scale: 1, color: 'rgba(26,20,8,0.88)', mt: 0, mb: 1.4 },
 
   { text: 'LunarAIstorm · lunaraistorm.se',
     scale: 1.03, bold: true, display: true,
-    color: 'rgba(26,20,8,1)', date: '2025', mt: 0, mb: 0.28 },
+    color: 'rgba(26,20,8,1)', date: '2026', mt: 0, mb: 0.28 },
   { text: "Swedish social network for AI agents, built in 48 hours. Inspired by Lunarstorm.\nAgents blog, chat, and interact autonomously.\nFrontend lead, design, and OPSEC. Co-built with OpenSverige community members.",
     scale: 1, color: 'rgba(26,20,8,0.88)', mt: 0, mb: 2 },
 
