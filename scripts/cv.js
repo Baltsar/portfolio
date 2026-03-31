@@ -3,10 +3,11 @@ import { prepareWithSegments, layoutNextLine } from 'https://cdn.jsdelivr.net/np
 // ── A4 geometry ───────────────────────────────────────────────────
 const A4_W   = 794;
 const A4_H   = 1123;
-const PAD_X  = 60;
-const PAD_Y  = 52;
-const CONT_W = A4_W - 2 * PAD_X;   // 674
-const CONT_H = A4_H - 2 * PAD_Y;   // 1019
+// PAD_X/PAD_Y/CONT_W/CONT_H are mutable — updated on mobile resize
+let PAD_X  = 60;
+let PAD_Y  = 52;
+let CONT_W = A4_W - 2 * PAD_X;   // 674 on desktop
+let CONT_H = A4_H - 2 * PAD_Y;   // 1019 on desktop
 
 const CARD_W  = 196;
 const CARD_ML = 26;
@@ -337,7 +338,8 @@ function runFit() {
   // Phase 1: largest fontSize in [MIN_FS, 16] that fits A4.
   // MIN_FS = 9 ensures text is always readable — never sacrifice legibility.
   const MIN_FS = 16;
-  const fontSize = bs(MIN_FS, 24, 0.05, fs => measure(fs, 1.2) <= CONT_H);
+  const MAX_FS = CONT_H > 9000 ? 18 : 24;  // cap at 18px on mobile (no height constraint)
+  const fontSize = bs(MIN_FS, MAX_FS, 0.05, fs => measure(fs, 1.2) <= CONT_H);
 
   // Phase 2: largest lhMult within available space.
   // If content at MIN_FS+lh1.2 still overflows A4, expand the page height
@@ -543,24 +545,88 @@ window.toggleAttack = function () {
   cardEl.addEventListener('lostpointercapture', stopDrag);
 })();
 
-// ── Scale A4 to viewport ──────────────────────────────────────────
+// ── Responsive layout ─────────────────────────────────────────────
+// Mobile (< 600px): reflow pretext into viewport width, hide card.
+// Tablet (600–794px): CSS scale the A4 window to fit.
+// Desktop (≥ 794px): full A4 layout, no scaling.
 (function () {
-  const wrap = document.getElementById('cv-win-wrap');
-  const win  = document.getElementById('cv-mac-win');
-  const scale = () => {
-    const avail = innerWidth - 8;
-    if (avail < A4_W) {
-      const s = avail / A4_W;
+  const wrap   = document.getElementById('cv-win-wrap');
+  const win    = document.getElementById('cv-mac-win');
+  const a4el   = document.getElementById('cv-a4');
+  const cardEl = document.getElementById('photo-card');
+
+  let currentMode = null;
+
+  const applyLayout = () => {
+    const vw = innerWidth;
+    const mode = vw < 600 ? 'mobile' : (vw < A4_W ? 'tablet' : 'desktop');
+
+    if (mode === 'mobile') {
+      PAD_X  = 20;
+      PAD_Y  = 40;
+      CONT_W = vw - 2 * PAD_X;
+      CONT_H = 999999;  // no height limit — page scrolls
+
+      win.style.width     = vw + 'px';
+      win.style.transform = '';
+      a4el.style.width    = vw + 'px';
+      a4el.style.minHeight = '';
+      wrap.style.minHeight = '';
+
+      cardEl.style.display = 'none';
+      cardH = 0;
+
+    } else if (mode === 'tablet') {
+      // Restore A4 geometry, then CSS-scale to fit
+      PAD_X  = 60;
+      PAD_Y  = 52;
+      CONT_W = A4_W - 2 * PAD_X;
+      CONT_H = A4_H - 2 * PAD_Y;
+
+      win.style.width  = '';
+      a4el.style.width = '';
+
+      cardEl.style.display = '';
+      cardH = cardEl.offsetHeight;
+
+      const s = (vw - 8) / A4_W;
       win.style.transform       = `scale(${s})`;
       win.style.transformOrigin = 'top center';
       wrap.style.minHeight      = (win.offsetHeight * s + 60) + 'px';
+
     } else {
-      win.style.transform  = '';
+      // Desktop: plain A4
+      PAD_X  = 60;
+      PAD_Y  = 52;
+      CONT_W = A4_W - 2 * PAD_X;
+      CONT_H = A4_H - 2 * PAD_Y;
+
+      win.style.width     = '';
+      win.style.transform = '';
+      a4el.style.width    = '';
       wrap.style.minHeight = '';
+
+      cardEl.style.display = '';
+      cardH = cardEl.offsetHeight;
+    }
+
+    // Reposition card for non-mobile modes
+    if (mode !== 'mobile') {
+      cardX   = CONT_W - CARD_W;
+      cardTop = 0;
+      positionCard(cardEl);
+    }
+
+    // Only re-fit when mode changes or on mobile resize (CONT_W changed)
+    if (mode !== currentMode || mode === 'mobile') {
+      currentMode = mode;
+      clearTimeout(fitTimer);
+      fitTimer = setTimeout(runFit, 100);
     }
   };
-  addEventListener('resize', scale);
-  setTimeout(scale, 50);
+
+  addEventListener('resize', applyLayout);
+  setTimeout(applyLayout, 50);
 })();
 
 // ── Grain ─────────────────────────────────────────────────────────
