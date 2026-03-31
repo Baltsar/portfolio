@@ -3,6 +3,11 @@
   background: var(--win-bg);
 }
 
+.profile-photo-link {
+  display: block;
+  text-decoration: none;
+}
+
 .profile-photo {
   width: 100%;
   aspect-ratio: 1/1;
@@ -12,6 +17,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 .profile-photo::after {
@@ -38,6 +44,33 @@
 .profile-info {
   padding: 10px 12px;
   border-top: 1px solid var(--win-border);
+}
+
+.profile-info-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: background 0.15s;
+  position: relative;
+}
+
+.profile-info-link:hover {
+  background: rgba(0,51,255,0.04);
+}
+
+.profile-cv-hint {
+  font-family: var(--font-mono);
+  font-size: 0.4375rem;
+  color: var(--blue);
+  opacity: 0;
+  margin-top: 4px;
+  letter-spacing: 0.08em;
+  transition: opacity 0.2s;
+}
+
+.profile-info-link:hover .profile-cv-hint {
+  opacity: 0.7;
 }
 
 .profile-name {
@@ -91,4 +124,31 @@
   background: rgba(0,51,255,0.08);
   border-color: rgba(0,51,255,0.2);
   color: var(--blue);
+}
+
+/* Profile photo CV overlay */
+.profile-cv-title {
+  font-size: clamp(4rem, 22cqi, 7rem);
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+/* Overlay sub fades in on hover */
+.profile-photo .overlay-sub {
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.2s, transform 0.2s;
+}
+.profile-photo-link:hover .overlay-sub {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Slightly dim overlay at rest, full on hover */
+.profile-photo .project-overlay::before {
+  opacity: 0.55;
+  transition: opacity 0.2s;
+}
+.profile-photo-link:hover .project-overlay::before {
+  opacity: 0.75;
 }

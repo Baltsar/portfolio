@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gustaf Garnow — CV · Creative Technologist · Stockholm</title>
+<meta name="description" content="Gustaf Garnow is a Creative Technologist and Digital Producer based in Stockholm. 10+ years in design, now building AI agents, open source tools, and communities. Available for freelance work.">
+<meta name="author" content="Gustaf Garnow">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://gustafgarnow.com/cv">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Gustaf Garnow — CV · Creative Technologist · Stockholm">
+<meta property="og:description" content="10+ years in design, now building AI agents, open source tools, and communities. Freelance Creative Technologist based in Stockholm.">
+<meta property="og:url" content="https://gustafgarnow.com/cv">
+<meta property="og:site_name" content="Gustaf Garnow">
+<meta property="og:image" content="https://gustafgarnow.com/og-image-baltsar.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Gustaf Garnow — CV · Creative Technologist · Stockholm">
+<meta name="twitter:description" content="10+ years in design, now building AI agents, open source tools, and communities.">
+<meta name="twitter:image" content="https://gustafgarnow.com/og-image-baltsar.png">
+<meta name="theme-color" content="#0a0a0a">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://gustafgarnow.com/#person",
+      "name": "Gustaf Garnow",
+      "givenName": "Gustaf",
+      "familyName": "Garnow",
+      "url": "https://gustafgarnow.com",
+      "email": "gustaf.garnow@gmail.com",
+      "jobTitle": "Creative Technologist",
+      "description": "Creative Technologist and Digital Producer based in Stockholm. 10+ years in design. Building AI agents, open source tools, and communities. Available for freelance work.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Stockholm",
+        "addressCountry": "SE"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/gustafgarnow/",
+        "https://github.com/Baltsar",
+        "https://gustafgarnow.com"
+      ],
+      "knowsAbout": ["AI Agents", "Model Context Protocol", "Claude", "Cursor", "Digital Production", "Creative Technology", "Open Source", "Community Building", "Figma", "Motion Graphics", "Discord Bots"],
+      "hasOccupation": [
+        {
+          "@type": "Role",
+          "roleName": "Creative Technologist",
+          "startDate": "2025",
+          "description": "Building AI-native tools, shipping products, and running communities. Founded OpenSverige — Sweden's largest AI builder community. Shipped Kammaren (3:12 tax optimizer) and LunarAIstorm."
+        },
+        {
+          "@type": "Role",
+          "roleName": "Digital Producer",
+          "startDate": "2017",
+          "endDate": "2025",
+          "description": "7+ years digital production for a major Swedish pension provider in a regulated environment. 100+ campaigns across display, print, email, and motion graphics."
+        }
+      ],
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Medieinstitutet",
+        "address": {"@type": "PostalAddress", "addressLocality": "Stockholm", "addressCountry": "SE"}
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://gustafgarnow.com/cv",
+      "url": "https://gustafgarnow.com/cv",
+      "name": "Gustaf Garnow — CV",
+      "description": "Full CV for Gustaf Garnow — Creative Technologist, Digital Producer, and AI-Native builder in Stockholm.",
+      "isPartOf": {"@id": "https://gustafgarnow.com"},
+      "about": {"@id": "https://gustafgarnow.com/#person"},
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": ["#cv-text-layer"]
+      }
+    }
+  ]
+}
+</script>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ── Tokens ───────────────────────────────── */
+:root {
+  --bg: #0a0a0a;
+  --win-bg: #f5e6c8;
+  --win-bg-light: #faf3e6;
+  --win-titlebar: #e8d5b0;
+  --win-border: #c4a97a;
+  --win-border-dark: #8a7352;
+  --win-text: #1a1408;
+  --green: #33ff33;
+  --green-dim: #1a8c1a;
+  --green-glow: rgba(51,255,51,0.15);
+  --blue-bright: #3366ff;
+  --blue-glow: rgba(0,51,255,0.2);
+  --text-primary: #f5e6c8;
+  --text-secondary: #9c8b6e;
+  --text-dim: #5c5040;
+  --font-mono: 'IBM Plex Mono', monospace;
+  --font-display: 'Space Mono', monospace;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  /* always-fit drives these */
+  --cv-fs: 9px;
+  --cv-lh: 1.5;
+}
+
+/* ── Reset ────────────────────────────────── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { font-size: 16px; -webkit-font-smoothing: antialiased; scrollbar-width: none; }
+html::-webkit-scrollbar, body::-webkit-scrollbar, *::-webkit-scrollbar { display: none; }
+body { background: var(--bg); color: var(--text-primary); font-family: var(--font-mono); min-height: 100vh; }
+
+/* ── Grain + scanlines ────────────────────── */
+#grain { position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: 0.06; mix-blend-mode: screen; }
+body::after {
+  content: ''; position: fixed; inset: 0; z-index: 1; pointer-events: none;
+  background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.025) 2px, rgba(0,0,0,0.025) 4px);
+}
+
+/* ── Shell ────────────────────────────────── */
+.cv-shell { position: relative; z-index: 2; min-height: 100vh; display: flex; flex-direction: column; }
+
+/* ── Nav ──────────────────────────────────── */
+.cv-nav {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 32px;
+  border-bottom: 1px solid rgba(245,230,200,0.08);
+  position: sticky; top: 0;
+  background: rgba(10,10,10,0.94);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  z-index: 200;
+}
+.back-btn {
+  font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.02em;
+  color: var(--text-primary); text-decoration: none; flex-shrink: 0;
+  display: flex; align-items: center; gap: 8px;
+  padding: 6px 14px;
+  border: 1px solid rgba(245,230,200,0.18);
+  background: rgba(245,230,200,0.05);
+  transition: background .15s, border-color .15s, color .15s, text-shadow .15s;
+}
+.back-btn:hover {
+  background: rgba(51,255,51,0.07);
+  border-color: var(--green-dim);
+  color: var(--green);
+  text-shadow: 0 0 10px var(--green-glow);
+}
+.back-arrow { color: var(--text-secondary); }
+.back-domain { color: var(--text-primary); }
+.back-sub { font-size: 0.5rem; color: var(--text-secondary); letter-spacing: 0.1em; text-transform: uppercase; margin-left: 2px; }
+.nav-center { flex: 1; text-align: center; font-size: 0.5rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-dim); }
+.nav-actions { display: flex; gap: 8px; flex-shrink: 0; }
+.print-btn {
+  font-family: var(--font-mono); font-size: 0.5rem; letter-spacing: 0.05em;
+  color: var(--text-secondary); background: rgba(245,230,200,0.04);
+  border: 1px solid rgba(245,230,200,0.1); padding: 5px 12px;
+  cursor: pointer; transition: all .15s; display: flex; align-items: center; gap: 5px;
+}
+.print-btn:hover { background: rgba(51,255,51,0.06); border-color: var(--green-dim); color: var(--green); }
+.attack-btn {
+  font-family: var(--font-mono); font-size: 0.5rem; letter-spacing: 0.08em;
+  color: var(--blue-bright); background: rgba(0,51,255,0.06);
+  border: 1px solid rgba(0,51,255,0.22); padding: 5px 12px;
+  cursor: pointer; transition: all .15s; display: flex; align-items: center; gap: 5px;
+}
+.attack-btn:hover { background: rgba(0,51,255,0.12); border-color: rgba(0,51,255,0.45); }
+.attack-btn.is-active { color: #ff4040; background: rgba(255,64,64,0.06); border-color: rgba(255,64,64,0.3); }
+.attack-btn.is-active:hover { background: rgba(255,64,64,0.12); border-color: rgba(255,64,64,0.5); }
+
+/* ── Top attack button (small, above CV) ───── */
+.atk-top-zone {
+  display: flex; justify-content: center;
+  padding: 16px 24px 0;
+}
+.atk-top-btn {
+  font-family: var(--font-mono); font-size: 0.5rem; letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,80,80,0.45);
+  background: transparent;
+  border: 1px solid rgba(255,48,48,0.12);
+  padding: 6px 16px;
+  cursor: pointer;
+  display: inline-flex; align-items: center; gap: 8px;
+  transition: color .15s, background .15s, border-color .15s;
+  animation: atk-idle 3s ease-in-out infinite;
+}
+.atk-top-btn:hover {
+  animation: none;
+  color: rgba(255,80,80,0.85);
+  background: rgba(255,48,48,0.05);
+  border-color: rgba(255,48,48,0.4);
+}
+.atk-top-btn.is-active {
+  animation: atk-live 0.9s ease-in-out infinite;
+  color: rgba(255,100,100,0.9);
+  background: rgba(255,48,48,0.06);
+  border-color: rgba(255,48,48,0.5);
+}
+.atk-top-btn .attack-spin {
+  font-size: 0.625rem; line-height: 1; display: inline-block;
+}
+
+/* ── Attack zone (big dangerous button) ───── */
+.cv-attack-zone {
+  display: flex; justify-content: center;
+  padding: 0 24px 64px;
+}
+.attack-zone-btn {
+  font-family: var(--font-mono);
+  position: relative;
+  width: 100%; max-width: 540px;
+  padding: 24px 36px;
+  background: transparent;
+  border: 1px solid rgba(255,48,48,0.22);
+  cursor: pointer;
+  transition: background .2s, border-color .2s, box-shadow .2s;
+  animation: atk-idle 3s ease-in-out infinite;
+}
+@keyframes atk-idle {
+  0%,100% { border-color: rgba(255,48,48,0.18); box-shadow: none; }
+  50%     { border-color: rgba(255,48,48,0.48); box-shadow: 0 0 32px rgba(255,48,48,0.08); }
+}
+/* corner brackets */
+.attack-zone-btn::before,
+.attack-zone-btn::after {
+  content: '';
+  position: absolute;
+  width: 12px; height: 12px;
+  border-style: solid;
+  border-color: rgba(255,48,48,0.4);
+  transition: border-color .2s;
+}
+.attack-zone-btn::before { top: -1px; left: -1px;    border-width: 2px 0 0 2px; }
+.attack-zone-btn::after  { bottom: -1px; right: -1px; border-width: 0 2px 2px 0; }
+.attack-zone-btn:hover {
+  animation: none;
+  background: rgba(255,48,48,0.04);
+  border-color: rgba(255,48,48,0.65);
+  box-shadow: 0 0 48px rgba(255,48,48,0.14), inset 0 0 0 1px rgba(255,48,48,0.06);
+}
+.attack-zone-btn:hover::before,
+.attack-zone-btn:hover::after { border-color: rgba(255,48,48,0.8); }
+.attack-zone-btn.is-active {
+  animation: atk-live 0.9s ease-in-out infinite;
+  background: rgba(255,48,48,0.05);
+  border-color: rgba(255,48,48,0.65);
+}
+@keyframes atk-live {
+  0%,100% { box-shadow: 0 0 18px rgba(255,48,48,0.12); }
+  50%     { box-shadow: 0 0 56px rgba(255,48,48,0.28); }
+}
+.atk-content {
+  display: flex; align-items: center; gap: 22px;
+}
+.atk-glyph {
+  font-size: 2.25rem; line-height: 1; flex-shrink: 0;
+  color: rgba(255,48,48,0.65);
+  transition: color .2s, text-shadow .2s;
+}
+.attack-zone-btn:hover .atk-glyph  { color: rgba(255,48,48,1); text-shadow: 0 0 24px rgba(255,48,48,0.5); }
+.attack-zone-btn.is-active .atk-glyph { color: rgba(255,48,48,1); }
+.atk-labels { display: flex; flex-direction: column; gap: 5px; text-align: left; }
+.atk-title {
+  font-size: 0.9375rem; font-weight: 700; letter-spacing: 0.22em;
+  color: rgba(245,230,200,0.82); text-transform: uppercase;
+  transition: color .2s;
+}
+.attack-zone-btn:hover   .atk-title { color: rgba(245,230,200,0.95); }
+.attack-zone-btn.is-active .atk-title { color: rgba(255,100,100,0.9); }
+.atk-sub {
+  font-size: 0.4rem; letter-spacing: 0.12em; text-transform: uppercase;
+  color: rgba(245,230,200,0.2); transition: color .2s;
+}
+.attack-zone-btn:hover .atk-sub { color: rgba(255,48,48,0.4); }
+.attack-zone-btn.is-active .atk-sub { color: rgba(255,48,48,0.45); }
+
+/* ── Attacker boxes ───────────────────────────── */
+.cv-attacker {
+  position: absolute;
+  width: 36px; height: 27px;
+  border: 1.5px solid var(--win-border);
+  border-right-color: var(--win-border-dark);
+  border-bottom-color: var(--win-border-dark);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-mono); font-size: 14px; font-weight: 500;
+  pointer-events: none; user-select: none;
+  z-index: 6;
+  box-shadow: 2px 2px 0 rgba(0,0,0,0.22);
+  will-change: left, top;
+}
+
+/* ── Mac window wrapper (outer shell) ─────── */
+.cv-win-wrap {
+  flex: 1; display: flex; justify-content: center; align-items: flex-start;
+  padding: 44px 24px 80px;
+}
+
+.cv-mac-win {
+  width: 794px;
+  transform-origin: top center;
+  background: var(--win-bg);
+  border: 2px solid var(--win-border);
+  border-top-color: var(--win-bg-light); border-left-color: var(--win-bg-light);
+  border-right-color: var(--win-border-dark); border-bottom-color: var(--win-border-dark);
+  box-shadow: 6px 6px 0 rgba(0,0,0,0.55), 0 0 0 1px rgba(0,0,0,0.12);
+  opacity: 0;
+  animation: winDrop .65s var(--ease) .25s forwards;
+}
+@keyframes winDrop {
+  from { opacity: 0; transform: translateY(24px) scale(0.96); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ── Mac titlebar ─────────────────────────── */
+.mac-titlebar {
+  background: var(--win-titlebar); border-bottom: 1px solid var(--win-border);
+  padding: 6px 10px; display: flex; align-items: center; gap: 8px; user-select: none;
+}
+.tb-grip { display: flex; flex-direction: column; gap: 2.5px; width: 20px; padding: 2px 0; flex-shrink: 0; }
+.tb-grip span { display: block; height: 1.5px; background: var(--win-border-dark); opacity: 0.4; border-radius: 1px; }
+.tb-title { flex: 1; text-align: center; font-family: var(--font-mono); font-size: 0.5625rem; font-weight: 600; color: var(--win-text); letter-spacing: .03em; }
+.tb-close {
+  width: 14px; height: 14px; border-radius: 50%; background: #ff5f57;
+  border: 1px solid rgba(0,0,0,0.15); cursor: pointer; flex-shrink: 0;
+  text-decoration: none; display: block; transition: filter .15s;
+}
+.tb-close:hover { filter: brightness(.8); }
+
+/* ════════════════════════════════════════════
+   A4 PAGE — pretext rendering canvas
+   ════════════════════════════════════════════ */
+.cv-a4 {
+  width: 794px;
+  min-height: 1123px;
+  background: var(--win-bg);
+  position: relative;       /* containing block for photo card + text layer */
+  overflow: visible;
+}
+
+/* Text layer — pretext renders spans here */
+#cv-text-layer {
+  position: absolute;
+  inset: 0;
+  /* pointer-events enabled so text is selectable */
+}
+
+/* ════════════════════════════════════════════
+   PHOTO CARD — absolutely positioned, draggable.
+   JS sets left/top. pretext's layoutNextLine()
+   fills text on BOTH sides of the card.
+   ════════════════════════════════════════════ */
+.photo-card {
+  position: absolute;       /* JS positions via left + top */
+  width: 196px;
+  background: var(--win-bg-light);
+  border: 1.5px solid var(--win-border);
+  border-top-color: var(--win-bg-light);
+  border-right-color: var(--win-border-dark);
+  border-bottom-color: var(--win-border-dark);
+  box-shadow: 3px 3px 0 rgba(138,115,82,0.25);
+  touch-action: none;
+  z-index: 10;
+  will-change: left, top;
+}
+
+/* Drag handle */
+.pc-handle {
+  background: var(--win-titlebar);
+  border-bottom: 1px solid var(--win-border);
+  padding: 5px 8px;
+  display: flex; align-items: center; gap: 5px;
+  cursor: grab; user-select: none;
+}
+.photo-card.is-dragging .pc-handle { cursor: grabbing; }
+
+.pc-grip-lines {
+  display: flex; flex-direction: column; gap: 2.5px;
+  width: 16px; padding: 1px 0; flex-shrink: 0;
+}
+.pc-grip-lines span {
+  display: block; height: 1.5px;
+  background: var(--win-border-dark); opacity: 0.4; border-radius: 1px;
+  transition: opacity .15s;
+}
+.photo-card:hover .pc-grip-lines span,
+.photo-card.is-dragging .pc-grip-lines span { opacity: 0.8; }
+
+.pc-label {
+  font-family: var(--font-mono); font-size: calc(var(--cv-fs) * 0.72);
+  color: rgba(26,20,8,0.38); letter-spacing: .06em; flex: 1; pointer-events: none;
+}
+.pc-drag-hint {
+  font-family: var(--font-mono); font-size: calc(var(--cv-fs) * 0.65);
+  color: rgba(26,20,8,0.5); letter-spacing: .1em; text-transform: uppercase;
+  pointer-events: none; flex-shrink: 0; transition: color .15s;
+  border: 1px solid rgba(26,20,8,0.18); padding: 1px 5px;
+}
+.photo-card:hover .pc-drag-hint,
+.photo-card.is-dragging .pc-drag-hint { color: rgba(26,20,8,0.85); border-color: rgba(26,20,8,0.35); }
+
+/* Photo image */
+.pc-photo {
+  width: 192px;   /* card width minus 2×border */
+  aspect-ratio: 1 / 1;
+  background: #1a1408;
+  position: relative; overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+}
+.pc-photo img { width: 100%; height: 100%; object-fit: cover; display: block; pointer-events: none; }
+.pc-photo::after {
+  content: ''; position: absolute; inset: 0;
+  background-image: radial-gradient(circle, rgba(0,0,0,0.16) 1px, transparent 1px);
+  background-size: 3px 3px;
+  pointer-events: none; z-index: 1;
+}
+
+/* ════════════════════════════════════════════
+   CV text — all font sizes scale with --cv-fs
+   ════════════════════════════════════════════ */
+.cv-header {
+  margin-bottom: calc(var(--cv-fs) * 2.5);
+  padding-bottom: calc(var(--cv-fs) * 1.6);
+  border-bottom: 2px solid rgba(138,115,82,0.55);
+}
+.cv-name {
+  font-family: var(--font-display); font-weight: 700;
+  font-size: calc(var(--cv-fs) * 2.4); letter-spacing: -0.04em; line-height: 1;
+  color: var(--win-text); margin-bottom: calc(var(--cv-fs) * 0.65);
+}
+.cv-role {
+  font-size: calc(var(--cv-fs) * 1.05);
+  color: rgba(26,20,8,0.55); letter-spacing: .02em; margin-bottom: calc(var(--cv-fs) * 1.1);
+}
+.cv-contact {
+  font-size: calc(var(--cv-fs) * 0.88);
+  color: rgba(26,20,8,0.42);
+  display: flex; flex-wrap: wrap; gap: 2px 0;
+}
+.cv-contact span + span::before { content: ' · '; margin: 0 7px; opacity: .35; }
+
+.cv-section { margin-bottom: calc(var(--cv-fs) * 2); }
+.cv-section-title {
+  font-family: var(--font-display); font-weight: 700;
+  font-size: calc(var(--cv-fs) * 0.85); letter-spacing: .16em; text-transform: uppercase;
+  color: rgba(26,20,8,0.4); margin-bottom: calc(var(--cv-fs) * 1.1);
+  padding-bottom: calc(var(--cv-fs) * 0.55); border-bottom: 1px solid rgba(196,169,122,0.38);
+}
+.cv-entry { margin-bottom: calc(var(--cv-fs) * 1.4); }
+.cv-entry:last-child { margin-bottom: 0; }
+.cv-entry-header { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; margin-bottom: calc(var(--cv-fs) * 0.28); flex-wrap: wrap; }
+.cv-entry-title { font-family: var(--font-display); font-weight: 700; font-size: calc(var(--cv-fs) * 1.03); color: var(--win-text); line-height: 1.2; }
+.cv-entry-date  { font-size: calc(var(--cv-fs) * 0.85); color: rgba(26,20,8,0.38); white-space: nowrap; flex-shrink: 0; font-style: italic; }
+.cv-entry-org   { font-size: calc(var(--cv-fs) * 0.9); color: rgba(26,20,8,0.48); font-style: italic; margin-bottom: calc(var(--cv-fs) * 0.45); }
+.cv-entry-body  { font-size: var(--cv-fs); color: rgba(26,20,8,0.75); line-height: var(--cv-lh); }
+.cv-skills-grid { display: grid; grid-template-columns: auto 1fr; gap: calc(var(--cv-fs) * 0.65) calc(var(--cv-fs) * 1.8); }
+.cv-skill-label { font-family: var(--font-display); font-weight: 700; font-size: calc(var(--cv-fs) * 0.78); color: rgba(26,20,8,0.38); text-transform: uppercase; letter-spacing: .1em; white-space: nowrap; align-self: start; padding-top: 1px; }
+.cv-skill-value { font-size: var(--cv-fs); color: rgba(26,20,8,0.75); line-height: var(--cv-lh); }
+
+/* ── Status bar ───────────────────────────── */
+.cv-status {
+  border-top: 1px solid var(--win-border); background: var(--win-titlebar);
+  padding: 4px 10px; display: flex; justify-content: space-between; align-items: center;
+  font-family: var(--font-mono); font-size: 0.4375rem;
+  color: rgba(26,20,8,0.38); letter-spacing: .05em; gap: 8px;
+}
+.status-dot {
+  display: inline-block; width: 5px; height: 5px; border-radius: 50%;
+  background: rgba(26,20,8,0.18); margin-right: 4px; vertical-align: middle;
+  animation: dotPulse 1s ease-in-out infinite;
+}
+@keyframes dotPulse { 0%,100%{opacity:.3} 50%{opacity:1;background:var(--green-dim)} }
+.status-dot.done { animation: none; background: var(--green-dim); opacity: .65; }
+
+/* ── Photo card CTA ───────────────────────── */
+.pc-cta {
+  padding: 7px 8px;
+  border-top: 1px solid var(--win-border);
+  background: var(--win-titlebar);
+}
+.pc-cta-btn {
+  display: flex; align-items: center; justify-content: center; gap: 5px;
+  width: 100%;
+  font-family: var(--font-mono); font-size: 0.4375rem; font-weight: 500;
+  letter-spacing: 0.06em; text-decoration: none;
+  color: var(--win-text);
+  background: rgba(26,20,8,0.06);
+  border: 1px solid rgba(26,20,8,0.15);
+  padding: 5px 8px;
+  cursor: pointer;
+  transition: background .15s, border-color .15s, color .15s;
+}
+.pc-cta-btn:hover {
+  background: rgba(0,51,255,0.08);
+  border-color: rgba(0,51,255,0.25);
+  color: var(--blue-bright);
+}
+
+/* ── Footer ───────────────────────────────── */
+.cv-footer {
+  padding: 24px 40px 48px;
+  border-top: 1px solid rgba(245,230,200,0.06);
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+  text-align: center;
+}
+.cv-footer .u { color: var(--green); text-shadow: 0 0 10px var(--green-glow); }
+.cv-footer .a { color: var(--text-dim); }
+.cv-footer .p { color: var(--blue-bright); text-shadow: 0 0 10px var(--blue-glow); }
+.cv-footer .s { color: var(--text-secondary); }
+.cv-footer-prompt { font-size: .75rem; }
+.cv-footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
+.cv-footer-links a { font-size: .6875rem; color: var(--blue-bright); text-decoration: none; transition: color .2s; }
+.cv-footer-links a::before { content: '> '; color: var(--text-dim); }
+.cv-footer-links a:hover { color: var(--green); text-shadow: 0 0 8px var(--green-glow); }
+.cv-footer-stats { font-size: .4375rem; color: var(--text-dim); letter-spacing: .1em; }
+
+.cv-credits {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 12px 24px; text-align: center;
+  padding: 8px 0;
+  border-top: 1px solid rgba(245,230,200,0.06);
+  border-bottom: 1px solid rgba(245,230,200,0.06);
+}
+.cv-credit { display: flex; flex-direction: column; gap: 3px; }
+.cv-credit-title {
+  font-family: var(--font-mono); font-size: 0.5625rem; font-weight: 600;
+  color: var(--blue-bright); text-decoration: none; letter-spacing: .02em;
+  transition: color .15s, text-shadow .15s;
+}
+.cv-credit-title:hover { color: var(--green); text-shadow: 0 0 8px var(--green-glow); }
+.cv-credit-desc {
+  font-family: var(--font-mono); font-size: 0.4375rem;
+  color: var(--text-dim); letter-spacing: .04em;
+}
+
+/* ── Focus ────────────────────────────────── */
+a:focus-visible, button:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; }
+
+/* ── Responsive ───────────────────────────── */
+@media (max-width: 900px) {
+  .cv-nav { padding: 14px 20px 12px; }
+  .cv-win-wrap { padding: 24px 0 60px; }
+  .cv-footer { padding: 20px 20px 40px; }
+}
+
+@media (max-width: 600px) {
+  .cv-nav { padding: 10px 14px; gap: 6px; }
+  .back-sub { display: none; }
+  .nav-center { display: none; }
+  .back-btn { font-size: 0.625rem; padding: 5px 10px; }
+  .print-btn { padding: 5px 8px; }
+  .cv-win-wrap { padding: 12px 0 48px; }
+  .cv-footer { padding: 16px 16px 36px; gap: 8px; }
+  .cv-footer-prompt { font-size: 0.6875rem; }
+  .cv-footer-links { gap: 12px; }
+  .cv-footer-links a { font-size: 0.5625rem; }
+}
+
+@media (max-width: 400px) {
+  .cv-nav { padding: 8px 10px; }
+  .cv-footer { padding: 12px 12px 28px; }
+  .cv-footer-links { flex-direction: column; gap: 6px; }
+}
+
+/* ── Print ────────────────────────────────── */
+@media print {
+  #grain, body::after, .cv-nav, .cv-footer { display: none !important; }
+  body { background: white; }
+  .cv-win-wrap { padding: 0; }
+  .cv-mac-win { width: 794px !important; transform: none !important; box-shadow: none !important; border: none !important; animation: none !important; opacity: 1 !important; }
+  .mac-titlebar, .cv-status { display: none !important; }
+  .cv-a4 { min-height: 0 !important; overflow: visible !important; }
+  @page { size: A4; margin: 0; }
+}
+</style>
+</head>
+<body>
+
+<canvas id="grain" aria-hidden="true"></canvas>
+
+<div class="cv-shell">
+
+  <nav class="cv-nav">
+    <a href="https://gustafgarnow.com" class="back-btn" aria-label="Back to gustafgarnow.com — portfolio work">
+      <span class="back-arrow">←</span>
+      <span class="back-domain">gustafgarnow.com</span>
+      <span class="back-sub">portfolio work</span>
+    </a>
+    <div class="nav-center" aria-hidden="true">Gustaf Garnow · CV</div>
+    <div class="nav-actions">
+      <button class="attack-btn" id="attack-btn" onclick="toggleAttack()"><span class="attack-spin">↑</span><span id="attack-btn-label"> attack my CV</span></button>
+      <button class="print-btn" onclick="printCV()">↓ export.pdf</button>
+    </div>
+  </nav>
+
+  <!-- Small top attack button -->
+  <div class="atk-top-zone">
+    <button class="atk-top-btn" id="atk-top-btn" onclick="toggleAttack()">
+      <span class="attack-spin">↑</span>
+      <span id="atk-top-label">ATTACK MY CV</span>
+    </button>
+  </div>
+
+  <div class="cv-win-wrap" id="cv-win-wrap">
+    <div class="cv-mac-win" id="cv-mac-win">
+
+      <!-- Mac titlebar -->
+      <div class="mac-titlebar">
+        <div class="tb-grip" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div class="tb-title">gustaf.cv — always-fit-resume</div>
+        <a href="/" class="tb-close" aria-label="Close"></a>
+      </div>
+
+      <!-- A4 page -->
+      <div class="cv-a4" id="cv-a4">
+
+        <!-- Photo card: absolutely positioned by JS, draggable by titlebar.
+             pretext's layoutNextLine() fills text on BOTH sides. -->
+        <div class="photo-card" id="photo-card">
+          <div class="pc-handle" id="pc-handle">
+            <div class="pc-grip-lines" aria-hidden="true"><span></span><span></span><span></span></div>
+            <span class="pc-label">gustaf.profile</span>
+            <span class="pc-drag-hint">⠿ drag</span>
+          </div>
+          <div class="pc-photo">
+            <img src="/art/profile.png" alt="Gustaf Garnow" loading="eager">
+          </div>
+          <div class="pc-cta">
+            <a href="https://cal.com/gustaf-garnow-3u8eg5" class="pc-cta-btn" target="_blank" rel="noopener noreferrer">
+              <svg width="9" height="9" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M7 3v2M17 3v2M4 8h16M6.5 21h11c1.38 0 2.5-1.12 2.5-2.5V7.5C20 6.12 18.88 5 17.5 5h-11C5.12 5 4 6.12 4 7.5v11c0 1.38 1.12 2.5 2.5 2.5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M8 12h4M8 16h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+              boka möte →
+            </a>
+          </div>
+        </div>
+
+        <!-- pretext renders absolutely positioned spans here -->
+        <div id="cv-text-layer" aria-label="Gustaf Garnow CV"></div>
+
+      </div><!-- /.cv-a4 -->
+
+      <!-- Status bar -->
+      <div class="cv-status">
+        <span>gustaf.cv</span>
+        <span><span class="status-dot" id="status-dot"></span><span id="status-text">computing fit…</span></span>
+        <span>always-fit-resume</span>
+      </div>
+
+    </div><!-- /.cv-mac-win -->
+  </div><!-- /.cv-win-wrap -->
+
+  <!-- Big attack button -->
+  <div class="cv-attack-zone">
+    <button class="attack-zone-btn" id="attack-zone-btn" onclick="toggleAttack()">
+      <div class="atk-content">
+        <span class="atk-glyph">⌐</span>
+        <div class="atk-labels">
+          <span class="atk-title" id="atk-title">ATTACK MY CV</span>
+          <span class="atk-sub"   id="atk-sub">WARNING: initiates DVD mode · pretext flows around all obstacles in real-time</span>
+        </div>
+      </div>
+    </button>
+  </div>
+
+  <footer class="cv-footer">
+    <div class="cv-footer-prompt">
+      <span class="u">gustaf</span><span class="a">@</span><span class="p">garnow</span><span class="s">:~$ </span>
+    </div>
+
+    <div class="cv-credits">
+      <div class="cv-credit">
+        <a href="https://github.com/vladartym/always-fit-resume" target="_blank" rel="noopener noreferrer" class="cv-credit-title">vladartym/always-fit-resume ↗</a>
+        <p class="cv-credit-desc">binary search · fit to A4</p>
+      </div>
+      <div class="cv-credit">
+        <a href="https://github.com/chenglou/pretext" target="_blank" rel="noopener noreferrer" class="cv-credit-title">chenglou/pretext ↗</a>
+        <p class="cv-credit-desc">canvas text layout · Cheng Lou</p>
+      </div>
+    </div>
+
+    <div class="cv-footer-stats" id="footer-stats">
+      powered by always-fit-resume · binary search + canvas measurement via pretext
+    </div>
+  </footer>
+
+</div>
+
+<script type="module" src="/scripts/cv.js"></script>
+</body>
+</html>
