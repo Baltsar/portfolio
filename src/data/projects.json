@@ -365,6 +365,186 @@
       }
     },
     {
+      "id": "headless-design",
+      "title": "HEADLESS",
+      "titleAccent": ".DESIGN",
+      "accentClass": "w-green",
+      "windowTitle": "headless.design — design review as an API",
+      "link": "https://www.headless.design/",
+      "tags": [
+        { "label": "Shipped", "class": "shipped" },
+        { "label": "Active", "class": "active" }
+      ],
+      "art": "/art/headless-design.png",
+      "artPlaceholder": "art-placeholder-1",
+      "scanClass": "",
+      "spinnerSet": "braille",
+      "winClass": "win-5",
+      "overlaySub": "Design Review · Senior Judgment · 72h · 8 900 SEK",
+      "caseStudy": {
+        "heroTitle": "HEADLESS<br><span class=\"w-green\">.DESIGN</span>",
+        "heroSub": "Design Review · Senior Judgment · 72h",
+        "title": "Senior designomdöme. Levererat som ett API.",
+        "sections": [
+          {
+            "type": "text",
+            "text": "Designbyråer levererar PowerPoints. Ingen tar ansvar för faktiska förändringar. Du betalar för en process, inte ett resultat. Jag tröttnade och byggde något annat: senior designomdöme levererat som ett API. En URL in. Spec ut. 72 timmar."
+          },
+          {
+            "type": "text",
+            "text": "Gratisscanen ger de 5 viktigaste fixarna rankade efter impact — på 60 sekunder, ingen inloggning. Sprint är det betalda: fullständig spec.md, HTML/JSX-diffs klara för commit, 12-minuters walkthrough-video och ett 30-minuters strategisamtal. Pengarna tillbaka om du inte är nöjd inom 7 dagar.",
+            "imgRef": { "id": 1, "filename": "headless-design-sprint.png" }
+          },
+          {
+            "type": "stats",
+            "items": [
+              { "value": "72h", "label": "Max leveranstid" },
+              { "value": "8 900", "label": "SEK per sprint" },
+              { "value": "5", "label": "Fixes i gratisscanen" },
+              { "value": "0", "label": "Retainers" }
+            ]
+          },
+          {
+            "type": "text",
+            "text": "Modellen är enkel: identifiera vad som blockerar sajterns syfte, leverera tre saker — spec, kod, video. Inte en process. Inte ett möte. Commits, inte decks.",
+            "imgRef": { "id": 2, "filename": "headless-design-scan.png" }
+          },
+          {
+            "type": "quote",
+            "text": "Din sajt har ett syfte. Vad blockerar det?",
+            "attr": "headless.design"
+          },
+          {
+            "type": "text",
+            "text": "Stack: Claude, ChatGPT, Perplexity, Cursor, Figma. Vibecoded från noll — sajt, scan-verktyg, hela leveransflödet. Det här är vad det ser ut som när designer och builder är samma person.",
+            "imgRef": { "id": 3, "filename": "headless-design-stack.png" }
+          }
+        ],
+        "images": [
+          {
+            "id": 1,
+            "filename": "headless-design-sprint.png",
+            "caption": "Sprint-leveransen. Spec.md, HTML/JSX-diff redo för commit, 12-minutersvideo, strategisamtal. Allt på 72h.",
+            "placeholder": "SPRINT<br>DELIVERY"
+          },
+          {
+            "id": 2,
+            "filename": "headless-design-scan.png",
+            "caption": "Gratisscanen. Top 5 fixar rankade efter impact. 60 sekunder. Ingen inloggning krävs.",
+            "placeholder": "FREE<br>SCAN"
+          },
+          {
+            "id": 3,
+            "filename": "headless-design-stack.png",
+            "caption": "Sajten och toolingen. Vibecoded med Claude, Cursor och Figma. En person. Noll byråprocesser.",
+            "placeholder": "HEADLESS<br>STACK"
+          }
+        ],
+        "meta": [
+          { "label": "Roll", "value": "Founder / Designer / Builder" },
+          { "label": "Stack", "value": "Claude · Cursor · Figma · Next.js" },
+          { "label": "Status", "value": "Shipped & Active", "color": "var(--green-dim)" },
+          { "label": "Webb", "value": "<a href=\"https://www.headless.design/\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--blue); text-decoration: none;\">headless.design</a>" }
+        ],
+        "finderPath": "~/projects/<span>headless-design</span>/assets",
+        "finderFiles": [
+          { "name": "headless-design-sprint.png", "size": "524 KB", "date": "2026-03-10", "type": "PNG" },
+          { "name": "headless-design-scan.png", "size": "318 KB", "date": "2026-02-28", "type": "PNG" },
+          { "name": "headless-design-stack.png", "size": "445 KB", "date": "2026-03-15", "type": "PNG" }
+        ]
+      }
+    },
+    {
+      "id": "agent-scanner",
+      "title": "AGENT READY",
+      "titleAccent": "SCANNER",
+      "accentClass": "w-blue",
+      "windowTitle": "agent scanner — vad AI-agenter ser",
+      "link": "https://agent.opensverige.se/scan",
+      "tags": [
+        { "label": "Shipped", "class": "shipped" },
+        { "label": "Active", "class": "active" }
+      ],
+      "art": "/art/agent-scanner.png",
+      "artPlaceholder": "art-placeholder-2",
+      "scanClass": "blue-scan",
+      "spinnerSet": "arrows",
+      "winClass": "win-6",
+      "overlaySub": "AI Agent Visibility · Open Source · OpenSverige · 300+ Users",
+      "caseStudy": {
+        "heroTitle": "AGENT READY<br><span class=\"w-blue\">SCANNER</span>",
+        "heroSub": "AI Agent Visibility · Open Source · OpenSverige",
+        "title": "Vad ser AI-agenter när de tittar på ditt företag?",
+        "sections": [
+          {
+            "type": "text",
+            "text": "Agenter tar över integrationslagret. De söker, evaluerar och väljer API:er autonomt. Företag som inte syns för dem hamnar utanför det ekosystem som byggs just nu. Det är inte en framtidsfråga. Det händer nu."
+          },
+          {
+            "type": "text",
+            "text": "Agent Ready Scanner är ett open source-verktyg byggt under OpenSverige-paraplyet. Klistra in en URL. Scannern analyserar vad AI-agenter faktiskt ser — öppna API:er, maskinläsbar dokumentation, integrationshinder. Anonym. Ingen inloggning. 300+ builders har redan kört sina sajter.",
+            "imgRef": { "id": 1, "filename": "agent-scanner-results.png" }
+          },
+          {
+            "type": "stats",
+            "items": [
+              { "value": "300+", "label": "Builders som testat" },
+              { "value": "0", "label": "Registrering krävs" },
+              { "value": "OSS", "label": "Open source" },
+              { "value": "∞", "label": "Skalbarhet" }
+            ]
+          },
+          {
+            "type": "text",
+            "text": "Insikten bakom verktyget är enkel men brutal: de flesta företag har noll synlighet för agenter. Ingen llms.txt, inga maskinläsbara endpoints, dokumentation skriven för människor. Det eskalerar ju fler agenter det finns.",
+            "imgRef": { "id": 2, "filename": "agent-scanner-ui.png" }
+          },
+          {
+            "type": "quote",
+            "text": "Företag som inte syns för agenter blir ointegrerbara.",
+            "attr": "agent.opensverige.se"
+          },
+          {
+            "type": "text",
+            "text": "Privacy-first: hashed IP-adresser, resultat raderas på begäran. Community-driven och FOSS — byggt av och för builders som evaluerar vilka system som faktiskt är värda att implementera mot.",
+            "imgRef": { "id": 3, "filename": "agent-scanner-community.png" }
+          }
+        ],
+        "images": [
+          {
+            "id": 1,
+            "filename": "agent-scanner-results.png",
+            "caption": "Scan-resultaten. Vad agenter ser — öppna API:er, maskinläsbar dokumentation, eller ett svart hål.",
+            "placeholder": "SCAN<br>RESULTS"
+          },
+          {
+            "id": 2,
+            "filename": "agent-scanner-ui.png",
+            "caption": "Scannern. En URL in. Anonym. Ingen inloggning. 300+ builders har redan testat sina sajter.",
+            "placeholder": "SCANNER<br>UI"
+          },
+          {
+            "id": 3,
+            "filename": "agent-scanner-community.png",
+            "caption": "Del av OpenSverige-ekosystemet. Community-driven, open source, privacy-first.",
+            "placeholder": "OPENSVERIGE<br>COMMUNITY"
+          }
+        ],
+        "meta": [
+          { "label": "Roll", "value": "Builder / Designer" },
+          { "label": "Stack", "value": "Claude · Next.js · OpenSverige" },
+          { "label": "Status", "value": "Shipped & Active", "color": "var(--green-dim)" },
+          { "label": "Webb", "value": "<a href=\"https://agent.opensverige.se/scan\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--blue); text-decoration: none;\">agent.opensverige.se/scan</a>" }
+        ],
+        "finderPath": "~/projects/<span>agent-scanner</span>/assets",
+        "finderFiles": [
+          { "name": "agent-scanner-results.png", "size": "412 KB", "date": "2026-03-20", "type": "PNG" },
+          { "name": "agent-scanner-ui.png", "size": "287 KB", "date": "2026-03-20", "type": "PNG" },
+          { "name": "agent-scanner-community.png", "size": "356 KB", "date": "2026-03-25", "type": "PNG" }
+        ]
+      }
+    },
+    {
       "accentClass": "w-beige",
       "art": "/art/enterprise.png",
       "artPlaceholder": "art-placeholder-3",

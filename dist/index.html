@@ -51,8 +51,10 @@
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-  <script type="module" crossorigin src="/assets/index-Di-RVeXd.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-uI628zmz.css">
+  <script type="module" crossorigin src="/assets/index-C1WjjHet.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/modulepreload-polyfill-B5Qt9EMX.js">
+  <link rel="stylesheet" crossorigin href="/assets/index-CuYIZHhy.css">
+  <link rel="stylesheet" crossorigin href="/assets/tokens-Cv5INjj3.css">
 </head>
 <body>
 
@@ -85,33 +87,6 @@
   </div>
 
   <main class="windows-area" id="windows-area">
-
-    <!-- WINDOW 1: Monero MCP -->
-    <div class="mac-window is-active win-1" id="win1" data-project="monero-mcp">
-      <h2 class="sr-only">Monero MCP — World's First Monero MCP Server</h2>
-      <div class="mac-titlebar">
-        <div class="titlebar-grip"><span></span><span></span><span></span></div>
-        <div class="mac-title">monero-mcp — world first</div>
-      </div>
-      <div class="mac-content">
-        <div class="project-canvas">
-          <div class="project-art art-placeholder-1" id="art-monero" style="background-image: url('/art/monero-mcp.png'); background-size: contain">
-            <div class="scan"></div>
-            <div class="project-overlay">
-              <div class="overlay-text">
-                <div class="overlay-title">MONERO<br><span class="w-green">MCP</span></div>
-                <div class="overlay-sub">Model Context Protocol · Open Source · World First · 2025</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="project-bar">
-          <div class="bar-tags"><span class="tag shipped">Shipped</span><span class="tag active">Active</span></div>
-          <a class="open-btn" href="#" data-spinner="braille" data-resting="⌐"><span class="open-glyph">⌐</span> Open</a>
-          <div class="bar-drag"></div>
-        </div>
-      </div>
-    </div>
 
     <!-- WINDOW 2: OpenSverige -->
     <div class="mac-window is-active win-2" id="win2" data-project="opensverige">
@@ -204,7 +179,61 @@
       </div>
     </div>
 
-    <!-- WINDOW 5: PROFILE -->
+    <!-- WINDOW 5: Headless.design -->
+    <div class="mac-window win-5" id="headlessdesign" data-project="headless-design">
+      <h2 class="sr-only">Headless.design — Senior designomdöme levererat som ett API, 72h, 8900 SEK</h2>
+      <div class="mac-titlebar">
+        <div class="titlebar-grip"><span></span><span></span><span></span></div>
+        <div class="mac-title">headless.design — design review as an API</div>
+      </div>
+      <div class="mac-content">
+        <div class="project-canvas">
+          <div class="project-art art-placeholder-1">
+            <div class="scan"></div>
+            <div class="project-overlay">
+              <div class="overlay-text">
+                <div class="overlay-title">HEADLESS<br><span class="w-green">.DESIGN</span></div>
+                <div class="overlay-sub">Design Review · Senior Judgment · 72h · 8 900 SEK</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="project-bar">
+          <div class="bar-tags"><span class="tag shipped">Shipped</span><span class="tag active">Active</span></div>
+          <a class="open-btn" href="#" data-spinner="braille" data-resting="⌐"><span class="open-glyph">⌐</span> Open</a>
+          <div class="bar-drag"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WINDOW 6: Agent Ready Scanner -->
+    <div class="mac-window win-6" id="agentscanner" data-project="agent-scanner">
+      <h2 class="sr-only">Agent Ready Scanner — AI Agent Visibility verktyg, Open Source, OpenSverige</h2>
+      <div class="mac-titlebar">
+        <div class="titlebar-grip"><span></span><span></span><span></span></div>
+        <div class="mac-title">agent scanner — vad AI-agenter ser</div>
+      </div>
+      <div class="mac-content">
+        <div class="project-canvas">
+          <div class="project-art art-placeholder-2">
+            <div class="scan blue-scan"></div>
+            <div class="project-overlay">
+              <div class="overlay-text">
+                <div class="overlay-title">AGENT READY<br><span class="w-blue">SCANNER</span></div>
+                <div class="overlay-sub">AI Agent Visibility · Open Source · OpenSverige · 300+ Users</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="project-bar">
+          <div class="bar-tags"><span class="tag shipped">Shipped</span><span class="tag active">Active</span></div>
+          <a class="open-btn" href="#" data-spinner="arrows" data-resting="⌐"><span class="open-glyph">⌐</span> Open</a>
+          <div class="bar-drag"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WINDOW 7: PROFILE -->
     <div class="mac-window win-profile" id="win-profile">
       <div class="mac-titlebar">
         <div class="titlebar-grip"><span></span><span></span><span></span></div>
@@ -212,13 +241,23 @@
       </div>
       <div class="mac-content">
         <div class="profile-content">
-          <div class="profile-photo">
-            <img src="/art/profile.png" alt="Gustaf Garnow" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-          </div>
-          <div class="profile-info">
+          <a href="/cv.html" class="profile-photo-link" aria-label="View Gustaf Garnow's CV">
+            <div class="profile-photo">
+              <img src="/art/profile.png" alt="Gustaf Garnow" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+              <div class="scan blue-scan"></div>
+              <div class="project-overlay">
+                <div class="overlay-text">
+                  <div class="overlay-title profile-cv-title"><span class="w-beige">CV</span></div>
+                  <div class="overlay-sub">view full CV →</div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a href="/cv.html" class="profile-info profile-info-link" aria-label="View Gustaf Garnow's CV">
             <div class="profile-name">Gustaf Garnow</div>
             <div class="profile-role">Digital Producer / Creative Technologist / AI-Native</div>
-          </div>
+            <div class="profile-cv-hint">view cv →</div>
+          </a>
           <div class="profile-stack">
             <div class="stack-label">Tech Stack</div>
             <div class="stack-grid">
@@ -248,6 +287,15 @@
       <a href="https://www.linkedin.com/in/gustafgarnow/" target="_blank" rel="noopener noreferrer">linkedin</a>
       <a href="mailto:gustaf.garnow@gmail.com">mail</a>
       <a href="https://github.com/Baltsar" target="_blank" rel="noopener noreferrer">github</a>
+      <a class="book-btn" href="https://cal.com/gustaf-garnow-3u8eg5" target="_blank" rel="noopener noreferrer" aria-label="Boka möte via Cal.com">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden>
+          <path d="M7 3v2M17 3v2M4 8h16M6.5 21h11c1.38 0 2.5-1.12 2.5-2.5V7.5C20 6.12 18.88 5 17.5 5h-11C5.12 5 4 6.12 4 7.5v11c0 1.38 1.12 2.5 2.5 2.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M8 12h4M8 16h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        boka
+      </a>
+      <a href="/cv.html">cv</a>
+      <a href="/loading-styleguide.html">loading styleguide</a>
     </div>
 
     <div class="export-section">
@@ -291,9 +339,6 @@
   <div class="sr-only">
     <h1>Gustaf Garnow — Creative Technologist, Stockholm</h1>
     <p>10 years of design. Then I started shipping. Creative Technologist building AI agents, open source tools, and communities. Available in Stockholm.</p>
-
-    <h2>Monero MCP — World's First Monero MCP Server</h2>
-    <p>AI-agenter kommer hantera pengar. Ingen hade byggt en MCP-server för Monero. Jag byggde den. Världens första. Open source. 5 säkerhetslager. TypeScript + MCP.</p>
 
     <h2>OpenSverige — Sveriges AI Agent Community</h2>
     <p>Sveriges första community för folk som bygger med AI-agenter. 150+ Discord-medlemmar. IRL meetups i Stockholm. FOSS. Builders, inte talkers.</p>
