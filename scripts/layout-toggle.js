@@ -19,4 +19,6 @@ export function initLayoutToggle() {
 
   btnChaos.addEventListener('click', () => setLayout('chaos'));
   btnGrid.addEventListener('click', () => setLayout('grid'));
+
+  setLayout('grid');
 }
