@@ -6,6 +6,7 @@ import { initExport } from './export.js';
 import { initSpinners } from './spinners.js';
 import { initTerminal } from './terminal.js';
 import { initLightbox } from './lightbox.js';
+import { initMovedModal } from './moved-modal.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   initGrain();
@@ -16,4 +17,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initExport();
   initSpinners();
   initTerminal();
+  initMovedModal();
 });

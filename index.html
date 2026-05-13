@@ -61,6 +61,7 @@
 <link rel="stylesheet" href="/styles/components/profile.css">
 <link rel="stylesheet" href="/styles/components/case-study.css">
 <link rel="stylesheet" href="/styles/components/footer.css">
+<link rel="stylesheet" href="/styles/components/moved-modal.css">
 <link rel="stylesheet" href="/styles/responsive.css">
 </head>
 <body>
@@ -341,6 +342,40 @@
 
 <!-- Case study backdrop -->
 <div class="case-backdrop" id="case-backdrop"></div>
+
+<!-- MOVED MODAL -->
+<div class="moved-backdrop" id="moved-backdrop" aria-hidden="true">
+  <div class="moved-window" role="dialog" aria-modal="true" aria-labelledby="moved-title">
+    <div class="mac-titlebar">
+      <button class="mac-btn-close" id="moved-close" aria-label="Stäng"></button>
+      <div class="mac-title">notice.txt</div>
+      <div class="titlebar-grip" aria-hidden="true"><span></span><span></span><span></span></div>
+    </div>
+    <div class="moved-body">
+      <div class="moved-hero">
+        <div class="moved-display" id="moved-title">MOVED.</div>
+        <div class="moved-arrow">— → —</div>
+        <div class="moved-dest"><span class="w-green">HEADLESS</span>.DESIGN<span class="moved-slash">/</span>PORTFOLIO</div>
+      </div>
+      <p class="moved-copy">
+        Jag har flyttat det mesta av portföljen till
+        <span class="moved-link-inline">headless.design/portfolio</span>.
+        Den här sidan finns kvar — gå dit för senaste case, eller fortsätt browsa här.
+      </p>
+      <div class="moved-actions">
+        <a class="moved-cta-primary" href="https://headless.design/portfolio" target="_blank" rel="noopener">
+          <span class="moved-cta-glyph">→</span> gå till headless.design
+        </a>
+        <button class="moved-cta-secondary" id="moved-stay" type="button">
+          stanna här ↳
+        </button>
+      </div>
+      <div class="moved-terminal">
+        <span class="u">gustaf</span><span class="a">@</span><span class="p">garnow</span><span class="s">:~$</span><span class="cmd">cat notice.txt</span><span class="moved-cursor">▮</span>
+      </div>
+    </div>
+  </div>
+</div>
 
 <noscript>
   <div class="sr-only">
